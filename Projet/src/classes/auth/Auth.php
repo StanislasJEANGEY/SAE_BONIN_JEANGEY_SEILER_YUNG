@@ -2,9 +2,6 @@
 
 namespace iutnc\netVOD\auth;
 
-use iutnc\deefy\db\ConnectionFactory;
-use iutnc\deefy\exception\AuthException;
-use iutnc\deefy\model\User;
 
 class Auth
 {

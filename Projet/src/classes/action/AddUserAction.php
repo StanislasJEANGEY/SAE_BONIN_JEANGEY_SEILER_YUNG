@@ -2,8 +2,7 @@
 
 namespace iutnc\netVOD\action;
 
-use iutnc\deefy\auth\Auth;
-use iutnc\deefy\exception\AuthException;
+use iutnc\netVOD\auth\Auth;
 
 class AddUserAction extends Action
 {

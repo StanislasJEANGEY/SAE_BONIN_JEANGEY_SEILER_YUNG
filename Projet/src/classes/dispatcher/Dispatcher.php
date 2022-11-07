@@ -2,11 +2,8 @@
 
 namespace iutnc\netVOD\dispatcher;
 
-use iutnc\deefy\action\AddPlaylistAction;
-use iutnc\deefy\action\AddPodcastTrackAction;
-use iutnc\deefy\action\AddUserAction;
-use iutnc\deefy\action\DisplayPlaylistAction;
-use iutnc\deefy\action\SigninAction;
+
+use iutnc\netVOD\action\SigninAction;
 
 class Dispatcher
 {

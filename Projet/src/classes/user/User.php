@@ -2,8 +2,8 @@
 
 namespace iutnc\netVOD\user;
 
-use iutnc\deefy\audio\lists\Playlist;
-use iutnc\deefy\db\ConnectionFactory;
+
+use iutnc\netVOD\db\ConnectionFactory;
 
 class User 
 {
