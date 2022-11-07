@@ -6,9 +6,9 @@ session_start();
 require_once 'vendor/autoload.php';
 
 
-\iutnc\deefy\db\ConnectionFactory::setConfig();
+\iutnc\netVOD\db\ConnectionFactory::setConfig();
 
-use iutnc\deefy\dispatcher\Dispatcher;
+use iutnc\netVOD\dispatcher\Dispatcher;
 
 
 $action = isset($_GET['action']) ? $_GET['action'] : null;
