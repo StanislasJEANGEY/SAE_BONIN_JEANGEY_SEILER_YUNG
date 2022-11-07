@@ -10,8 +10,9 @@ class Auth
 {
 
 
-    public static function register(string $email, string $password)
+    public static function register(string $email, string $password): bool
     {
+        $verify = false;
         if(strlen($password) >= 8)
         {
             $email = filter_var($email, FILTER_SANITIZE_EMAIL);
@@ -24,6 +25,7 @@ class Auth
                 $passHash = password_hash($password, PASSWORD_DEFAULT, ["cost" => 12]);
                 $state = $db->prepare("INSERT INTO Utilisateur (email, passwd, role) VALUES (?,?,?)");
                 $state->execute([$email, $passHash, 1]);
+                $verify = true;
             }
             else
             {
@@ -35,6 +37,7 @@ class Auth
         {
             throw new AuthException("Mot de passe invalide (min cara)", 4);
         }
+        return $verify;
     }
 
     public static function authenticate(string $email, string $password) : User
