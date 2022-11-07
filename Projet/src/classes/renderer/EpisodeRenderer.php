@@ -14,8 +14,7 @@ class EpisodeRenderer implements renderer {
 
     public function render(int $selector = 1): string
     {
-        $html = "";
-
+        $html = "<h1>Titre : {$this->episode->titre}</h1>";
         switch ($selector){
             case 1:
                 $html .= <<<END
@@ -31,6 +30,7 @@ class EpisodeRenderer implements renderer {
                 break;
 
         }
+        $html .= "<div>Résumé : {$this->episode->resume} Durée : {$this->episode->duree}</p>" . "</div>";
         return $html;
     }
 }
