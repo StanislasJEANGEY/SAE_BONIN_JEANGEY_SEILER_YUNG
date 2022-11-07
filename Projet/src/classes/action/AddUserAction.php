@@ -23,7 +23,6 @@ class AddUserAction extends Action
       if(! $_POST['pwd'] === $_POST['pwd2']){
               throw new \iutnc\netVOD\Exception\AuthException("Les saisies de vos mot de passes ne sont pas identiques");
           }
-
         try
         {
             $email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);

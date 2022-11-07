@@ -14,10 +14,10 @@ class SigninAction extends Action
         try
         {
             $user = Auth::authenticate($_POST['email'], $_POST['password']);
-            foreach ($user->getPlaylists() as $value)
-            {
-                return (new AudioListRenderer($value))->render(1);
-            }
+            //foreach ($user->getPlaylists() as $value)
+            //{
+            //    return (new AudioListRenderer($value))->render(1);
+            //}
 
         } catch (AuthException $e) {
             if($e->getCode() == 1) {return '<p style="color:red;">Email invalide !</p>';}

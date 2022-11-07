@@ -5,7 +5,7 @@ namespace iutnc\netVOD\user;
 
 use iutnc\netVOD\db\ConnectionFactory;
 
-class User 
+class User
 {
     private String $user;
     private String $passwd;
@@ -29,6 +29,7 @@ class User
         return $this->user;
     }
 
+    /** a modif 
     public function getPlaylists() : array
     {
         $bd = ConnectionFactory::makeConnection();
@@ -48,5 +49,7 @@ class User
         }
         return $playlists;
     }
-    
+
+  */
+
 }
