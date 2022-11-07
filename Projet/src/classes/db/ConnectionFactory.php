@@ -10,7 +10,8 @@ class ConnectionFactory
     private static array $config = [];
     private static ?PDO $db = null;
 
-    public static function setConfig(String $file = "config.ini")
+    //public static function setConfig(String $file = "configWEBETU.ini")
+    public static function setConfig(String $file = "configXAMPP.ini")
     {
         ConnectionFactory::$config = parse_ini_file($file);
         

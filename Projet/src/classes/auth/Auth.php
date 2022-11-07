@@ -2,6 +2,9 @@
 
 namespace iutnc\netVOD\auth;
 
+use iutnc\netVOD\db\ConnectionFactory;
+use iutnc\netVOD\Exception\AuthException;
+use iutnc\netVOD\user\User;
 
 class Auth
 {
@@ -9,28 +12,28 @@ class Auth
 
     public static function register(string $email, string $password)
     {
-        if(strlen($password) >= 11)
+        if(strlen($password) >= 8)
         {
             $email = filter_var($email, FILTER_SANITIZE_EMAIL);
             $db = ConnectionFactory::makeConnection();
-            $state = $db->prepare("SELECT email FROM user WHERE email = :email");
+            $state = $db->prepare("SELECT email FROM Utilisateur WHERE email = :email");
             $state->execute([':email' => $email]);
             if($state->rowCount() == 0)
             {
 
                 $passHash = password_hash($password, PASSWORD_DEFAULT, ["cost" => 12]);
-                $state = $db->prepare("INSERT INTO user (email, passwd, role) VALUES (?,?,?)");
+                $state = $db->prepare("INSERT INTO Utilisateur (email, passwd, role) VALUES (?,?,?)");
                 $state->execute([$email, $passHash, 1]);
             }
             else
             {
-                throw new iutnc\netVOD\Exception\AuthException("Utilisateur existant", 3);
+                throw new AuthException("Utilisateur existant", 3);
             }
             $state->closeCursor();
         }
         else
         {
-            throw new iutnc\netVOD\Exception\AuthException("Mot de passe invalide (min cara)", 4);
+            throw new AuthException("Mot de passe invalide (min cara)", 4);
         }
     }
 
@@ -38,7 +41,7 @@ class Auth
     {
         $email = filter_var($email, FILTER_SANITIZE_EMAIL);
         $db = ConnectionFactory::makeConnection();
-        $state = $db->prepare("SELECT passwd, role FROM user WHERE email = :user");
+        $state = $db->prepare("SELECT passwd, role FROM Utilisateur WHERE email = :user");
         $state->execute([':user' => $email]);
 
         $array = $state->fetchAll();
