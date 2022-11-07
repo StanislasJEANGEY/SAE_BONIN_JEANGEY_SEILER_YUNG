@@ -3,6 +3,7 @@
 namespace iutnc\netVOD\action;
 
 use iutnc\netVOD\auth\Auth;
+use iutnc\netVOD\Exception\AuthException;
 
 class AddUserAction extends Action
 {
@@ -21,7 +22,7 @@ class AddUserAction extends Action
     protected function postExecute(): string
     {
       if(! $_POST['pwd'] === $_POST['pwd2']){
-              throw new \iutnc\netVOD\Exception\AuthException("Les saisies de vos mot de passes ne sont pas identiques");
+              throw new \iutnc\netVOD\Exception\AuthException("Les saisies de vos mot de passes ne sont pas identiques",5);
           }
 
         try
@@ -30,14 +31,15 @@ class AddUserAction extends Action
             $mdp = filter_var($_POST['pwd'], FILTER_SANITIZE_SPECIAL_CHARS);
 
             if (Auth::register($email, $mdp)) {
-                $html = "Inscription réussie";
+                $html = "<h2> Inscription réussie </h2>";
             }
         }
         catch (AuthException $e)
         {
-            if($e->getCode() == 3){return "Email déjà utilisé =(";}
-            if($e->getCode() == 4){return "Mot de passe invalide (13 caractères min) =O";}
+            if($e->getCode() == 3){$html = "<h2> Email déjà utilisé </h2>";}
+            if($e->getCode() == 4){$html = "<h2> Mot de passe invalide (13 caractères min) </h2>";}
+            if($e->getCode() == 5){$html = "<h2> Mot de passe différents </h2>";}
         }
-        return "";
+        return $html;
     }
 }
