@@ -36,7 +36,7 @@ class Dispatcher
               $html = $action->execute();
                 break;
             default:
-                $html =  "<h1>Bienvenue</h1>";
+                $html =  "<h1>Acceuil</h1>";
                   break;
         }
         $this->renderPage($html);
