@@ -16,8 +16,8 @@ YUNG Théo
 ## Choses faites :
 
 1. Identification/Authentification – Formulaire de login  
-    gérer les exceptions
-
+    OK
+    
 2. Inscription sur la plateforme  
     OK
 

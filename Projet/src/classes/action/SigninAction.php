@@ -3,6 +3,7 @@
 namespace iutnc\netVOD\action;
 
 use iutnc\netVOD\auth\Auth;
+use iutnc\netVOD\Exception\AuthException;
 
 
 
@@ -14,16 +15,15 @@ class SigninAction extends Action
         try
         {
             $user = Auth::authenticate($_POST['email'], $_POST['password']);
+            if (isset($user)) $html = "<h2>Connexion réussi</h2>";
             //foreach ($user->getPlaylists() as $value)
             //{
             //    return (new AudioListRenderer($value))->render(1);
             //}
 
-        } catch (AuthException $e) {
-            if($e->getCode() == 1) {return '<p style="color:red;">Email invalide !</p>';}
-            if($e->getCode() == 2) {return '<p style="color:red;">Mot de passe invalide !</p>';}
-        }
-        return '';
+        } catch (AuthException $e) { $html = "<h2>".$e->getMessage()."</h2>"; }
+
+        return $html;
     }
 
     protected function executeGET(): string

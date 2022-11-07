@@ -29,13 +29,13 @@ class Auth
             }
             else
             {
-                throw new AuthException("Utilisateur existant", 3);
+                throw new AuthException("Utilisateur existant");
             }
             $state->closeCursor();
         }
         else
         {
-            throw new AuthException("Mot de passe invalide (min cara)", 4);
+            throw new AuthException("Mot de passe invalide (min cara)");
         }
         return $verify;
     }
@@ -51,7 +51,7 @@ class Auth
 
         if(empty($array))
         {
-            throw new AuthException("Email invalide !", 1);
+            throw new AuthException("Email invalide !");
         }
 
         $passVerif = $array[0]['passwd'];
@@ -59,7 +59,7 @@ class Auth
 
         if(!password_verify($password, $passVerif))
         {
-            throw new AuthException("Mot de passe invalide !", 2);
+            throw new AuthException("Mot de passe invalide !");
         }
 
         $user = new User($email, $passVerif, $role);
