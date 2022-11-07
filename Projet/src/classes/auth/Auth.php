@@ -16,13 +16,13 @@ class Auth
         {
             $email = filter_var($email, FILTER_SANITIZE_EMAIL);
             $db = ConnectionFactory::makeConnection();
-            $state = $db->prepare("SELECT email FROM user WHERE email = :email");
+            $state = $db->prepare("SELECT email FROM Utilisateur WHERE email = :email");
             $state->execute([':email' => $email]);
             if($state->rowCount() == 0)
             {
 
                 $passHash = password_hash($password, PASSWORD_DEFAULT, ["cost" => 12]);
-                $state = $db->prepare("INSERT INTO user (email, passwd, role) VALUES (?,?,?)");
+                $state = $db->prepare("INSERT INTO Utilisateur (email, passwd, role) VALUES (?,?,?)");
                 $state->execute([$email, $passHash, 1]);
             }
             else
@@ -41,7 +41,7 @@ class Auth
     {
         $email = filter_var($email, FILTER_SANITIZE_EMAIL);
         $db = ConnectionFactory::makeConnection();
-        $state = $db->prepare("SELECT passwd, role FROM user WHERE email = :user");
+        $state = $db->prepare("SELECT passwd, role FROM Utilisateur WHERE email = :user");
         $state->execute([':user' => $email]);
 
         $array = $state->fetchAll();
