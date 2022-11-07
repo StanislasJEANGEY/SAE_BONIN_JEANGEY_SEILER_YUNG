@@ -16,10 +16,10 @@ YUNG Théo
 ## Choses faites :
 
 1. Identification/Authentification – Formulaire de login  
-    fonctionne mais exception sur pas les mêmes mots de passe à gérer 
+    gérer les exceptions
 
 2. Inscription sur la plateforme  
-    fonctionne mais exception à gérer
+    OK
 
 3. Affichage du catalogue de séries
 
