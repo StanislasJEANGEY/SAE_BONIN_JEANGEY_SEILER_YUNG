@@ -1,6 +1,6 @@
 <?php
 
-namespace iutnc\netVOD\render;
+namespace iutnc\netVOD\renderer;
 
 interface renderer
 {

@@ -8,6 +8,7 @@ require_once 'vendor/autoload.php';
 
 \iutnc\netVOD\db\ConnectionFactory::setConfig();
 
+
 use iutnc\netVOD\dispatcher\Dispatcher;
 
 
