@@ -1,6 +1,6 @@
 <?php
 
-namespace iutnc\deefy\dispatcher;
+namespace iutnc\netVOD\dispatcher;
 
 use iutnc\deefy\action\AddPlaylistAction;
 use iutnc\deefy\action\AddPodcastTrackAction;

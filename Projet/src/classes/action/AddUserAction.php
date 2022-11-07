@@ -1,6 +1,6 @@
 <?php
 
-namespace iutnc\deefy\action;
+namespace iutnc\netVOD\action;
 
 use iutnc\deefy\auth\Auth;
 use iutnc\deefy\exception\AuthException;

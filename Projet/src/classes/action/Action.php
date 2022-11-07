@@ -1,6 +1,6 @@
 <?php
 
-namespace iutnc\deefy\action;
+namespace iutnc\netVOD\action;
 
 abstract class Action {
 

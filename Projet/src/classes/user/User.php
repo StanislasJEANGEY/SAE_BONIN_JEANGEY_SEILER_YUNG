@@ -1,6 +1,6 @@
 <?php
 
-namespace iutnc\deefy\model;
+namespace iutnc\netVOD\user;
 
 use iutnc\deefy\audio\lists\Playlist;
 use iutnc\deefy\db\ConnectionFactory;

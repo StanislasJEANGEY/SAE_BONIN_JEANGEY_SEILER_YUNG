@@ -1,6 +1,6 @@
 <?php
 
-namespace iutnc\deefy\auth;
+namespace iutnc\netVOD\auth;
 
 use iutnc\deefy\db\ConnectionFactory;
 use iutnc\deefy\exception\AuthException;
