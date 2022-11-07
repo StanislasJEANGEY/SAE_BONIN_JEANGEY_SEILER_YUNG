@@ -17,7 +17,7 @@ YUNG Théo
 
 1. Identification/Authentification – Formulaire de login  
     OK
-    
+
 2. Inscription sur la plateforme  
     OK
 
@@ -42,6 +42,6 @@ commentaires
 <br>
 <br>
 
-# Liste des utilateurs avec leurs mot de passe :
+# Liste des utilateurs avec leur mot de passe :
 1.      test@gmail.com  
         azertyuiop
