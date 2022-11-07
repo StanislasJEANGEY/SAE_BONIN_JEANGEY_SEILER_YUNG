@@ -14,10 +14,16 @@ use iutnc\netVOD\dispatcher\Dispatcher;
 
 $action = isset($_GET['action']) ? $_GET['action'] : null;
 
+
+
+
 if(!isset($playlists))
 {
     $playlists = [];
 }
+
+$dispatcher = new Dispatcher();
+$dispatcher->run();
 
 $htmlRender = <<<EOF
     <!DOCTYPE html>
@@ -34,9 +40,5 @@ $htmlRender = <<<EOF
             <li><a href="?action=add-user">Inscription</a></li>
             <li><a href="?action=signin">Connexion</a></li>
         </ul>
-    </nav>
-
 EOF;
-
-$dispatcher = new Dispatcher($action);
-$dispatcher->renderPage($htmlRender);
+echo $htmlRender;

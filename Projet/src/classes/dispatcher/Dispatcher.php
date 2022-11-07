@@ -9,14 +9,15 @@ use iutnc\netVOD\action\AddUserAction;
 class Dispatcher
 {
 
-    private ?string $action;
+    protected ?string $action = null;
 
-    public function __construct(?string $action)
+    public function __construct()
     {
-        $this->action = $action;
-    }
+      $this->action = isset($_GET['action'])? $_GET['action']:null;
+}
 
-    public function run() : string
+
+    public function run() : void
     {
         $action = null;
 
@@ -24,32 +25,39 @@ class Dispatcher
         {
             case("add-user"):
                 $action = new AddUserAction();
+                $html = $action->execute();
                 break;
             case("add-playlist"):
                 $action = new AddPlaylistAction();
-                break;
-            case("add-podcasttrack"):
-                $action = new AddPodcastTrackAction();
+                $html = $action->execute();
                 break;
             case("signin"):
                 $action = new SigninAction();
-                break;
-            case("display-playlist"):
-                $action = new DisplayPlaylistAction();
+              $html = $action->execute();
                 break;
             default:
-                return "<h1>Bienvenue</h1>";
-
+                $html =  "<h1>Bienvenue</h1>";
+                  break;
         }
-        return $action->execute();
-    }
+        $this->renderPage($html);
+        }
+
 
     public function renderPage(string $html) : void
     {
-        echo $html . $this->run() . <<<EOF
-        </body>
-        </html>
-        EOF;
+      echo<<<end
+ <!DOCTYPE html>
+ <html lang="fr">
+ <head>
+     <title>Deefy</title>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ </head>
+ <body>
+ $html
+ </body>
+ end;
+
     }
 
 }
