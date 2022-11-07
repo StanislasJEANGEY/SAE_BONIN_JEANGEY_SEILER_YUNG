@@ -33,8 +33,6 @@ $htmlRender = <<<EOF
         <ul>
             <li><a href="?action=add-user">Inscription</a></li>
             <li><a href="?action=signin">Connexion</a></li>
-            <li><a href="?action=add-playlist">Ajouter une Playlist</a></li>
-            <li><a href="?action=display-playlist">Afficher une Playlist</a></li>
         </ul>
     </nav>
 
@@ -42,5 +40,3 @@ EOF;
 
 $dispatcher = new Dispatcher($action);
 $dispatcher->renderPage($htmlRender);
-
-
