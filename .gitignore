@@ -9,4 +9,5 @@
 *.iml
 # Log file
 *.log
-*.idea
+.idea/*
+*.idea/

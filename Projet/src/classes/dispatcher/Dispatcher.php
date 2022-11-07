@@ -4,6 +4,7 @@ namespace iutnc\netVOD\dispatcher;
 
 
 use iutnc\netVOD\action\SigninAction;
+use iutnc\netVOD\action\AddUserAction;
 
 class Dispatcher
 {
