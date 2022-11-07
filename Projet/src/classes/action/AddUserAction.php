@@ -30,7 +30,7 @@ class AddUserAction extends Action
             $mdp = filter_var($_POST['pwd'], FILTER_SANITIZE_SPECIAL_CHARS);
 
             if (Auth::register($email, $mdp)) {
-                $html .= "Inscription réussie";
+                $html = "Inscription réussie";
             }
         }
         catch (AuthException $e)
