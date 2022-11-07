@@ -2,6 +2,9 @@
 
 namespace iutnc\netVOD\auth;
 
+use iutnc\netVOD\db\ConnectionFactory;
+use iutnc\netVOD\Exception\AuthException;
+use iutnc\netVOD\user\User;
 
 class Auth
 {
@@ -9,7 +12,7 @@ class Auth
 
     public static function register(string $email, string $password)
     {
-        if(strlen($password) >= 11)
+        if(strlen($password) >= 8)
         {
             $email = filter_var($email, FILTER_SANITIZE_EMAIL);
             $db = ConnectionFactory::makeConnection();
@@ -24,13 +27,13 @@ class Auth
             }
             else
             {
-                throw new iutnc\netVOD\Exception\AuthException("Utilisateur existant", 3);
+                throw new AuthException("Utilisateur existant", 3);
             }
             $state->closeCursor();
         }
         else
         {
-            throw new iutnc\netVOD\Exception\AuthException("Mot de passe invalide (min cara)", 4);
+            throw new AuthException("Mot de passe invalide (min cara)", 4);
         }
     }
 
