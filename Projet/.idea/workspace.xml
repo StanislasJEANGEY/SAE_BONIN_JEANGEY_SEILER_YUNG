@@ -19,11 +19,6 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="PhpWorkspaceProjectConfiguration">
-    <include_path>
-      <path value="$PROJECT_DIR$/vendor/composer" />
-    </include_path>
-  </component>
   <component name="ProjectId" id="2HDCJSTc0EaViXWkl7LtQGGtE5l" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -51,7 +46,7 @@
       <workItem from="1667810196813" duration="2254000" />
       <workItem from="1667828089246" duration="97000" />
       <workItem from="1667828450062" duration="2576000" />
-      <workItem from="1667831060631" duration="1227000" />
+      <workItem from="1667831060631" duration="1566000" />
     </task>
     <task id="LOCAL-00001" summary="gitignore">
       <created>1667810522395</created>
@@ -88,7 +83,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667831783814</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="conncect à la base">
+      <created>1667832616638</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1667832616638</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
