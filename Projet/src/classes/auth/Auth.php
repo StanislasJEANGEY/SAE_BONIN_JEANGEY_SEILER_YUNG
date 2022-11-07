@@ -24,13 +24,13 @@ class Auth
             }
             else
             {
-                throw new AuthException("Utilisateur existant", 3);
+                throw new iutnc\netVOD\Exception\AuthException("Utilisateur existant", 3);
             }
             $state->closeCursor();
         }
         else
         {
-            throw new AuthException("Mot de passe invalide (min cara)", 4);
+            throw new iutnc\netVOD\Exception\AuthException("Mot de passe invalide (min cara)", 4);
         }
     }
 

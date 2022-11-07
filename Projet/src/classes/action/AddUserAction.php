@@ -9,21 +9,29 @@ class AddUserAction extends Action
     protected function executeGET(): string
     {
         return  <<<EOF
-                <form method="post">
-                    <input type="email" placeholder="Email" name="email">
-                    <input type="password" min="11" max="150" placeholder="Password" name="password">
-                    <input type="submit" value="Inscription">
-                </form>
-            EOF;
+                     <form method="post" action="?action=add-user">
+                        <label>Email : <input type ="email" name="email" value='' placeholder='email'> </label> <br>
+                        <label>Mot de passe : <input type='password' name='pwd' value=''></label> <br>
+                        <label>Ressaisir votre mot de passe : <input type='password' name='pwd2' value=''></label> <br>
+                        <button type="submit"> Connexion </button>
+                     </form>
+                     EOF;
     }
 
     protected function postExecute(): string
     {
-        $email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
+      if(! $_POST['pwd'] === $_POST['pwd2']){
+              throw new \iutnc\netVOD\Exception\AuthException("Les saisies de vos mot de passes ne sont pas identiques");
+          }
+
         try
         {
-            Auth::register($email, $_POST['password']);
-            return "Utilisateur inscris =)";
+            $email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
+            $mdp = filter_var($_POST['pwd'], FILTER_SANITIZE_SPECIAL_CHARS);
+
+            if (Auth::register($email, $mdp)) {
+                $html .= "Inscription réussie";
+            }
         }
         catch (AuthException $e)
         {
