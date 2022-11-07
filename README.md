@@ -5,10 +5,10 @@
 <br>
 
 ## Membre du groupe : 
-BONIN Lucas 
-JEANGEY Stanislas
-SEILER Mathis
-YUNG Théo
+BONIN Lucas  
+JEANGEY Stanislas  
+SEILER Mathis  
+YUNG Théo  
 
 <br>
 <br>
