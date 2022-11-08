@@ -30,11 +30,13 @@ class SigninAction extends Action
     protected function executeGET(): string
     {
         return <<<EOF
+                <div id="mainLogin">
                 <form method="post">
                     <input type="email" placeholder="Email" name="email">
                     <input type="password" placeholder="Mot de passe" name="password">
                     <input type="submit" value="Connexion">
                 </form>
+                </div>
             EOF;
     }
 }
