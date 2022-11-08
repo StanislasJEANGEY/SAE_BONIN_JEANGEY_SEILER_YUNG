@@ -3,6 +3,7 @@
 namespace iutnc\netVOD\action;
 
 use iutnc\netVOD\renderer;
+use iutnc\netVOD\renderer\EpisodeRenderer;
 use iutnc\netVOD\video\track\Episode;
 
 class DisplayEpisodeAction extends Action
@@ -16,6 +17,6 @@ class DisplayEpisodeAction extends Action
     protected function executeGET(): string
     {
         $rendererEpisode = new EpisodeRenderer(Episode::getEpisode($_GET['id']));
-        return $rendererEpisode->render(2);
+        return $rendererEpisode->render();
     }
 }
