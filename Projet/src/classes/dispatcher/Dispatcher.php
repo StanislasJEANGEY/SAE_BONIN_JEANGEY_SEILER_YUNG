@@ -54,17 +54,17 @@ class Dispatcher
     public function renderPage(string $html): void
     {
         echo <<<end
- <!DOCTYPE html>
- <html lang="fr">
- <head>
-     <title>NetVOD</title>
-     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
- </head>
- <body>
- $html
- </body>
- end;
+            <!DOCTYPE html>
+            <html lang="fr">
+            <head>
+                <title>NetVOD</title>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            </head>
+            <body>
+            $html
+            </body>
+        end;
 
     }
 
