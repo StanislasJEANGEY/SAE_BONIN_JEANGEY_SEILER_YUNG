@@ -21,13 +21,13 @@ class EpisodeRenderer implements renderer {
                         Durée : {$this->episode->duree} min </div><br>".
                     "</div>";
                 $html .=  "<div class='track'>" .
-                    "<p><video controls src='{$this->episode->source}' type='image/beach.jpg'></video></p>";
+                    "<p><video controls src='{$this->episode->source}' type='".  $this->episode->source ."'></video></p>";
                 break;
             case 2:
                 $html = "<h2>Episode : {$this->episode->titre}</h2>";
                 $html .= <<<END
                         <div class="track">
-                        <a href='?action=serie&id={$this->episode->source}'><br><img src='image/beach.jpg' width='300' height='300'></a>
+                        <a href='?action=serie&id={$this->episode->source}'><br><img src='{$this->episode->source}"' width='300' height='300'></a>
                         </div>                    
                         END;
                 break;
