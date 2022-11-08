@@ -45,7 +45,7 @@ class Dispatcher
                 $html = $action->execute();
                 break;
             default:
-                $html = "<h1>Acceuil</h1>";
+                $html = "<h1 id=Titre>NetVOD</h1>";
                 break;
         }
         $this->renderPage($html);
