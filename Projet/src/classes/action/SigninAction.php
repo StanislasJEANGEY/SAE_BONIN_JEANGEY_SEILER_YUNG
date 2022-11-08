@@ -32,9 +32,9 @@ class SigninAction extends Action
         return <<<EOF
                 <div id="mainLogin">
                 <form method="post">
-                    <input type="email" placeholder="Email" name="email">
-                    <input type="password" placeholder="Mot de passe" name="password">
-                    <input type="submit" value="Connexion">
+                    <input id="TextLogin" type="email" placeholder="Email..." name="email">
+                    <input id="TextMdp" type="password" placeholder="Mot de passe..." name="password">
+                    <input id="ButtonConnexion" type="submit" value="Connexion">
                 </form>
                 </div>
             EOF;

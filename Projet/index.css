@@ -3,32 +3,33 @@
 ul{
   display: flex;
   flex-direction: row;
-  border-bottom: solid darkgrey 10px;
+  border-bottom: solid #FBC638 10px;
   list-style-type: none;
   padding: 50px;
   justify-content: center;
   align-items: center;
-  background-color: #0B3954;
-  font-family: "Varela Round", sans-serif;
+  background-color: #6225E6;
+  font-family: 'Poppins', sans-serif;
   letter-spacing: 1.1px;
   margin-bottom:0;
 
 }
+
 li{
   margin-bottom: 30px
 }
+
 #accueil{
   text-decoration: none;
   font-size: 22px;
   color: #DCDCDC;
   transition: all 0.45s;
   margin-right: 30px;
-
 }
 
 #accueil:hover{
-  color: #d94f5c;
-  border-bottom: solid #FF5A5F 2px;
+  color: #FBC638;
+  border-bottom: solid #FBC638 2px;
   padding: 10px;
 }
 
@@ -61,13 +62,88 @@ li{
   display: grid;
   justify-content: center;
   align-items: center;
+  padding-left: 10px;
+  spacing: 100px;
 }
 
+::placeholder {
+  color: white;
+  font-size: 10px;
+  text-align: center;
+}
+
+
+
+#TextLogin:focus {
+  border: 3px solid #555;
+  background-color: #9370db;
+}
+
+#TextLogin:hover {
+  border: 3px solid #555;
+  background-color: #9370db;
+}
+
+#TextMdp:focus{
+  border: 3px solid #555;
+  background-color: #9370db;
+}
+
+#TextMdp:hover{
+  border: 3px solid #555;
+  background-color: #9370db;
+}
+
+#ButtonConnexion{
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+  color: white;
+  background: #6225E6;
+  transition: 1s;
+  box-shadow: 6px 6px 0 black;
+  transform: skewX(-15deg);
+  height: 50px;
+  width: 200px;
+}
+
+#ButtonConnexion:hover{
+  background: #9370db;
+}
+
+
+#TextMdp{
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+  color: white;
+  background: #6225E6;
+  transition: 1s;
+  box-shadow: 6px 6px 0 black;
+  transform: skewX(-15deg);
+  height: 44px;
+  width: 200px;
+}
+
+#TextLogin{
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+  color: white;
+  background: #6225E6;
+  transition: 1s;
+  box-shadow: 6px 6px 0 black;
+  transform: skewX(-15deg);
+  height: 44px;
+  width: 200px;
+}
 
 #retour:hover{
   transition: 0.5s;
   box-shadow: 10px 10px 0 #FBC638;
 }
+
+
 
 #retour:focus {
    outline: none;
