@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:900i');
+
 ul{
   display: flex;
   flex-direction: row;
@@ -15,7 +17,7 @@ ul{
 li{
   margin-bottom: 30px
 }
-a{
+#accueil{
   text-decoration: none;
   font-size: 22px;
   color: #DCDCDC;
@@ -24,24 +26,54 @@ a{
 
 }
 
-a:hover{
+#accueil:hover{
   color: #d94f5c;
   border-bottom: solid #FF5A5F 2px;
   padding: 10px;
 }
 
 #retour{
+  justify-content: center;
+  align-items: center;
+  display: grid;
+  padding: 10px 45px;
   text-decoration: none;
-  font-size: 22px;
-  color: #DCDCDC;
-  transition: all 0.45s;
-  margin-right: 30px;
-  background-color: #0B3954;
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+  color: white;
+  background: #6225E6;
+  transition: 1s;
+  box-shadow: 6px 6px 0 black;
+  transform: skewX(-15deg);
+  height: 50px;
+  width: 200px;
 }
+
+#mainReturn {
+  padding-top: 200px;
+  display:grid;
+  justify-content: center;
+  align-items: center;
+}
+
+#mainLogin {
+  padding-top: 50px;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+
 #retour:hover{
-  text-decoration: none;
-  font-size: 22px;
-  color: #DCDCDC;
-  transition: all 0.45s;
-  margin-right: 30px;
+  transition: 0.5s;
+  box-shadow: 10px 10px 0 #FBC638;
+}
+
+#retour:focus {
+   outline: none;
+}
+
+#retour span:nth-child(2) {
+    transition: 0.5s;
+    margin-right: 0px;
 }
