@@ -6,6 +6,7 @@ use iutnc\netVOD\db\ConnectionFactory;
 
 class Episode extends video
 {
+    public mixed $descriptif;
     protected $idSaison;
 
     public function __construct(string $title, int $duration, string $resume, string $source, int $idS)

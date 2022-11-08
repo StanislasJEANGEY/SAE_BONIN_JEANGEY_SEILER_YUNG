@@ -25,7 +25,7 @@ class SerieRenderer implements renderer {
 
                 break;
             case 2:
-                $html .= "Genre : {$this->serie->genre}";
+                $html .= "Genre : {$this->serie->descriptif}";
                 $bd = ConnectionFactory::makeConnection();
                 $requete = $bd->prepare("SELECT * FROM episode WHERE serie_id = ?");
                 $requete->bindParam(1, $_GET['id']);
