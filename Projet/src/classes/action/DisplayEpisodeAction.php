@@ -2,6 +2,7 @@
 
 namespace iutnc\netVOD\action;
 
+use iutnc\netVOD\renderer;
 use iutnc\netVOD\renderer\EpisodeRenderer;
 use iutnc\netVOD\video\track\Episode;
 

@@ -2,7 +2,6 @@
 
 namespace iutnc\netVOD\renderer;
 
-use iutnc\netVOD\render\renderer;
 use iutnc\netVOD\video\track\Episode;
 
 class EpisodeRenderer implements renderer {
@@ -20,10 +19,13 @@ class EpisodeRenderer implements renderer {
         }
         switch ($selector){
             case 1:
-                $html .= <<<END
-                        <div class="track">
-                        <p><img controls src="{$this->episode->source}></img></p>"
-                        END;
+                $html =
+                    "<h1>Titre : {$this->episode->titre}</h1>" .
+                    "<div class = 'resume'>Résumé : {$this->episode->descriptif}</div>  <div class='duree'> 
+                        Durée : {$this->episode->duree} min </div><br>".
+                    "</div>";
+                $html .=  "<div class='track'>" .
+                    "<p><video controls src='{$this->episode->source}' type='video/mp4'></video></p>";
                 break;
             case 2:
                 $html .= <<<END
