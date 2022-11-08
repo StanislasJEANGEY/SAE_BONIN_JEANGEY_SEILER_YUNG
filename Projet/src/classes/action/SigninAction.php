@@ -21,7 +21,11 @@ class SigninAction extends Action
             //    return (new AudioListRenderer($value))->render(1);
             //}
 
-        } catch (AuthException $e) { $html = "<h2>".$e->getMessage()."</h2>"; }
+        } catch (AuthException $e) {
+            $html = "<h2>".$e->getMessage()."</h2>";
+            $html .= "<a href='?action=sign-in'>Retour à la connexion</a><br><br>";
+
+        }
 
         return $html;
     }
