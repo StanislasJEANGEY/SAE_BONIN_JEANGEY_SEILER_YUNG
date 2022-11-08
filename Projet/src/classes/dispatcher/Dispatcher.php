@@ -22,15 +22,10 @@ class Dispatcher
 
     public function run(): void
     {
-        $action = null;
 
         switch ($this->action) {
             case("add-user"):
                 $action = new AddUserAction();
-                $html = $action->execute();
-                break;
-            case("add-playlist"):
-                $action = new AddPlaylistAction();
                 $html = $action->execute();
                 break;
             case("signin"):
@@ -46,9 +41,9 @@ class Dispatcher
                 $html = $action->execute();
                 break;
             case("serie"):
-            $action = new DisplaySerieAction();
-            $html = $action->execute();
-            break;
+                $action = new DisplaySerieAction();
+                $html = $action->execute();
+                break;
             default:
                 $html = "<h1>Acceuil</h1>";
                 break;

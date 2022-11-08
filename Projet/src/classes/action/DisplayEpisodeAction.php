@@ -2,7 +2,7 @@
 
 namespace iutnc\netVOD\action;
 
-use iutnc\netVOD\renderer\EpisodeRenderer;
+use iutnc\netVOD\renderer;
 use iutnc\netVOD\video\track\Episode;
 
 class DisplayEpisodeAction extends Action

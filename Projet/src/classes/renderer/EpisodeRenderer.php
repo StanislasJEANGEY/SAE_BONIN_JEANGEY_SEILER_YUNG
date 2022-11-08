@@ -2,7 +2,6 @@
 
 namespace iutnc\netVOD\renderer;
 
-use iutnc\netVOD\render\renderer;
 use iutnc\netVOD\video\track\Episode;
 
 class EpisodeRenderer implements renderer {
