@@ -11,7 +11,7 @@ class SerieRenderer implements renderer {
         $this->serie = $ser;
     }
 
-    public function render(int $selector): string
+    public function render(int $selector = 1): string
     {
         $html = "<h1>Titre : {$this->serie->titre}</h1>";
         switch ($selector){
