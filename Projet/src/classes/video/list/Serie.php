@@ -2,6 +2,7 @@
 namespace iutnc\netVOD\video\list;
 
 use Exception;
+use iutnc\netVOD\db\ConnectionFactory;
 
 class Serie {
     protected $idSerie;
@@ -27,6 +28,16 @@ class Serie {
     public function __set( string $attr, mixed $val) : void {
         if (property_exists($this, $attr)) $this->$attr = $val;
         throw new Exception("$attr : invalid property");
+    }
+
+    public static function getSerie(string $id) : Serie
+    {
+        $bd = ConnectionFactory::makeConnection();
+        $requete = $bd->prepare("SELECT * FROM serie WHERE id = ?");
+        $requete->bindParam($id);
+        $data = $requete->fetch();
+        $serie = new Serie($data['id'], $data['titre'], $data['descriptif'], $data['img'], $data['anne']);
+        return $serie;
     }
 
 }

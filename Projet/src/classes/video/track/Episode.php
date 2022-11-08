@@ -17,7 +17,7 @@ class Episode extends video
     {
         $bd = ConnectionFactory::makeConnection();
         $requete = $bd->prepare("SELECT * FROM episode WHERE id = ?");
-        $requete->prepare([$id]);
+        $requete->bindParam($id);
         $data = $requete->fetch();
         $episode = new Episode($data['titre'], $data['duree'], $data['resume'], $data['file'], $data['serie_id']);
         return $episode;
