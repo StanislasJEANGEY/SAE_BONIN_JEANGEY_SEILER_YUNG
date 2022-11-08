@@ -64,6 +64,14 @@ li{
   align-items: center;
 }
 
+#Titre{
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  background: #6225E6;
+  color: white;
+}
+
 #MainRegister{
   padding-top: 10px;
   display:grid;
