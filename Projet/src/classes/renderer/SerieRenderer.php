@@ -2,9 +2,14 @@
 
 namespace iutnc\netVOD\renderer;
 use iutnc\netVOD\renderer\EpisodeRenderer;
+use iutnc\netVOD\video\list\Serie;
 
 class SerieRenderer implements renderer {
     protected $serie;
+
+    public function __construct(Serie $ser){
+        $this->serie = $ser;
+    }
 
     public function render(int $selector): string
     {
