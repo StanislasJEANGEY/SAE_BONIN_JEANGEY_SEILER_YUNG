@@ -7,12 +7,12 @@ use iutnc\netVOD\db\ConnectionFactory;
 class Episode extends video
 {
     public mixed $descriptif;
-    public $idSaison;
+    public $idSerie;
 
     public function __construct(string $id, string $title, int $duration, string $resume, string $source, int $idS)
     {
         parent::__construct($id, $title, $duration, $resume, $source);
-        $this->idSaison = $idS;
+        $this->idSerie = $idS;
     }
 
     public static function getEpisode(string $id): Episode
