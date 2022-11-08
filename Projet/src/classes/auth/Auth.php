@@ -68,7 +68,7 @@ class Auth
 
     }
 
-    public static function isAuthorizedPlaylist($idPlaylist) : bool
+    public static function isAuthorized($idPlaylist) : bool
     {
         $user = $_SESSION['user'];
         if(empty($user)) { return false;}
