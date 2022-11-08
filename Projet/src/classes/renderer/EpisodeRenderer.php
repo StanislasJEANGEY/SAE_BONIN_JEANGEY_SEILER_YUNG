@@ -13,10 +13,6 @@ class EpisodeRenderer implements renderer {
 
     public function render(int $selector = 1): string
     {
-        $html = "<h1>Titre : {$this->episode->titre}</h1>";
-        foreach ($this->episode->type as $typ){
-            $html .= $typ;
-        }
         switch ($selector){
             case 1:
                 $html =
@@ -28,6 +24,7 @@ class EpisodeRenderer implements renderer {
                     "<p><video controls src='{$this->episode->source}' type='image/beach.jpg'></video></p>";
                 break;
             case 2:
+                $html = "<h2>Episode : {$this->episode->titre}</h2>";
                 $html .= <<<END
                         <div class="track">
                         <a href='?action=serie&id={$this->episode->source}'><br><img src='image/beach.jpg' width='300' height='300'></a>
