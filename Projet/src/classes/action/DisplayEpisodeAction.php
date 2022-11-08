@@ -16,6 +16,6 @@ class DisplayEpisodeAction extends Action
     protected function executeGET(): string
     {
         $rendererEpisode = new EpisodeRenderer(Episode::getEpisode($_GET['id']));
-        return $rendererEpisode->render();
+        return $rendererEpisode->render(2);
     }
 }
