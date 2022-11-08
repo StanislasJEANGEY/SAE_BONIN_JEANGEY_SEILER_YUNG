@@ -11,17 +11,15 @@ class video
      * @param int $duree;
      * @param string $resume;
      * @param string $source;
-     * @param string $image;
      * @param array $type;
      * @param array $genre;
      */
 
-    public function __construct(string $title, int $duration,string $resume, string $source, string $im, array $type, array $genre) {
+    public function __construct(string $title, int $duration,string $resume, string $source, array $type, array $genre) {
         $this->titre = $title;
         $this->duree = $duration;
-        $this->resume = $duration;
+        $this->resume = $resume;
         $this->source = $source;
-        $this->image = $im;
         $this->type = $type;
         $this->genre = $genre;
     }
