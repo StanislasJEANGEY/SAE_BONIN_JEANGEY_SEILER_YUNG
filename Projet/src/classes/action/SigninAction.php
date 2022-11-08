@@ -16,10 +16,6 @@ class SigninAction extends Action
         {
             $user = Auth::authenticate($_POST['email'], $_POST['password']);
             if (isset($user)) $html = "<h2>Connexion réussi</h2>";
-            //foreach ($user->getPlaylists() as $value)
-            //{
-            //    return (new AudioListRenderer($value))->render(1);
-            //}
 
         } catch (AuthException $e) {
             $html = "<h2>".$e->getMessage()."</h2>";
