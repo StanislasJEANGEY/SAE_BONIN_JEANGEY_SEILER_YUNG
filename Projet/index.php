@@ -32,13 +32,22 @@ $htmlRender = <<<EOF
 
         <ul>
             <li><a href="?action=add-user">Inscription</a></li>
+            <br>
             <li><a href="?action=signin">Connexion</a></li>
         </ul>
 EOF;
 }else{
+  if($_GET['action']=='signin'){
+    $htmlRender = <<<EOF
+            <a href="?action=catalogue">Catalogue</a>
+            <a href='index.php'>Retour a l'accueil</a>
+    EOF;
+  }else{
   $htmlRender = <<<EOF
 
           <a href='index.php'>Retour a l'accueil</a>
   EOF;
+
+}
 }
 echo $htmlRender;

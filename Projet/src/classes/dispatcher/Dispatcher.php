@@ -5,6 +5,7 @@ namespace iutnc\netVOD\dispatcher;
 
 use iutnc\netVOD\action\SigninAction;
 use iutnc\netVOD\action\AddUserAction;
+use iutnc\netVOD\action\DisplayCatalogueAction;
 
 class Dispatcher
 {
@@ -33,6 +34,10 @@ class Dispatcher
                 break;
             case("signin"):
                 $action = new SigninAction();
+              $html = $action->execute();
+                break;
+              case("catalogue"):
+              $action = new DisplayCatalogueAction();
               $html = $action->execute();
                 break;
             default:
