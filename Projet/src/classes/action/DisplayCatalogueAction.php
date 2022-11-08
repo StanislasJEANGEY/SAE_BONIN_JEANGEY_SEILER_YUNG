@@ -22,14 +22,12 @@ class DisplayCatalogueAction extends Action
         if(!isset($_SESSION['user'])) {
         return "<a href=?action=sign-in>Veuillez vous connecter</a>";
     } else {
-        $user = unserialize($_SESSION['user']);
         $html = "<h1> Catalogue : </h1>";
         $query = "SELECT id,titre,img FROM serie";
         $result = ConnectionFactory::makeConnection()->prepare($query);
         $result->execute();
         while($data = $result->fetch()){
             $html .= $data['titre'];
-            echo $data['id'];
             $html .= "<a href='?action=serie&id=". $data['id'] . "'><br><img src='image/beach.jpg' width='300' height='300'></a><br>";
         }
     }
