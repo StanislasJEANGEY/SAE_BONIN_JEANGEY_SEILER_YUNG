@@ -29,7 +29,7 @@ class DisplayCatalogueAction extends Action
         $result->execute();
         while($data = $result->fetch()){
             $html .= $data['titre'];
-            $html .= "<a href='?action=display-catalogue&titre=' ". $data['id'] . "><img src='image/beach.mp4' 
+            $html .= "<a href='?action=display-catalogue&titre=' ". $data['id'] . "><img src='image/beach.jpg' 
                         width='300' height='300'></a><br>";
 
 
