@@ -16,7 +16,7 @@ class SigninAction extends Action
         {
             $user = Auth::authenticate($_POST['email'], $_POST['password']);
             if (isset($user)){
-              $html = "<h2>Connexion réussi</h2> <br>"."<a href=?action=catalogue>Catalogue</a>";
+              $html = "<div id=MainButtonCatalogue>" .  "<a id=ButtonCatalogue href=?action=catalogue>Catalogue</a>";
 }
         } catch (AuthException $e) {
             $html = "<h2>".$e->getMessage()."</h2>";
