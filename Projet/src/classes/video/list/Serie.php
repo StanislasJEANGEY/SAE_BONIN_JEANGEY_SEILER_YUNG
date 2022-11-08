@@ -34,7 +34,7 @@ class Serie {
     {
         $bd = ConnectionFactory::makeConnection();
         $requete = $bd->prepare("SELECT * FROM serie WHERE id = ?");
-        $requete->prepare([$id]);
+        $requete->bindParam($id);
         $data = $requete->fetch();
         $serie = new Serie($data['id'], $data['titre'], $data['descriptif'], $data['img'], $data['anne']);
         return $serie;
