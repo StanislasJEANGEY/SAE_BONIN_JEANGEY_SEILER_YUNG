@@ -24,12 +24,12 @@ class DisplayCatalogueAction extends Action
     } else {
         $user = unserialize($_SESSION['user']);
         $html = "<h1> Catalogue : </h1>";
-        $query = "SELECT id,titre,img,descriptif,annee FROM serie";
+        $query = "SELECT id,titre,img FROM serie";
         $result = ConnectionFactory::makeConnection()->prepare($query);
         $result->execute();
         while($data = $result->fetch()){
             $html .= $data['titre'];
-            $html .= "<a href='?action=display-catalogue&titre=' ". $data['id'] . "><img src='image/beach.jpg' 
+            $html .= "<a href='?action=display-catalogue&titre=' ". $data['id'] . "><br><img src='image/beach.jpg' 
                         width='300' height='300'></a><br>";
 
 
