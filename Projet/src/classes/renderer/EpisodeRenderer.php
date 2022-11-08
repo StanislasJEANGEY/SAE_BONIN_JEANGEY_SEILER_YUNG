@@ -17,11 +17,11 @@ class EpisodeRenderer implements renderer {
             case 1:
                 $html =
                     "<h1>Titre : {$this->episode->titre}</h1>" .
-                    "<div class = 'resume'>Résumé : {$this->episode->descriptif}</div>  <div class='duree'> 
+                    "<div class = 'resume'>Résumé : {$this->episode->resume}</div>  <div class='duree'> 
                         Durée : {$this->episode->duree} min </div><br>".
                     "</div>";
                 $html .=  "<div class='track'>" .
-                    "<p><video controls src='{$this->episode->source}' type='image/beach.jpg'></video></p>";
+                    "<p><video controls src='video/{$this->episode->source}'></video></p>";
                 break;
             case 2:
                 $html = "<h2>Episode : {$this->episode->titre}</h2>";
@@ -33,7 +33,6 @@ class EpisodeRenderer implements renderer {
                 break;
 
         }
-        $html .= "<div>Résumé : {$this->episode->resume} Durée : {$this->episode->duree}</p>" . "</div>";
         return $html;
     }
 
