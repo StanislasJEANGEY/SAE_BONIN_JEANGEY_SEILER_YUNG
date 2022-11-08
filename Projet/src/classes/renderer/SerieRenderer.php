@@ -11,11 +11,11 @@ class SerieRenderer implements renderer {
         $html = "<h1>Titre : {$this->serie->titre}</h1>";
         switch ($selector){
             case 1:
+                $html .= <<<END
+                        <div class="track">
+                        <p><img controls src="{$this->episode->image}></img></p>"
+                        END;
 
-                foreach ($this->serie->__get('episodes') as $ep){
-                    $epRend = new EpisodeRenderer($ep);
-                    $html .= $epRend->render(self::COMPACT);
-                }
                 break;
             case 2:
                 $html .= "Genre : {$this->serie->genre}";
