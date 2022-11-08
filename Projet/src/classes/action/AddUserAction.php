@@ -10,12 +10,14 @@ class AddUserAction extends Action
     protected function executeGET(): string
     {
         return <<<EOF
+                     <div id="MainRegister">
                      <form method="post" action="?action=add-user">
-                        <label>Email : <input type ="email" name="email" value='' placeholder='email'> </label> <br>
-                        <label>Mot de passe : <input type='password' name='pwd' value=''></label> <br>
-                        <label>Ressaisir votre mot de passe : <input type='password' name='pwd2' value=''></label> <br>
-                        <button type="submit"> Connexion </button>
+                        <span id="espace"><label id="labelRegister">Email : </label><br><input id="TextLogin" type ="email" name="email" value='' placeholder='Saisir email...'><br></span>
+                        <span id="espace"><label id="labelRegister">Mot de passe : </label><br><input id="TextMdp" type='password' name='pwd' placeholder='Mot de passe...' value=''><br></span>
+                        <span id="espace"><label id="labelRegister">Confirmer votre mot de passe : </label><br><input id="TextMdp" type='password' name='pwd2' placeholder='Mot de passe...' value=''><br></span>
+                        <button id="ButtonConnexion" type="submit"> Inscription </button>
                      </form>
+                     </div>
                      EOF;
     }
 

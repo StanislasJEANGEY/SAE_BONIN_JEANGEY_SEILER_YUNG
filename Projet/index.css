@@ -51,7 +51,7 @@ li{
 }
 
 #mainReturn {
-  padding-top: 200px;
+  padding-top: 180px;
   display:grid;
   justify-content: center;
   align-items: center;
@@ -62,6 +62,20 @@ li{
   display:grid;
   justify-content: center;
   align-items: center;
+}
+
+#MainRegister{
+  padding-top: 10px;
+  display:grid;
+  justify-content: center;
+  align-items: center;
+}
+
+#espace{
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  padding-top: 3px;
 }
 
 #mainLogin {
@@ -139,6 +153,8 @@ li{
   height: 44px;
   width: 200px;
 }
+
+
 
 #TextLogin{
   text-decoration: none;
