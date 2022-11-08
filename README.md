@@ -1,16 +1,17 @@
 # SAE_BONIN_JEANGEY_SEILER_YUNG
 
-## SAE Développer une application web sécurisée 
+## SAE Développer une application web sécurisée
 
 https://docs.google.com/document/d/18JlecGTAmzPNkR0mv3FkQhdQj7pgGciCsjey5xb32E8/edit?usp=sharing
 
 <br>
 
-## Membre du groupe : 
+## Membre du groupe :
+
 BONIN Lucas  
 JEANGEY Stanislas  
 SEILER Mathis  
-YUNG Théo  
+YUNG Théo
 
 <br>
 <br>
@@ -18,10 +19,10 @@ YUNG Théo
 ## Choses faites :
 
 1. Identification/Authentification – Formulaire de login  
-    OK
+   OK
 
 2. Inscription sur la plateforme  
-    OK
+   OK
 
 3. Affichage du catalogue de séries
 
@@ -34,16 +35,17 @@ YUNG Théo
 7. Page d’accueil d’un utilisateur : afficher ses séries préférées
 
 8. Lors du visionnage d’un épisode, ajouter automatiquement la série à la liste « en
-cours » de l’utilisateur
+   cours » de l’utilisateur
 
 9. Lors du visionnage d’un épisode d’une série, noter et commenter la série
 
 10. Lors de l’affichage d’une série, indiquer sa note moyenne et donner accès aux
-commentaires
+    commentaires
 
 <br>
 <br>
 
 # Liste des utilateurs avec leur mot de passe :
-1.      test@gmail.com  
+
+1.       test@gmail.com
         azertyuiop
