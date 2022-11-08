@@ -38,14 +38,6 @@ $htmlRender = <<<EOF
             </ul>
 
 
-<<<<<<< HEAD
-        <ul>
-            <li><a href="?action=add-user">Inscription</a></li>
-            <br>
-            <li><a href="?action=signin">Connexion</a></li>
-        </ul>
-=======
->>>>>>> acb8532f7a2a20fa2e2869eb0756b1c9e4a0db6c
 EOF;
 }else{
   if($_GET['action']=='signin'){

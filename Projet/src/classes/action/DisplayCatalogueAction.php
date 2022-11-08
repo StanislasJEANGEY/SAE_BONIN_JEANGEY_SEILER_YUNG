@@ -19,21 +19,22 @@ class DisplayCatalogueAction extends Action
 
     protected function executeGET(): string
     {
-$html = '';
-      if(!isset($_SESSION['user'])) {
-     return "<a href=?action=sign-in>Veuillez vous connecter</a>";
- } else {
-     $user = unserialize($_SESSION['user']);
-     $query = "SELECT id,titre,img,descriptif,annee FROM serie";
-     $result = ConnectionFactory::makeConnection()->prepare($query);
-     $result->execute();
-     while($data = $result->fetch()){
-        $titre = $data['titre'];
+        if(!isset($_SESSION['user'])) {
+        return "<a href=?action=sign-in>Veuillez vous connecter</a>";
+    } else {
+        $user = unserialize($_SESSION['user']);
+        $html = "<h1> Catalogue : </h1>";
+        $query = "SELECT id,titre,img,descriptif,annee FROM serie";
+        $result = ConnectionFactory::makeConnection()->prepare($query);
+        $result->execute();
+        while($data = $result->fetch()){
+            $html .= $data['titre'];
+            $html .= "<a href='?action=display-catalogue&titre=' ". $data['id'] . "><img src='image/beach.mp4' 
+                        width='300' height='300'></a><br>";
 
-        $render->renderer();
-        $html .= $titre.'<br>';
-     }
-   }
-return $html;
-}
+
+        }
     }
+    return $html;
+    }
+}
