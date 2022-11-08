@@ -39,11 +39,7 @@ $htmlRender = <<<EOF
 
 EOF;
 }else{
-  if($_GET['action']=='signin'){
-    $htmlRender = <<<EOF
-            <a href='index.php'>Retour a l'accueil</a>
-    EOF;
-  }else{
+
   $htmlRender = <<<EOF
           <head>
               <link rel="stylesheet" href="index.css">
@@ -56,5 +52,5 @@ EOF;
   EOF;
 
 }
-}
+
 echo $htmlRender;
