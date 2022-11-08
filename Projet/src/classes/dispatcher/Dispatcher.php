@@ -5,6 +5,7 @@ namespace iutnc\netVOD\dispatcher;
 
 use iutnc\netVOD\action\SigninAction;
 use iutnc\netVOD\action\AddUserAction;
+use iutnc\netVOD\action\DisplayCatalogueAction;
 
 class Dispatcher
 {
@@ -35,6 +36,10 @@ class Dispatcher
                 $action = new SigninAction();
               $html = $action->execute();
                 break;
+              case("catalogue"):
+              $action = new DisplayCatalogueAction();
+              $html = $action->execute();
+                break;
             default:
                 $html =  "<h1>Acceuil</h1>";
                   break;
@@ -49,7 +54,7 @@ class Dispatcher
  <!DOCTYPE html>
  <html lang="fr">
  <head>
-     <title>Deefy</title>
+     <title>NetVOD</title>
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
  </head>
