@@ -18,6 +18,7 @@ class SerieRenderer implements renderer {
         switch ($selector){
             case 1:
                 $html .= <<<END
+                        1
                         <div class="track">
                         <p><img controls src="{$this->episode->image}></img></p>"
                         END;

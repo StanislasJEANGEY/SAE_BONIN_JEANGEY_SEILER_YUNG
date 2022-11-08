@@ -13,7 +13,7 @@ class EpisodeRenderer implements renderer {
 
     public function render(int $selector = 1): string
     {
-        $html = "<h1>Titre : {$this->episode->titre}</h1>" . implode(' ', $this->episode->genre);
+        $html = "<h1>Titre : {$this->episode->titre}</h1>";
         foreach ($this->episode->type as $typ){
             $html .= $typ;
         }
@@ -25,12 +25,12 @@ class EpisodeRenderer implements renderer {
                         Durée : {$this->episode->duree} min </div><br>".
                     "</div>";
                 $html .=  "<div class='track'>" .
-                    "<p><video controls src='{$this->episode->source}' type='video/mp4'></video></p>";
+                    "<p><video controls src='{$this->episode->source}' type='image/beach.jpg'></video></p>";
                 break;
             case 2:
                 $html .= <<<END
                         <div class="track">
-                        <p><video controls src="{$this->episode->source}></video></p>"                        
+                        <p><img controls src="{$this->episode->source}" href='?action=serie&id= {$this->episode->' ></video></p>                       
                         END;
                 break;
 

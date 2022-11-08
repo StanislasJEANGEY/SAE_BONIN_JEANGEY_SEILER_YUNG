@@ -20,15 +20,8 @@ class video
         $this->source = $source;
     }
 
-    public function __get( string $attr) : mixed {
-        if (property_exists($this, $attr)) return $this->$attr;
-        else {
-            throw new Exception("$attr : invalid property");}
-    }
 
-    public function __set( string $attr, mixed $val) : void {
-        if (property_exists($this, $attr)) $this->$attr = $val;
-        throw new Exception("$attr : invalid property");
-    }
+
+
 
 }
