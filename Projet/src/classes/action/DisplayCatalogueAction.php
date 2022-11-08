@@ -30,7 +30,7 @@ class DisplayCatalogueAction extends Action
         while($data = $result->fetch()){
             $html .= $data['titre'];
             echo $data['id'];
-            $html .= "<a href='?action=serie&id= ". $data['id'] . "'><br><img src='image/beach.jpg' width='300' height='300'></a><br>";
+            $html .= "<a href='?action=serie&id=". $data['id'] . "'><br><img src='image/beach.jpg' width='300' height='300'></a><br>";
         }
     }
     return $html;
