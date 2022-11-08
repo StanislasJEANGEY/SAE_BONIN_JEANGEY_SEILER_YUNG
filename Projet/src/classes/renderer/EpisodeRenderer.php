@@ -30,7 +30,7 @@ class EpisodeRenderer implements renderer {
             case 2:
                 $html .= <<<END
                         <div class="track">
-                        <p><img controls src="{$this->episode->source}" href='?action=serie&id= {$this->episode->' ></video></p>                       
+                        <p><img controls src="{$this->episode->source}" href='?action=ep&id= {$this->episode->id}' ></video></p>                       
                         END;
                 break;
 
