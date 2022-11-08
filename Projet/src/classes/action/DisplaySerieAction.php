@@ -2,6 +2,8 @@
 
 namespace iutnc\netVOD\action;
 
+use iutnc\netVOD\renderer\SerieRenderer;
+
 class DisplaySerieAction extends Action {
 
     protected function postExecute(): string
@@ -11,7 +13,8 @@ class DisplaySerieAction extends Action {
 
     protected function executeGET(): string
     {
-        // TODO: Implement executeGET() method.
+        $rendererSerie = new SerieRenderer(Serie::getSerie($_GET['id']));
+        return $rendererSerie->render();
     }
 
 }
