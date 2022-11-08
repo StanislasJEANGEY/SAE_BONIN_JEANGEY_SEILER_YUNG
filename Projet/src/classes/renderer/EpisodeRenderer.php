@@ -36,4 +36,6 @@ class EpisodeRenderer implements renderer {
         $html .= "<div>Résumé : {$this->episode->resume} Durée : {$this->episode->duree}</p>" . "</div>";
         return $html;
     }
+
+
 }
