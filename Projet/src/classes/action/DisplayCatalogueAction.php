@@ -2,9 +2,6 @@
 
 namespace iutnc\netVOD\action;
 use iutnc\netVOD\db\ConnectionFactory;
-use iutnc\netVOD\video\list\Serie;
-use iutnc\netVOD\renderer\renderer;
-use iutnc\netVOD\renderer\SerieRenderer;
 
 class DisplayCatalogueAction extends Action
 {
