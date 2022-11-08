@@ -3,6 +3,7 @@
 namespace iutnc\netVOD\dispatcher;
 
 
+use iutnc\netVOD\action\DisplayEpisodeAction;
 use iutnc\netVOD\action\SigninAction;
 use iutnc\netVOD\action\AddUserAction;
 use iutnc\netVOD\action\DisplayCatalogueAction;
@@ -39,6 +40,9 @@ class Dispatcher
                 $action = new DisplayCatalogueAction();
                 $html = $action->execute();
                 break;
+            case ("episode"):
+                $action = new DisplayEpisodeAction();
+                $html = $action->execute();
             default:
                 $html = "<h1>Acceuil</h1>";
                 break;
