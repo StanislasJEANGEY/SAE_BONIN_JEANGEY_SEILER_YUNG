@@ -1,8 +1,10 @@
 <?php
 
 namespace iutnc\netVOD\renderer;
+use iutnc\netVOD\db\ConnectionFactory;
 use iutnc\netVOD\renderer\EpisodeRenderer;
 use iutnc\netVOD\video\list\Serie;
+use iutnc\netVOD\video\track\Episode;
 
 class SerieRenderer implements renderer {
     protected $serie;
@@ -24,8 +26,11 @@ class SerieRenderer implements renderer {
                 break;
             case 2:
                 $html .= "Genre : {$this->serie->genre}";
-                foreach ($this->serie->__get('episodes') as $ep){
-                    $epRend = new EpisodeRenderer($ep);
+                $bd = ConnectionFactory::makeConnection();
+                $requete = $bd->prepare("SELECT * FROM episode WHERE serie_id = ?");
+                $requete->bindParam(1, $_GET['id']);
+                while ($data = $requete->fetch()){
+                    $epRend = new EpisodeRenderer(Episode::getEpisode($data['id']));
                     $html .= $epRend->render(self::LONG);
                 }
                 break;
