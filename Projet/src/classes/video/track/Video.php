@@ -11,6 +11,7 @@ class video
      * @param int $duree;
      * @param string $resume;
      * @param string $source;
+     * @param string $image;
      * @param array $type;
      * @param array $genre;
      */

@@ -22,7 +22,7 @@ class EpisodeRenderer implements renderer {
             case 1:
                 $html .= <<<END
                         <div class="track">
-                        <p><img controls src="{$this->episode->image}></img></p>"
+                        <p><img controls src="{$this->episode->source}></img></p>"
                         END;
                 break;
             case 2:
