@@ -20,7 +20,7 @@ class SigninAction extends Action
 }
         } catch (AuthException $e) {
             $html = "<h2>".$e->getMessage()."</h2>";
-            $html .= "<a href='?action=sign-in'>Retour à la connexion</a><br><br>";
+            $html .= "<a href='?action=signin'>Retour à la connexion</a><br><br>";
 
         }
 
