@@ -39,6 +39,11 @@ $htmlRender = <<<EOF
 
 EOF;
 }else{
+  if($_GET['action']=='signin'){
+    $htmlRender = <<<EOF
+            <a href='index.php'>Retour a l'accueil</a>
+    EOF;
+  }else{
   $htmlRender = <<<EOF
           <head>
               <link rel="stylesheet" href="index.css">
@@ -49,5 +54,7 @@ EOF;
             <svg width="66px" height="43px" viewBox="0 0 66 43" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
           </div>
   EOF;
+
+}
 }
 echo $htmlRender;

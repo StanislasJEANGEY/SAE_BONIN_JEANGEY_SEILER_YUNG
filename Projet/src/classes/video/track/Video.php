@@ -11,18 +11,13 @@ class video
      * @param int $duree;
      * @param string $resume;
      * @param string $source;
-     * @param string $image;
-     * @param array $type;
-     * @param array $genre;
      */
 
-    public function __construct(string $title, int $duration,string $resume, string $source, array $type, array $genre) {
+    public function __construct(string $title, int $duration,string $resume, string $source) {
         $this->titre = $title;
         $this->duree = $duration;
         $this->resume = $resume;
         $this->source = $source;
-        $this->type = $type;
-        $this->genre = $genre;
     }
 
     public function __get( string $attr) : mixed {

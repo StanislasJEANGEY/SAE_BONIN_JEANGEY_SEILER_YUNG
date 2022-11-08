@@ -15,15 +15,12 @@ class SigninAction extends Action
         try
         {
             $user = Auth::authenticate($_POST['email'], $_POST['password']);
-            if (isset($user)) $html = "<h2>Connexion réussi</h2>";
-            //foreach ($user->getPlaylists() as $value)
-            //{
-            //    return (new AudioListRenderer($value))->render(1);
-            //}
-
+            if (isset($user)){
+              $html = "<h2>Connexion réussi</h2> <br>"."<a href=?action=catalogue>Catalogue</a>";
+}
         } catch (AuthException $e) {
             $html = "<h2>".$e->getMessage()."</h2>";
-            $html .= "<a href='?action=sign-in'>Retour à la connexion</a><br><br>";
+            $html .= "<a href='?action=signin'>Retour à la connexion</a><br><br>";
 
         }
 
