@@ -14,16 +14,15 @@ class Dispatcher
 
     public function __construct()
     {
-      $this->action = isset($_GET['action'])? $_GET['action']:null;
-}
+        $this->action = isset($_GET['action']) ? $_GET['action'] : null;
+    }
 
 
-    public function run() : void
+    public function run(): void
     {
         $action = null;
 
-        switch ($this->action)
-        {
+        switch ($this->action) {
             case("add-user"):
                 $action = new AddUserAction();
                 $html = $action->execute();
@@ -34,23 +33,23 @@ class Dispatcher
                 break;
             case("signin"):
                 $action = new SigninAction();
-              $html = $action->execute();
+                $html = $action->execute();
                 break;
-              case("catalogue"):
-              $action = new DisplayCatalogueAction();
-              $html = $action->execute();
+            case("catalogue"):
+                $action = new DisplayCatalogueAction();
+                $html = $action->execute();
                 break;
             default:
-                $html =  "<h1>Acceuil</h1>";
-                  break;
+                $html = "<h1>Acceuil</h1>";
+                break;
         }
         $this->renderPage($html);
-        }
+    }
 
 
-    public function renderPage(string $html) : void
+    public function renderPage(string $html): void
     {
-      echo<<<end
+        echo <<<end
  <!DOCTYPE html>
  <html lang="fr">
  <head>
