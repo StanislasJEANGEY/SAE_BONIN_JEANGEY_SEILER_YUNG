@@ -42,7 +42,6 @@ EOF;
 }else{
   if($_GET['action']=='signin'){
     $htmlRender = <<<EOF
-            
             <a href='index.php'>Retour a l'accueil</a>
     EOF;
   }else{
