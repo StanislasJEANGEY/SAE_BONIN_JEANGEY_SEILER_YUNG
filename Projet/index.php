@@ -29,12 +29,23 @@ $htmlRender = '';
 if(!isset($_GET['action'])){
 
 $htmlRender = <<<EOF
+            <head>
+                <link rel="stylesheet" href="index.css">
+            </head>
+            <ul>
+                <li><a href="?action=add-user">Inscription</a></li>
+                <li><a href="?action=signin">Connexion</a></li>
+            </ul>
 
+
+<<<<<<< HEAD
         <ul>
             <li><a href="?action=add-user">Inscription</a></li>
             <br>
             <li><a href="?action=signin">Connexion</a></li>
         </ul>
+=======
+>>>>>>> acb8532f7a2a20fa2e2869eb0756b1c9e4a0db6c
 EOF;
 }else{
   if($_GET['action']=='signin'){
@@ -44,8 +55,11 @@ EOF;
     EOF;
   }else{
   $htmlRender = <<<EOF
+          <head>
+              <link rel="stylesheet" href="index.css">
+          </head>
+          <a id="retour" href='index.php'>Retour a l'accueil</a>
 
-          <a href='index.php'>Retour a l'accueil</a>
   EOF;
 
 }
