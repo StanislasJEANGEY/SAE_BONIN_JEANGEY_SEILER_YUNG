@@ -26,11 +26,13 @@ YUNG Théo
    OK
 
 3. Affichage du catalogue de séries
+   changer les images
 
 4. Affichage détaillé d’une série et de la liste de ses épisodes
+   changer les images
 
 5. Affichage/visionnage d’un épisode d’une série
-   OK
+   pas fait
 
 6. Ajout d’une série dans la liste de préférence d’un utilisateur
 
@@ -49,5 +51,5 @@ YUNG Théo
 
 # Liste des utilateurs avec leur mot de passe :
 
-1.        test@gmail.com
+1.         test@gmail.com
          azertyuiop
