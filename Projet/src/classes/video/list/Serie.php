@@ -39,7 +39,6 @@ class Serie {
         while ( $data = $requete->fetch()){
             $serie = new Serie($data['id'], $data['titre'], $data['descriptif'], $data['img'], $data['annee']);
         }
-
         return $serie;
     }
 

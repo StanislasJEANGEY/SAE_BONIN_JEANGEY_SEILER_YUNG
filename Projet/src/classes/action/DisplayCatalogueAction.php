@@ -27,7 +27,7 @@ class DisplayCatalogueAction extends Action
         $result = ConnectionFactory::makeConnection()->prepare($query);
         $result->execute();
         while($data = $result->fetch()){
-            $html .= $data['titre'];
+            $html .= "<h2>" .$data['titre']. "<h2>";
             $html .= "<a href='?action=serie&id=". $data['id'] . "'><br><img src='image/beach.jpg' width='300' height='300'></a><br>";
         }
     }
