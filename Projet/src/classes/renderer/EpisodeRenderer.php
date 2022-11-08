@@ -21,7 +21,7 @@ class EpisodeRenderer implements renderer {
                         Durée : {$this->episode->duree} min </div><br>".
                     "</div>";
                 $html .=  "<div class='track'>" .
-                    "<p><video controls src='video/{$this->episode->source}'></video></p>";
+                    "<p><video controls src='video/{$this->episode->source}' type='video/mp4'></video></p>";
                 break;
             case 2:
                 $html = "<h2>Episode : {$this->episode->titre}</h2>";
