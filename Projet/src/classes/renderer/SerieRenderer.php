@@ -23,7 +23,7 @@ class SerieRenderer implements renderer {
 
                 break;
             case 2:
-                $html .= "Genre : {$this->serie->genre}";
+                $html .= "Genre : {$this->serie->descriptif}";
                 foreach ($this->serie->__get('episodes') as $ep){
                     $epRend = new EpisodeRenderer($ep);
                     $html .= $epRend->render(self::LONG);

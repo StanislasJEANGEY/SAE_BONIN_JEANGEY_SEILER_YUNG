@@ -15,7 +15,7 @@ class DisplaySerieAction extends Action {
     protected function executeGET(): string
     {
         $rendererSerie = new SerieRenderer(Serie::getSerie($_GET['id']));
-        return $rendererSerie->render();
+        return $rendererSerie->render(2);
     }
 
 }
