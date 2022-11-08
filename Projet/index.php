@@ -29,16 +29,23 @@ $htmlRender = '';
 if(!isset($_GET['action'])){
 
 $htmlRender = <<<EOF
+            <head>
+                <link rel="stylesheet" href="index.css">
+            </head>
+            <ul>
+                <li><a href="?action=add-user">Inscription</a></li>
+                <li><a href="?action=signin">Connexion</a></li>
+            </ul>
 
-        <ul>
-            <li><a href="?action=add-user">Inscription</a></li>
-            <li><a href="?action=signin">Connexion</a></li>
-        </ul>
+
 EOF;
 }else{
   $htmlRender = <<<EOF
+          <head>
+              <link rel="stylesheet" href="index.css">
+          </head>
+          <a id="retour" href='index.php'>Retour a l'accueil</a>
 
-          <a href='index.php'>Retour a l'accueil</a>
   EOF;
 }
 echo $htmlRender;
