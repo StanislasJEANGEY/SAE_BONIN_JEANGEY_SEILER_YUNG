@@ -19,6 +19,11 @@ li{
   margin-bottom: 30px
 }
 
+body{
+  background-color: grey;
+}
+
+
 #accueil{
   text-decoration: none;
   font-size: 22px;
@@ -51,10 +56,12 @@ li{
 }
 
 #mainReturn {
-  padding-top: 180px;
-  display:grid;
-  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:center;
   align-items: center;
+  padding-top: 180px;
+
 }
 
 #MainButtonCatalogue {
@@ -266,10 +273,70 @@ li{
   transform: skewX(-15deg);
   height: 50px;
   width: 200px;
+  text-align: center;
+}
+
+#retourRegister:hover{
+  transition: 0.5s;
+  box-shadow: 10px 10px 0 #FBC638;
+}
+
+#retourConnexion{
+  justify-content: center;
+  align-items: center;
+  display: grid;
+  padding: 10px 45px;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+  color: white;
+  background: #6225E6;
+  transition: 1s;
+  box-shadow: 6px 6px 0 black;
+  transform: skewX(-15deg);
+  height: 50px;
+  width: 200px;
+  text-align: center;
+}
+
+#retourConnexion:hover{
+  transition: 0.5s;
+  box-shadow: 10px 10px 0 #FBC638;
 }
 
 #mainReturnRegister{
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+#mainReturnConnexion{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#logout{
+  justify-content: center;
+  align-items: center;
+  display: grid;
+  padding: 10px 45px;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+  color: white;
+  background: #6225E6;
+  transition: 1s;
+  box-shadow: 6px 6px 0 black;
+  transform: skewX(-15deg);
+  height: 50px;
+  width: 200px;
+  text-align: center;
+}
+
+#logout:hover{
+  transition: 0.5s;
+  box-shadow: 10px 10px 0 #FBC638;
 }

@@ -14,12 +14,13 @@ class SigninAction extends Action
         try {
             $user = Auth::authenticate($_POST['email'], $_POST['password']);
             if (isset($_SESSION['user'])) {
-                $html = "<div id=MainButtonCatalogue>" . "<a id=ButtonCatalogue href=?action=catalogue>Catalogue</a>";
+                $html = "<div id=mainReturn>" . "<a id=ButtonCatalogue href=?action=catalogue>Catalogue</a>" . "</div>";
             }
         } catch (AuthException $e) {
-            $html = "<h2>" . $e->getMessage() . "</h2>";
-            $html .= "<a href='?action=signin'>Retour à la connexion</a><br><br>";
-
+            $html = "<div id=mainReturnConnexion>";
+            $html .= "<h2>" . $e->getMessage() . "</h2>";
+            $html .= "<a id=retourConnexion href='?action=signin'>Retour à la connexion</a><br><br>";
+            $html .= "</div>";
         }
 
         return $html;
