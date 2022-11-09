@@ -14,6 +14,7 @@ class FavorieAction extends Action {
         }
         $html = 'localhost' . $_POST['url'];
         echo $html;
+        header_remove();
         header('Location: index.php?action=catalogue');
         die();
     }
