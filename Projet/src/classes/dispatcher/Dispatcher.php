@@ -36,6 +36,7 @@ class Dispatcher
             case("catalogue"):
                 $action = new DisplayCatalogueAction();
                 $html = $action->execute();
+                break;
             case ("episode"):
                 $action = new DisplayEpisodeAction();
                 $html = $action->execute();
