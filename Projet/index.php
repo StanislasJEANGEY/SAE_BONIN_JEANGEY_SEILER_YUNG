@@ -39,6 +39,7 @@ if (!isset($_GET['action'])) {
 EOF;
 } else {
 
+<<<<<<< HEAD
   $htmlRender .= <<<EOF
           <div id="mainReturn">
             <a id="retour" href="?action=signin">Retour à l'accueil</a>
@@ -46,6 +47,26 @@ EOF;
             <svg width="66px" height="43px" viewBox="0 0 66 43" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
           </div>
   EOF;
+=======
+  if(isset($_GET['action']) == 'catalogue'){
+    $htmlRender .= <<<EOF
+            <div id="mainReturn">
+              <a id="retour" href='?action=accueil'>Retour en arrière</a>
+              <span>
+              <svg width="66px" height="43px" viewBox="0 0 66 43" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            </div>
+        EOF;
+  }else{
+
+      $htmlRender .= <<<EOF
+              <div id="mainReturn">
+                <a id="retour" href='index.php'>Retour à l'accueil</a>
+                <span>
+                <svg width="66px" height="43px" viewBox="0 0 66 43" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              </div>
+      EOF;
+    }
+>>>>>>> b74d1982d62740ec4602e2fa6cc659fc2a9b1b86
 }
 
 echo $htmlRender;
