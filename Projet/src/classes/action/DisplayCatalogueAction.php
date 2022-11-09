@@ -32,7 +32,7 @@ class DisplayCatalogueAction extends Action
             $html .= "
                   <div id=MainAfficherSerie>
                   <h2>" . $data['titre'] ."<h2>
-                  <a href='?action=serie&id=". $data['idSerie'] . "'><br><img src='". $data['img'] ."' width='300' height='300'></a><br>
+                  <a href='?action=serie&id=". $data['idSerie'] . "'><br><img src='". $data['img'] ."' width='400' height='225'></a><br>
                   ";
 
             $user = unserialize($_SESSION['user']);

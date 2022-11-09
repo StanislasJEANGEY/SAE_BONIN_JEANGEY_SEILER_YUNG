@@ -17,11 +17,11 @@ class SerieRenderer implements renderer {
         $html = "<h1>Série : {$this->serie->titre}</h1>";
         switch ($selector){
             case 1:
-                $html .= <<<END
-                        1
-                        <div class="track">
-                        <p><img controls src="{$this->serie->image}></img></p>"
-                        END;
+                $html .= "
+                        <div class='track'>
+                        <a href='?action=serie&id=' ".$this->serie->__get('idSerie')."'> <img controls src='".$this->serie->image."'width='400' height='225'></img></a>
+                        </div>
+                        ";
 
                 break;
             case 2:
