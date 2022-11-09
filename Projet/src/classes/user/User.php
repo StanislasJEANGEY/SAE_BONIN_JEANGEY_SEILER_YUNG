@@ -31,6 +31,15 @@ class User
         $query->bindParam(2,$idSerie);
         return $query->execute();
     }
+    public function retirerSerieFav(int $idSerie): bool
+    {
+        $db = ConnectionFactory::makeConnection();
+        $query = $db->prepare("DELETE from favorite WHERE iduser = ? AND idserie = ?");
+        $query->bindParam(1, $this->id);
+        $query->bindParam(2,$idSerie);
+        return $query->execute();
+    }
+
     public function EstFavorie(int $serieid): bool
     {
         $db = ConnectionFactory::makeConnection();

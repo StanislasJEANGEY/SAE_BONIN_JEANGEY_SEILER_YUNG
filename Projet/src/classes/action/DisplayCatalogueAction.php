@@ -42,7 +42,14 @@ class DisplayCatalogueAction extends Action
                 </div>
                 EOF;
             } else {
-                $html .= "Déja en favorie" . "</div>";
+                $html .= <<<EOF
+                <form method="POST" action="?action=retirerfavorie&idSerie={$data['idSerie']}">
+                    <input type="hidden" name="url" value="{$_SERVER['REQUEST_URI']}">
+                    <input type="hidden" name="idserie" value="{$data['idSerie']}">
+                    <input type="submit" value="J'aime plus">
+                </form>
+                </div>
+                EOF;
             }
 
 
