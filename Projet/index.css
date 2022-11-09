@@ -107,10 +107,7 @@ li{
   background-color: #9370db;
 }
 
-#TextLogin::{
-  border: 3px solid #555;
-  background-color: #9370db;
-}
+
 
 #TextLogin:focus {
   border: 3px solid #555;
@@ -269,4 +266,10 @@ li{
   transform: skewX(-15deg);
   height: 50px;
   width: 200px;
+}
+
+#mainReturnRegister{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
