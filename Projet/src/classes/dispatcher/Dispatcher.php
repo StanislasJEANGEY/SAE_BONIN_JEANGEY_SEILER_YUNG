@@ -4,6 +4,7 @@ namespace iutnc\netVOD\dispatcher;
 
 
 use iutnc\netVOD\action\DisplayEpisodeAction;
+use iutnc\netVOD\action\DisplayProfilAction;
 use iutnc\netVOD\action\FavorieAction;
 use iutnc\netVOD\action\LogoutAction;
 use iutnc\netVOD\action\RetirerFavorieAction;
@@ -53,9 +54,13 @@ class Dispatcher
                 $action = new LogoutAction();
                 $html = $action->execute();
                 break;
-            case 'favorie':
+            case ("favorie"):
                 $action = new FavorieAction();
                 $html .= $action->execute();
+                break;
+            case ("profil"):
+                $action = new DisplayProfilAction();
+                $action->execute();
                 break;
             case 'retirerfavorie':
                 $action = new RetirerFavorieAction();

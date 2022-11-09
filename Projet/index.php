@@ -37,7 +37,8 @@ if (!isset($_GET['action'])) {
             </ul>
 
 EOF;
-} if (!isset($_SESSION['user'])) {
+} else if (!isset($_SESSION['user'])) {
+
   $htmlRender .= <<<EOF
           <div id="mainReturn">
             <a id="retour" href="index.php">Retour à l'accueil</a>
