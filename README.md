@@ -38,8 +38,7 @@ YUNG Théo
 
 7. Page d’accueil d’un utilisateur : afficher ses séries préférées
 
-8. Lors du visionnage d’un épisode, ajouter automatiquement la série à la liste « en
-   cours » de l’utilisateur
+8. Lors du visionnage d’un épisode, ajouter automatiquement la série à la liste « en cours » de l’utilisateur
 
 9. Lors du visionnage d’un épisode d’une série, noter et commenter la série
 
