@@ -36,7 +36,7 @@ class EpisodeRenderer implements renderer
                     $html .= "<p>Durée :  {$this->episode->duree}</h2>";
                     $html .=
                         "<div class='track'>".
-                        "<a href='?action=episode&id={$this->episode->id}'><br><img src='".$data['img']."' width='300' height='300'></a>".
+                        "<a href='?action=episode&id={$this->episode->id}&idserie={$this->episode->idSerie}'><br><img src='".$data['img']."' width='300' height='300'></a>".
                         "</div>";
                 }
                 break;

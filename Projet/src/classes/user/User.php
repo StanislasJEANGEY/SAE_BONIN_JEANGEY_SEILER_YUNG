@@ -50,12 +50,28 @@ class User
         return $query->rowCount() >= 1;
     }
 
+    public function AjouterSerieCommencer(int $serieid):void{
+      $db = ConnectionFactory::makeConnection();
+      $query = $db->prepare("INSERT INTO current values(?,?)");
+      $query->bindParam(1,$this->id);
+      $query->bindParam(2,$serieid);
+      $query->execute();
+    }
+
+public function DejaCommencer(int $serieid):bool{
+  $db = ConnectionFactory::makeConnection();
+  $query = $db->prepare("SELECT idserie FROM current WHERE iduser = ? AND idserie = ?");
+  $query->bindParam(1,$this->id);
+  $query->bindParam(2,$serieid);
+  $query->execute();
+  return $query->rowCount() >= 1;
+}
 
 
 
 
 
-    /** a modif 
+    /** a modif
     public function getPlaylists() : array
     {
         $bd = ConnectionFactory::makeConnection();
