@@ -25,13 +25,13 @@ YUNG Théo
 2. Inscription sur la plateforme  
    OK
 
-3. Affichage du catalogue de séries
+3. Affichage du catalogue de séries  
    OK
 
-4. Affichage détaillé d’une série et de la liste de ses épisodes
+4. Affichage détaillé d’une série et de la liste de ses épisodes  
    OK
 
-5. Affichage/visionnage d’un épisode d’une série
+5. Affichage/visionnage d’un épisode d’une série  
    OK
 
 6. Ajout d’une série dans la liste de préférence d’un utilisateur
