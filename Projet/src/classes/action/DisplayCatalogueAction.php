@@ -20,16 +20,20 @@ class DisplayCatalogueAction extends Action
         return "<a href=?action=sign-in>Veuillez vous connecter</a>";
     } else {
         $html = "<div id=catTitre><h1 id=Titrecatalogue> Catalogue : </h1> </div>";
+        $html .= "<div id=Tout>";
         $query = "SELECT idSerie,titre,img FROM serie";
         $result = ConnectionFactory::makeConnection()->prepare($query);
         $result->execute();
         while($data = $result->fetch()){
-            $html .= "<div id=MainAfficherSerie>";
-            $html .= "<h2>" .$data['titre']. "<h2>";
-            $html .= "<a href='?action=serie&id=". $data['idSerie'] . "'><br><img src='". $data['img'] ."' width='300' height='300'></a><br>";
-            $html .= "</div>";
+            $html .= "
+                  <div id=MainAfficherSerie>
+                  <h2>" . $data['titre'] ."<h2>
+                  <a href='?action=serie&id=". $data['idSerie'] . "'><br><img src='". $data['img'] ."' width='300' height='300'></a><br>
+                  </div>";
         }
+        $html .= "</div>";
     }
+
     return $html;
     }
 }

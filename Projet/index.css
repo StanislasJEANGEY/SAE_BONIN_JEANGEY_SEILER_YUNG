@@ -238,9 +238,18 @@ li{
 }
 
 #MainAfficherSerie{
-  display: grid;
-  width: 540px;
-  grid-template-columns: 120px 120px 120px;
-  align-items:center;
+  width: 500px;
+  border: 2px solid rgb(111,41,97);
+  border-radius: .5em;
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+  margin: 1em;
+}
+
+#Tout{
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
 }
