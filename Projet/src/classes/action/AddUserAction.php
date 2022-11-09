@@ -35,8 +35,10 @@ class AddUserAction extends Action
                 throw new \iutnc\netVOD\Exception\AuthException("Les saisies de vos mot de passes ne sont pas identiques");
 
         } catch (AuthException $e) {
-            $html = "<h2> ".$e->getMessage()." </h2>";
-            $html .= "<div id=retourRegister><a href='?action=add-user'>Retour à l'inscription</a></div><br><br>";
+            $html = "<div id=mainReturnRegister>";
+            $html .= "<h2> ".$e->getMessage()." </h2>";
+            $html .= "<a id=retourRegister href='?action=add-user'>Retour à l'inscription</a></div><br><br>";
+            $html .= "</div>";
         }
         return $html;
     }
