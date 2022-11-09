@@ -44,7 +44,7 @@ class Auth
     {
         $email = filter_var($email, FILTER_SANITIZE_EMAIL);
         $db = ConnectionFactory::makeConnection();
-        $state = $db->prepare("SELECT passwd, role FROM Utilisateur WHERE email = :user");
+        $state = $db->prepare("SELECT passwd, role, id FROM Utilisateur WHERE email = :user");
         $state->execute([':user' => $email]);
 
         $array = $state->fetchAll();
@@ -56,13 +56,16 @@ class Auth
 
         $passVerif = $array[0]['passwd'];
         $role = $array[0]['role'];
+        $id = $array[0]['id'];
+        echo $id;
+        echo 1;
 
         if(!password_verify($password, $passVerif))
         {
             throw new AuthException("Mot de passe invalide !");
         }
 
-        $user = new User($email, $passVerif, $role);
+        $user = new User($email, $passVerif, $role, $id);
         $_SESSION['user'] = serialize($user);
         return $user;
 

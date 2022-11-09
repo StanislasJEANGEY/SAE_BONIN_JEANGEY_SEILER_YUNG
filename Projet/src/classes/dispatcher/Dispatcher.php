@@ -4,6 +4,7 @@ namespace iutnc\netVOD\dispatcher;
 
 
 use iutnc\netVOD\action\DisplayEpisodeAction;
+use iutnc\netVOD\action\FavorieAction;
 use iutnc\netVOD\action\LogoutAction;
 use iutnc\netVOD\action\SigninAction;
 use iutnc\netVOD\action\AddUserAction;
@@ -24,8 +25,9 @@ class Dispatcher
 
     public function run(): void
     {
-
+        $html="";
         switch ($this->action) {
+
             case("add-user"):
                 $action = new AddUserAction();
                 $html = $action->execute();
@@ -50,9 +52,14 @@ class Dispatcher
                 $action = new LogoutAction();
                 $html = $action->execute();
                 break;
+            case 'favorie':
+                $action = new FavorieAction();
+                $html .= $action->execute();
+                break;
             default:
                 $html = "<h1 id=Titre>NetVOD</h1>";
                 break;
+
         }
         $this->renderPage($html);
     }

@@ -17,7 +17,7 @@ class DisplayCatalogueAction extends Action
     protected function executeGET(): string
     {
         if(!isset($_SESSION['user'])) {
-        return "<a href=?action=sign-in>Veuillez vous connecter</a>";
+        return "<a href=?action=signin>Veuillez vous connecter</a>";
     } else {
         $html = "<div id=catTitre><h1 id=Titrecatalogue> Catalogue : </h1> </div>";
         $html .= "<div id=Tout>";
@@ -29,7 +29,16 @@ class DisplayCatalogueAction extends Action
                   <div id=MainAfficherSerie>
                   <h2>" . $data['titre'] ."<h2>
                   <a href='?action=serie&id=". $data['idSerie'] . "'><br><img src='". $data['img'] ."' width='300' height='300'></a><br>
-                  </div>";
+                  ";
+            $html .= <<<EOF
+                <form method="POST" action="?action=favorie&idSerie={$data['idSerie']}">
+                    <input type="hidden" name="url" value="{$_SERVER['REQUEST_URI']}">
+                    <input type="hidden" name="idserie" value="{$data['idSerie']}">
+                    <input type="submit" value="J'adore =)">
+                </form>
+                </div>
+                EOF;
+
         }
         $html .= "</div>";
     }
