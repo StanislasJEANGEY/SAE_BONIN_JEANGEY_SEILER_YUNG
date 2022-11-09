@@ -4,6 +4,7 @@ namespace iutnc\netVOD\dispatcher;
 
 
 use iutnc\netVOD\action\DisplayEpisodeAction;
+use iutnc\netVOD\action\LogoutAction;
 use iutnc\netVOD\action\SigninAction;
 use iutnc\netVOD\action\AddUserAction;
 use iutnc\netVOD\action\DisplayCatalogueAction;
@@ -43,6 +44,10 @@ class Dispatcher
                 break;
             case("serie"):
                 $action = new DisplaySerieAction();
+                $html = $action->execute();
+                break;
+            case("logout"):
+                $action = new LogoutAction();
                 $html = $action->execute();
                 break;
             default:
