@@ -29,7 +29,7 @@ class AddUserAction extends Action
                 $mdp = filter_var($_POST['pwd'], FILTER_SANITIZE_SPECIAL_CHARS);
 
                 if (Auth::register($email, $mdp)) {
-                    $html = "<h2> Inscription réussie </h2>";
+                    $html = "<center><h2> Inscription réussie </h2></center>";
                 }
             } else
                 throw new \iutnc\netVOD\Exception\AuthException("Les saisies de vos mot de passes ne sont pas identiques");
