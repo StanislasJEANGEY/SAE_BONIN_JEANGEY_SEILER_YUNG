@@ -20,7 +20,7 @@ class SerieRenderer implements renderer {
                 $html .= <<<END
                         1
                         <div class="track">
-                        <p><img controls src="{$this->episode->image}></img></p>"
+                        <p><img controls src="{$this->serie->image}></img></p>"
                         END;
 
                 break;

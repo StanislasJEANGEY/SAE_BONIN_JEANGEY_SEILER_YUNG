@@ -28,7 +28,7 @@ class EpisodeRenderer implements renderer
                 break;
             case 2:
                 $bd = ConnectionFactory::makeConnection();
-                $requete = $bd->prepare("SELECT img FROM serie WHERE id = ?");
+                $requete = $bd->prepare("SELECT img FROM serie WHERE idSerie = ?");
                 $requete->bindParam(1, $this->episode->idSerie);
                 $requete->execute();
                 while ($data = $requete->fetch()) {

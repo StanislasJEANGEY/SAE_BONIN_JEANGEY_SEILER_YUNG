@@ -33,11 +33,11 @@ class Serie {
     public static function getSerie(string $id) : Serie
     {
         $bd = ConnectionFactory::makeConnection();
-        $requete = $bd->prepare("SELECT * FROM serie WHERE id = ?");
+        $requete = $bd->prepare("SELECT * FROM serie WHERE idSerie = ?");
         $requete->bindParam(1, $id);
         $requete->execute();
         while ( $data = $requete->fetch()){
-            $serie = new Serie($data['id'], $data['titre'], $data['descriptif'], $data['img'], $data['annee']);
+            $serie = new Serie($data['idSerie'], $data['titre'], $data['descriptif'], $data['img'], $data['annee']);
         }
         return $serie;
     }
