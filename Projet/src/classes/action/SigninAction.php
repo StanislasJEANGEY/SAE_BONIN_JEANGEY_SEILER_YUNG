@@ -29,14 +29,14 @@ class SigninAction extends Action
 
     protected function executeGET(): string
     {
-        return <<<EOF
-                <div id="mainLogin">
-                <form method="post">
-                    <input id="TextLogin" type="email" placeholder="Email..." name="email">
-                    <input id="TextMdp" type="password" placeholder="Mot de passe..." name="password">
-                    <input id="ButtonConnexion" type="submit" value="Connexion">
-                </form>
-                </div>
-            EOF;
+          return <<<EOF
+                  <div id="mainLogin">
+                  <form method="post">
+                      <input id="TextLogin" type="email" placeholder="Email..." name="email">
+                      <input id="TextMdp" type="password" placeholder="Mot de passe..." name="password">
+                      <input id="ButtonConnexion" type="submit" value="Connexion">
+                  </form>
+                  </div>
+              EOF;
     }
 }
