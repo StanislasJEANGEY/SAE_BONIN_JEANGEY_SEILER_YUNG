@@ -16,7 +16,7 @@ class LogoutAction extends Action
     {
         if (isset($_SESSION['user'])) {
             Auth::logout();
-            $html = "Deconnecté";
+            $html = "<center><h1>Déconnecté</h1></center>";
         } else $html = '';
         return $html;    }
 }
