@@ -68,6 +68,11 @@ class Auth
 
     }
 
+    public static function logout()
+    {
+        unset($_SESSION['user']);
+    }
+
     public static function isAuthorized($idPlaylist) : bool
     {
         $user = $_SESSION['user'];

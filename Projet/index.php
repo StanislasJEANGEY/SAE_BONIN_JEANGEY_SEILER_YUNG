@@ -37,26 +37,20 @@ if (!isset($_GET['action'])) {
             </ul>
 
 EOF;
+} else if (isset($_SESSION['user'])) {
+
+  $htmlRender .= <<<EOF
+          <div id="mainReturn">
+            <a id="logout" href="?action=logout">Se déconnecter</a>
+            <a id="retour" href="?action=signin">Retour à l'accueil</a>
+          </div>
+  EOF;
 } else {
-
-  if(isset($_GET['action']) == 'catalogue'){
-    $htmlRender .= <<<EOF
-            <div id="mainReturn">
-              <a id="retour" href='?action=signin'>Retour en arrière</a>
-              <span>
-              <svg width="66px" height="43px" viewBox="0 0 66 43" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-            </div>
-        EOF;
-  }else{
-
-      $htmlRender .= <<<EOF
-              <div id="mainReturn">
-                <a id="retour" href='index.php'>Retour à l'accueil</a>
-                <span>
-                <svg width="66px" height="43px" viewBox="0 0 66 43" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-              </div>
-      EOF;
-    }
+  $htmlRender .= <<<EOF
+          <div id="mainReturn">
+            <a id="retour" href="index.php">Retour à l'accueil</a>
+          </div>
+  EOF;
 }
 
 echo $htmlRender;
