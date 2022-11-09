@@ -30,14 +30,21 @@ class DisplayCatalogueAction extends Action
                   <h2>" . $data['titre'] ."<h2>
                   <a href='?action=serie&id=". $data['idSerie'] . "'><br><img src='". $data['img'] ."' width='300' height='300'></a><br>
                   ";
-            $html .= <<<EOF
+
+            $user = unserialize($_SESSION['user']);
+            if (!$user->EstFavorie($data['idSerie'])){
+                $html .= <<<EOF
                 <form method="POST" action="?action=favorie&idSerie={$data['idSerie']}">
                     <input type="hidden" name="url" value="{$_SERVER['REQUEST_URI']}">
                     <input type="hidden" name="idserie" value="{$data['idSerie']}">
-                    <input type="submit" value="J'adore =)">
+                    <input type="submit" value="J'adore">
                 </form>
                 </div>
                 EOF;
+            } else {
+                $html .= "Déja en favorie" . "</div>";
+            }
+
 
         }
         $html .= "</div>";

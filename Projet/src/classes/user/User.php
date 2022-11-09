@@ -31,14 +31,14 @@ class User
         $query->bindParam(2,$idSerie);
         return $query->execute();
     }
-    public function isFavoriteSerie(int $serieid): bool
+    public function EstFavorie(int $serieid): bool
     {
         $db = ConnectionFactory::makeConnection();
-        $query = $db->prepare("SELECT idserie FROM favorite WHERE idserie = ? AND idserie = ?");
+        $query = $db->prepare("SELECT idserie FROM favorite WHERE iduser = ? AND idserie = ?");
         $query->bindParam(1,$this->id);
         $query->bindParam(2,$serieid);
         $query->execute();
-        return $query->rowCount() > 0;
+        return $query->rowCount() >= 1;
     }
 
 
