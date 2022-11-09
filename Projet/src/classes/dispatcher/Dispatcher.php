@@ -9,6 +9,7 @@ use iutnc\netVOD\action\AddUserAction;
 use iutnc\netVOD\action\DisplayCatalogueAction;
 use iutnc\netVOD\action\DisplaySerieAction;
 
+
 class Dispatcher
 {
 
@@ -35,11 +36,6 @@ class Dispatcher
             case("catalogue"):
                 $action = new DisplayCatalogueAction();
                 $html = $action->execute();
-                break;
-            case("accueil"):
-                $action = new AccueilAction();
-                $html = $action->execute();
-                break;
             case ("episode"):
                 $action = new DisplayEpisodeAction();
                 $html = $action->execute();
