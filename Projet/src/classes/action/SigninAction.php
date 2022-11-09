@@ -30,6 +30,8 @@ class SigninAction extends Action
                 $iduser = $user->getId();
                 $req->bindParam(1, $iduser);
                 $req->execute();
+
+                $html .= "<h1> Serie favorites :</h1><br>";
                 while ($data = $req->fetch()){
                     $rendererSerie = new SerieRenderer(Serie::getSerie($data['idserie']));
                     $html .= $rendererSerie->render();
@@ -54,6 +56,20 @@ class SigninAction extends Action
             $html .= "<a id=retour href=?action=signin>Retour à l'accueil</a>";
             $html .= "<a id=logout href=?action=logout>Se déconnecter</a>";
             $html .= "</div>";
+
+            $bd = ConnectionFactory::makeConnection();
+            $req = $bd->prepare("SELECT idserie FROM favorite WHERE iduser = ?");
+
+            $user = unserialize($_SESSION['user']);
+            $iduser = $user->getId();
+            $req->bindParam(1, $iduser);
+            $req->execute();
+
+            $html .= "<h1> Serie favorites :</h1><br>";
+            while ($data = $req->fetch()){
+                $rendererSerie = new SerieRenderer(Serie::getSerie($data['idserie']));
+                $html .= $rendererSerie->render();
+            }
         } else {
             return <<<EOF
                 <div id="mainLogin">
