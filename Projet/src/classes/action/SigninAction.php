@@ -15,7 +15,7 @@ class SigninAction extends Action
         try
         {
             $user = Auth::authenticate($_POST['email'], $_POST['password']);
-            if (isset($user)){
+            if (isset($_SESSION['user'])){
               $html = "<div id=MainButtonCatalogue>" .  "<a id=ButtonCatalogue href=?action=catalogue>Catalogue</a>";
 }
         } catch (AuthException $e) {
@@ -29,6 +29,9 @@ class SigninAction extends Action
 
     protected function executeGET(): string
     {
+      if (isset($_SESSION['user'])){
+        $html = "<div id=MainButtonCatalogue>" .  "<a id=ButtonCatalogue href=?action=catalogue>Catalogue</a>";
+}else{
         return <<<EOF
                 <div id="mainLogin">
                 <form method="post">
@@ -39,4 +42,7 @@ class SigninAction extends Action
                 </div>
             EOF;
     }
+    return $html;
+  }
+
 }
