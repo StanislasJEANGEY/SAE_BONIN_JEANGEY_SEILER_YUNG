@@ -19,7 +19,7 @@ class SerieRenderer implements renderer {
             case 1:
                 $html .= "
                         <div class='track'>
-                        <a href='?action=serie&id=' ".$this->serie->__get('idSerie')."'> <img controls src='".$this->serie->image."'width='400' height='225'></img></a>
+                        <a href='?action=serie&id=".$this->serie->__get('idSerie')."'> <img controls src='".$this->serie->image."'width='400' height='225'></img></a>
                         </div>
                         ";
 
