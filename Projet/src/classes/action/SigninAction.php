@@ -14,7 +14,11 @@ class SigninAction extends Action
         try {
             $user = Auth::authenticate($_POST['email'], $_POST['password']);
             if (isset($_SESSION['user'])) {
-                $html = "<div id=mainReturn>" . "<a id=ButtonCatalogue href=?action=catalogue>Catalogue</a>" . "</div>";
+                $html = "<h1 id=Titre>NetVOD</h1>";
+                $html .= "<div id=mainMenu>" . "<a id=ButtonCatalogue href=?action=catalogue>Catalogue</a>";
+                $html .= "<a id=retour href=?action=signin>Retour à l'accueil</a>";
+                $html .= "<a id=logout href=?action=logout>Se déconnecter</a>";
+                $html .= "</div>";
             }
         } catch (AuthException $e) {
             $html = "<div id=mainReturnConnexion>";
@@ -29,7 +33,11 @@ class SigninAction extends Action
     protected function executeGET(): string
     {
         if (isset($_SESSION['user'])) {
-            $html = "<div id=MainButtonCatalogue>" . "<a id=ButtonCatalogue href=?action=catalogue>Catalogue</a>";
+          $html = "<h1 id=Titre>NetVOD</h1>";
+          $html .= "<div id=mainMenu>" . "<a id=ButtonCatalogue href=?action=catalogue>Catalogue</a>";
+          $html .= "<a id=retour href=?action=signin>Retour à l'accueil</a>";
+          $html .= "<a id=logout href=?action=logout>Se déconnecter</a>";
+          $html .= "</div>";
         } else {
             return <<<EOF
                 <div id="mainLogin">

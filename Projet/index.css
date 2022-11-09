@@ -55,13 +55,11 @@ body{
   width: 200px;
 }
 
-#mainReturn {
+#mainMenu {
   display: flex;
   flex-wrap: wrap;
   justify-content:center;
   align-items: center;
-  padding-top: 180px;
-
 }
 
 #MainButtonCatalogue {

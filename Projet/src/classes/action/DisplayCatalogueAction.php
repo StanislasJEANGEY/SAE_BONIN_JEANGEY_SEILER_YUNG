@@ -19,7 +19,11 @@ class DisplayCatalogueAction extends Action
         if(!isset($_SESSION['user'])) {
         return "<a href=?action=signin>Veuillez vous connecter</a>";
     } else {
-        $html = "<div id=catTitre><h1 id=Titrecatalogue> Catalogue : </h1> </div>";
+        $html = "<h1 id=Titre>NetVOD</h1>";
+        $html .= "<div id=mainMenu>" . "<a id=ButtonCatalogue href=?action=catalogue>Catalogue</a>";
+        $html .= "<a id=retour href=?action=signin>Retour à l'accueil</a>";
+        $html .= "<a id=logout href=?action=logout>Se déconnecter</a>";
+        $html .= "</div>";
         $html .= "<div id=Tout>";
         $query = "SELECT idSerie,titre,img FROM serie";
         $result = ConnectionFactory::makeConnection()->prepare($query);

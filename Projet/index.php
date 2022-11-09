@@ -37,15 +37,7 @@ if (!isset($_GET['action'])) {
             </ul>
 
 EOF;
-} else if (isset($_SESSION['user'])) {
-
-  $htmlRender .= <<<EOF
-          <div id="mainReturn">
-            <a id="retour" href="?action=signin">Retour à l'accueil</a>
-            <a id="logout" href="?action=logout">Se déconnecter</a>
-          </div>
-  EOF;
-} else {
+} if (!isset($_SESSION['user'])) {
   $htmlRender .= <<<EOF
           <div id="mainReturn">
             <a id="retour" href="index.php">Retour à l'accueil</a>
