@@ -41,11 +41,12 @@ EOF;
 
   $htmlRender .= <<<EOF
           <div id="mainReturn">
-            <a id="profil" href="?action=profil">Profil</a>
             <a id="retour" href="?action=signin">Retour à l'accueil</a>
             <a id="logout" href="?action=logout">Se déconnecter</a>
           </div>
   EOF;
+  //<a id="profil" href="?action=profil">Profil</a>
+
 } else {
   $htmlRender .= <<<EOF
           <div id="mainReturn">
