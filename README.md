@@ -34,19 +34,24 @@ YUNG Théo
 5. Affichage/visionnage d’un épisode d’une série  
    OK
 
-6. Ajout d’une série dans la liste de préférence d’un utilisateur
+6. Ajout d’une série dans la liste de préférence d’un utilisateur  
+   OK
 
-7. Page d’accueil d’un utilisateur : afficher ses séries préférées
+7. Page d’accueil d’un utilisateur : afficher ses séries préférées  
+   OK
 
-8. Lors du visionnage d’un épisode, ajouter automatiquement la série à la liste « en cours » de l’utilisateur
+8. Lors du visionnage d’un épisode, ajouter automatiquement la série à la liste « en cours » de l’utilisateur  
+   faite à moitié par théo
 
-9. Lors du visionnage d’un épisode d’une série, noter et commenter la série
+9. Lors du visionnage d’un épisode d’une série, noter et commenter la série  
+   presque fini par lucas
 
 10. Lors de l’affichage d’une série, indiquer sa note moyenne et donner accès aux
-    commentaires
-    
-15. gestion de la liste de préférence : retrait.
-   OK
+    commentaires  
+    OK
+
+11. Gestion de la liste de préférence : retrait.
+    OK
 
 <br>
 <br>
