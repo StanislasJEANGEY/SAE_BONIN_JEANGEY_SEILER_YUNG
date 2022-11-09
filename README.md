@@ -44,6 +44,9 @@ YUNG Théo
 
 10. Lors de l’affichage d’une série, indiquer sa note moyenne et donner accès aux
     commentaires
+    
+15. gestion de la liste de préférence : retrait.
+   OK
 
 <br>
 <br>
