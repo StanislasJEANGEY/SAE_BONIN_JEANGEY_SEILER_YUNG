@@ -2,6 +2,9 @@
 
 ## SAE Développer une application web sécurisée
 
+faut que je fasse la liste des série en cours de lecture en réutilisant mon code pour les favoris
+penser à faire des méthode pour alléger le code de signAction
+
 Dictionnaire BDD:
 https://docs.google.com/document/d/18JlecGTAmzPNkR0mv3FkQhdQj7pgGciCsjey5xb32E8/edit?usp=sharing
 
