@@ -36,7 +36,7 @@ class AddUserAction extends Action
 
         } catch (AuthException $e) {
             $html = "<h2> ".$e->getMessage()." </h2>";
-            $html .= "<a href='?action=add-user'>Retour à l'inscription</a><br><br>";
+            $html .= "<div id=retourRegister><a href='?action=add-user'>Retour à l'inscription</a></div><br><br>";
         }
         return $html;
     }
