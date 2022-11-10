@@ -31,3 +31,6 @@ create table commentaire (
 ALTER TABLE utilisateur ADD nom VARCHAR(20);
 ALTER TABLE utilisateur ADD prenom VARCHAR(20);
 ALTER TABLE utilisateur ADD genrePref VARCHAR(20);
+
+alter TABLE serie add COLUMN genre varchar(20);
+alter TABLE serie add COLUMN public varchar(20);
