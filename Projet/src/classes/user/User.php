@@ -59,8 +59,12 @@ class User
     public function AjouterSerieCommencer(int $serieid,int $epid): void
     {
       $db = ConnectionFactory::makeConnection();
-      $state = $db->prepare("SELECT iduser,idserie,id, FROM Utilisateur WHERE email = :email");
-      $state->execute([':email' => $email]);
+      $state = $db->prepare("SELECT iduser,idserie,id FROM current WHERE iduser = ? and idserie = ? and id = ?");
+      $state->bindParam(1, $this->id);
+      $state->bindParam(2, $serieid);
+      $state->bindParam(3,$epid);
+      $state->execute();
+
       if ($state->rowCount() == 0) {
         $query = $db->prepare("INSERT INTO current values(?,?,?)");
         $query->bindParam(1, $this->id);
@@ -68,6 +72,7 @@ class User
         $query->bindParam(3,$epid);
         $query->execute();
     }
+  }
 
     public function Finir(int $serieid):void
     {
