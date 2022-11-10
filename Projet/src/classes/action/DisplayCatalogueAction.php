@@ -11,13 +11,14 @@ class DisplayCatalogueAction extends Action
 
     protected function postExecute():string{
         $html=DisplayCatalogueAction::boutton();
+        var_dump($_POST['trier']);
         switch($_POST['trier']){
             case'episode':
                 $query = "SELECT idSerie,serie.titre,img from serie
                             inner join episode on episode.serie_id = serie.idSerie
                             GROUP BY idSerie,serie.titre,img
                             ORDER BY AVG(numero) ";
-                DisplayCatalogueAction::formulaire($query);
+                $html .= DisplayCatalogueAction::formulaire($query);
                 break;
             case'ajout':
                 $query = "SELECT idSerie,titre,img from serie ORDER BY date_ajout";
@@ -30,7 +31,7 @@ class DisplayCatalogueAction extends Action
                 break;
 
         }
-        return$html;
+        return $html;
     }
 
     public static function boutton(){
@@ -42,13 +43,13 @@ class DisplayCatalogueAction extends Action
         $html.=<<<EOF
                 trierpar:
                 <div>
-                <form method="POST"action="?action=catalogue&trie=note">
-                <select name="trier"id="trie">
+                <form method="POST" action="?action=catalogue&trie=note">
+                <select name="trier" id="trie">
                 <option value="note">par Note</option>
                 <option value="ajout">Date d'ajout</option>
                 <option value="episode">nom d'episode</option>
                 </select>
-                <input id="trier"name="trier"type="submit">
+                <input id="trie"name="trie"type="submit">
                 
                 </form>
                 </div>
