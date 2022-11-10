@@ -75,19 +75,25 @@ class User
     }
 
 
-    public function Finir(int $serieid):void
+    public function Finir(int $serieid):bool
     {
         $db = ConnectionFactory::makeConnection();
-        $query = $db->prepare("SELECT count(idserie) FROM current WHERE iduser = ? AND idserie = ?");
+        $query = $db->prepare("SELECT count(iduser) FROM current WHERE iduser = ? AND idserie = ?");
         $query->bindParam(1, $this->id);
         $query->bindParam(2, $serieid);
         $query->execute();
         $n = $query->rowCount();
-        echo $n;
-        $q = $db->prepare("SELECT count(serie_id) FROM episode WHERE serie_id = ?");
+
+        $q = $db->prepare("SELECT count(id) FROM episode WHERE serie_id = ?");
         $q->bindParam(1, $serieid);
         $q->execute();
-        echo $q->rowCount();
+        if($q->rowCount() == $n){
+          $del = $db->prepare("DELETE from current where iduser = ? and idserie = ?");
+          $del->bindParam(1, $this->id);
+          $del->bindParam(2, $serieid);
+          $del->execute();
+        }
+        return $q->rowCount() == $n;
 
     }
 

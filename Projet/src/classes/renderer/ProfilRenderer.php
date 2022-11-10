@@ -30,6 +30,7 @@ class ProfilRenderer implements renderer
                             <button id="buttonAjout" type="submit">Ajouter</button>
                         </form>
                         EOF;
+                $html .= "<a id=retourConnexion href='?action=signin'>Retour à la connexion</a><br><br>";
                 break;
             case 2 :
                 $user = unserialize($_SESSION['user']);
@@ -44,6 +45,7 @@ class ProfilRenderer implements renderer
                         Prenom : " . $data[0]['prenom'] . "<br>
                         Genre préféré : " . $data[0]['genrePref'] . "<br>";
                 $html .= "<a href='?action=modifyProfil'>Modifier</a>";
+                $html .= "<a id=retourConnexion href='?action=signin'>Retour à la connexion</a><br><br>";
                 break;
         }
         return $html;
