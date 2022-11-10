@@ -62,7 +62,7 @@ class Dispatcher
                 break;
             case ("profil"):
                 $action = new DisplayProfilAction();
-                $action->execute();
+                $html .= $action->execute();
                 break;
             case 'retirerfavorie':
                 $action = new RetirerFavorieAction();

@@ -32,7 +32,7 @@ class AddUserAction extends Action
                     $html = "<center><h2> Inscription réussie </h2></center>";
                 }
             } else
-                throw new \iutnc\netVOD\Exception\AuthException("Les saisies de vos mot de passes ne sont pas identiques");
+                throw new AuthException("Les saisies de vos mot de passes ne sont pas identiques");
 
         } catch (AuthException $e) {
             $html = "<div id=mainReturnRegister>";

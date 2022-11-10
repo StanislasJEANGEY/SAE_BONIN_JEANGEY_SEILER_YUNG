@@ -20,10 +20,11 @@ class SigninAction extends Action
                 $html = "<h1 id=Titre>NetVOD</h1>";
                 $html .= "<div id=mainMenu>" . "<a id=ButtonCatalogue href=?action=catalogue>Catalogue</a>";
                 $html .= "<a id=retour href=?action=signin>Retour à l'accueil</a>";
+                $html .= "<a id=profil href=?action=profil>Profil</a>";
                 $html .= "<a id=logout href=?action=logout>Se déconnecter</a>";
                 $html .= "</div>";
 
-                $iduser = $user->getId();
+                $iduser = $user->__get("id");
 
                 $html .= $this->serieFavorite($iduser);
                 $html .= "<br><br>";
@@ -46,11 +47,12 @@ class SigninAction extends Action
             $html = "<h1 id=Titre>NetVOD</h1>";
             $html .= "<div id=mainMenu>" . "<a id=ButtonCatalogue href=?action=catalogue>Catalogue</a>";
             $html .= "<a id=retour href=?action=signin>Retour à l'accueil</a>";
+            $html .= "<a id=profil href=?action=profil>Profil</a>";
             $html .= "<a id=logout href=?action=logout>Se déconnecter</a>";
             $html .= "</div>";
 
             $user = unserialize($_SESSION['user']);
-            $iduser = $user->getId();
+            $iduser = $user->__get("id");
 
             $html .= $this->serieFavorite($iduser);
 
