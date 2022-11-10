@@ -13,9 +13,9 @@ class DisplayProfilAction extends Action
         if (isset($_SESSION['user'])) {
             $user = unserialize($_SESSION['user']);
             $rendererProfil = new ProfilRenderer($user);
-            $user->__set("nom", $_POST['nom']);
-            $user->__set("prenom", $_POST['prenom']);
-            $user->__set("genrePref", $_POST['genrePref']);
+            $user->__set("nom", filter_var($_POST['nom']), FILTER_SANITIZE_SPECIAL_CHARS);
+            $user->__set("prenom", filter_var($_POST['prenom']), FILTER_SANITIZE_SPECIAL_CHARS);
+            $user->__set("genrePref", filter_var($_POST['genrePref']), FILTER_SANITIZE_SPECIAL_CHARS);
             $user->ajoutBDDInfos();
             $_SESSION['user'] = serialize($user);
             return $rendererProfil->render(2);
