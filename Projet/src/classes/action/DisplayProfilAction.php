@@ -15,15 +15,12 @@ class DisplayProfilAction extends Action
             $rendererProfil = new ProfilRenderer($user);
 
             $nom = filter_var($_POST['nom'], FILTER_SANITIZE_SPECIAL_CHARS);
-            $nom = filter_var($nom, FILTER_SANITIZE_STRING);
             $user->__set("nom", $nom);
 
             $prenom = filter_var($_POST['prenom'], FILTER_SANITIZE_SPECIAL_CHARS);
-            $prenom = filter_var($prenom, FILTER_SANITIZE_STRING);
             $user->__set("prenom", $prenom);
 
             $genre = filter_var($_POST['genrePref'], FILTER_SANITIZE_SPECIAL_CHARS);
-            $genre = filter_var($genre, FILTER_SANITIZE_STRING);
             $user->__set("genrePref", $genre);
 
             $user->ajoutBDDInfos();

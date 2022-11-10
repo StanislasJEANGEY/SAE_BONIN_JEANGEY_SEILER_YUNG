@@ -28,7 +28,7 @@ class ProfilRenderer implements renderer
                             <span id="nom"><label id="labelNom">Nom : </label><br><input id="TextLogin" type="text" name="nom" value="" placeholder='Saisir nom' required><br></span>
                             <span id="prenom"><label id="labelPrenom">Prénom : </label><br><input id="TextLogin" type="text" name="prenom" value="" placeholder='Saisir prénom' required><br></span>
                             <span id="genre"><label id="labelGenre">Genre préféré : </label><br>
-                              <select name="genrePref">
+                              <select name="genrePref" required>
                                   <option value="">Fais ton choix</option>
                                   <option value="Comédie">Comédie</option>
                                   <option value="Horreur">Horreur</option>
@@ -52,9 +52,9 @@ class ProfilRenderer implements renderer
                 $req->execute();
                 $data= $req->fetchAll();
                 $html = "<div id=mainLogin>";
-                $html .=  "<label id=nomProfil>Nom : {$data[0]['nom']} <br></label>";
-                $html .=  "<label id=prenomProfil>Prenom : {$data[0]['prenom']} <br></label>";
-                $html .=  "<label id=genreProfil>Genre préféré : {$data[0]['genrePref']} <br></label>";
+                $html .=  "<label id=nomProfil><h1>Nom : {$data[0]['nom']} </h1><br></label>";
+                $html .=  "<label id=prenomProfil><h1>Prenom : {$data[0]['prenom']} </h1><br></label>";
+                $html .=  "<label id=genreProfil><h1>Genre préféré : {$data[0]['genrePref']}</h1> <br></label>";
                 $html .= "<a id=ButtonModif href='?action=modifyProfil'>Modifier</a>";
                 $html .= "<a id=retourConnexion href='?action=signin'>Retour à l'accueil</a><br><br>";
                 $html .= "</div>";
