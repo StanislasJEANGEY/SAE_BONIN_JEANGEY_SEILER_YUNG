@@ -12,11 +12,15 @@ class DisplayCommentaireAction extends Action
         $html = "<h3>Commentaire : </h3>";
         $requete2 = $bd->prepare('SELECT commentaire FROM commentaire where idSerie = ?');
         $requete2->bindParam(1,$_GET['idSerie']);
+        $requete2->execute();
         while ($data2 = $requete2->fetch()){
+            echo $data2['commentaire'];
+            echo 1;
             $html .= $data2['commentaire'];
         }
-        $requete3 = $bd->prepare('SELECT MOY(note) as moy FROM commentaire where idSerie = ?');
+        $requete3 = $bd->prepare('SELECT AVG(note) as moy FROM commentaire where idSerie = ?');
         $requete3->bindParam(1,$_GET['idSerie']);
+        $requete3->execute();
         $html .= "<p>Note moyenne : </p>";
         while ($data3 = $requete3->fetch()) {
             $html .= $data3['moy'];
