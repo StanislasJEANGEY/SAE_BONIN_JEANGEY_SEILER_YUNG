@@ -16,6 +16,7 @@ use iutnc\netVOD\action\SigninAction;
 use iutnc\netVOD\action\AddUserAction;
 use iutnc\netVOD\action\DisplayCatalogueAction;
 use iutnc\netVOD\action\DisplaySerieAction;
+use iutnc\netVOD\action\TrieAction;
 
 
 class Dispatcher
@@ -40,6 +41,10 @@ class Dispatcher
                 break;
             case("signin"):
                 $action = new SigninAction();
+                $html = $action->execute();
+                break;
+            case ("trie"):
+                $action = new TrieAction();
                 $html = $action->execute();
                 break;
             case("catalogue"):

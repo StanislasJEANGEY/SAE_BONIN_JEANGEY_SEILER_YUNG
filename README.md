@@ -2,6 +2,12 @@
 
 ## SAE Développer une application web sécurisée
 
+### Lien vers le depot git :
+
+https://github.com/StanislasJEANGEY/SAE_BONIN_JEANGEY_SEILER_YUNG
+
+<br>
+
 Dictionnaire BDD:
 https://docs.google.com/document/d/18JlecGTAmzPNkR0mv3FkQhdQj7pgGciCsjey5xb32E8/edit?usp=sharing
 
@@ -59,7 +65,7 @@ YUNG Théo
 12. Recherche dans le catalogue par mots clés
 
 13. Tri dans le catalogue  
-    En cours par Lucas
+    OK
 
 14. Filtrage du catalogue par genre, par public
 
@@ -67,7 +73,7 @@ YUNG Théo
     OK
 
 16. Gestion de la liste « déjà visionnées »  
-    En cours par théo
+    OK
 
 17. Gestion du profil de l’utilisateur : ajouter des informations (nom, prénom, genre préféré ...)  
     OK
