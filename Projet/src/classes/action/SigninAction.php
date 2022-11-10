@@ -23,19 +23,11 @@ class SigninAction extends Action
                 $html .= "<a id=logout href=?action=logout>Se déconnecter</a>";
                 $html .= "</div>";
 
-
-                $bd = ConnectionFactory::makeConnection();
-                $req = $bd->prepare("SELECT idserie FROM favorite WHERE iduser = ?");
-
                 $iduser = $user->getId();
-                $req->bindParam(1, $iduser);
-                $req->execute();
 
-                $html .= "<h1> Serie favorites :</h1><br>";
-                while ($data = $req->fetch()){
-                    $rendererSerie = new SerieRenderer(Serie::getSerie($data['idserie']));
-                    $html .= $rendererSerie->render();
-                }
+                $html .= $this->serieFavorite($iduser);
+                $html .= "<br><br>";
+                $html .= $this->serieEnCours($iduser);
 
             }
         } catch (AuthException $e) {
