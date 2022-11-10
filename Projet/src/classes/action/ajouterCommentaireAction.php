@@ -4,11 +4,11 @@ namespace iutnc\netVOD\action;
 
 class ajouterCommentaireAction extends Action
 {
-    protected function executeGET(): string
+    protected function postExecute(): string
     {
         $html = <<<EOF
         <h1>Ajout d’un commentaire</h1>
-        
+
         <form action="index.php?action=ajouterCommentaireAction" method="post">
         <fieldset>
         <legend>Commentaire : </legend>
@@ -23,7 +23,7 @@ class ajouterCommentaireAction extends Action
         return $html;
     }
 
-    protected function postExecute(): string
+    protected function executeGET(): string
     {
         {
             if ($_POST['note'] != null) {
