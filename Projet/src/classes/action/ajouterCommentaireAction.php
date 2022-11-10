@@ -8,7 +8,7 @@ class ajouterCommentaireAction extends Action
             $html = <<<EOF
                     <h1>Ajout d’un commentaire</h1>
 
-                    <form action="index.php?action=ajouterCommentaireAction&idserie={$_GET['idSerie']}" method="POST">
+                    <form action="index.php?action=addComment&idserie={$_GET['idSerie']}" method="POST">
                     <fieldset>
                         <legend>Commentaire : </legend>
                         <input type="text" name="commentaire" id="commentaire">

@@ -16,10 +16,9 @@ class addCommentAction extends Action
             $idserie = $_GET['idserie'];
             $commentaire = $_GET['commentaire'];
             $note = $_GET['note'];
-            $iduser = $user->__get('id');
             $user->ajouterCommentaire($idserie, $note, $commentaire);
             echo $_GET['url'];
-            header('Location:');
+            header('Location: ');
             die();
         } else {
             return "Connecté vous";
