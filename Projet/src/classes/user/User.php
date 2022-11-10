@@ -56,26 +56,36 @@ class User
         return $query->rowCount() >= 1;
     }
 
-    public function AjouterSerieCommencer(int $serieid): void
+    public function AjouterSerieCommencer(int $serieid,int $epid): void
     {
-        $db = ConnectionFactory::makeConnection();
-        $query = $db->prepare("INSERT INTO current values(?,?)");
+      $db = ConnectionFactory::makeConnection();
+      $state = $db->prepare("SELECT iduser,idserie,id, FROM Utilisateur WHERE email = :email");
+      $state->execute([':email' => $email]);
+      if ($state->rowCount() == 0) {
+        $query = $db->prepare("INSERT INTO current values(?,?,?)");
         $query->bindParam(1, $this->id);
         $query->bindParam(2, $serieid);
+        $query->bindParam(3,$epid);
         $query->execute();
     }
 
-    public function DejaCommencer(int $serieid): bool
+    public function Finir(int $serieid):void
     {
         $db = ConnectionFactory::makeConnection();
-        $query = $db->prepare("SELECT idserie FROM current WHERE iduser = ? AND idserie = ?");
+        $query = $db->prepare("SELECT count(idserie) FROM current WHERE iduser = ? AND idserie = ?");
         $query->bindParam(1, $this->id);
         $query->bindParam(2, $serieid);
         $query->execute();
-        return $query->rowCount() >= 1;
+        $n = $query->rowCount();
+        echo $n;
+        $q = $db->prepare("SELECT count(serie_id) FROM episode WHERE serie_id = ?");
+        $q->bindParam(1, $serieid);
+        $q->execute();
+        echo $q->rowCount();
+
     }
 
-    public function ajouterCommentaire(int $serieid, string $commentaire = "", int $note)
+    public function ajouterCommentaire(int $serieid, int $note,string $commentaire = "")
     {
         $db = ConnectionFactory::makeConnection();
         $query = $db->prepare("INSERT INTO commentaire VALUES(?, ?, ?, ?)");
