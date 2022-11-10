@@ -29,6 +29,10 @@ class SigninAction extends Action
                 $html .= $this->serieFavorite($iduser);
                 $html .= "<br><br>";
                 $html .= $this->serieEnCours($iduser);
+                $html .= "<br><br>";
+
+                $html .= $this->serieFini($iduser);
+
 
             }
         } catch (AuthException $e) {
@@ -55,8 +59,10 @@ class SigninAction extends Action
             $iduser = $user->__get("id");
 
             $html .= $this->serieFavorite($iduser);
-
+            $html .= "<br><br>";
             $html .= $this->serieEnCours($iduser);
+            $html .= "<br><br>";
+            $html .= $this->serieFini($iduser);
 
         } else {
             return <<<EOF
@@ -91,11 +97,27 @@ class SigninAction extends Action
     public function serieEnCours(string $userid) : string
     {
         $bd = ConnectionFactory::makeConnection();
-        $req = $bd->prepare("SELECT idserie FROM current WHERE iduser = ?");
+        $req = $bd->prepare("SELECT distinct(idserie) FROM current WHERE iduser = ?");
         $req->bindParam(1, $userid);
         $req->execute();
 
         $html = "<h1 id=titreFav> Série en cours :</h1><br>";
+        while ($data = $req->fetch()){
+            $rendererSerie = new SerieRenderer(Serie::getSerie($data['idserie']));
+            $html .= $rendererSerie->render();
+        }
+        return $html;
+    }
+
+    public function serieFini(string $userid) : string
+    {
+        $bd = ConnectionFactory::makeConnection();
+        $req = $bd->prepare("SELECT idserie FROM fini WHERE iduser = ?");
+
+        $req->bindParam(1, $userid);
+        $req->execute();
+
+        $html = "<h1 id=titreFav> Série fini :</h1><br>";
         while ($data = $req->fetch()){
             $rendererSerie = new SerieRenderer(Serie::getSerie($data['idserie']));
             $html .= $rendererSerie->render();
