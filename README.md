@@ -41,10 +41,11 @@ YUNG Théo
    OK
 
 8. Lors du visionnage d’un épisode, ajouter automatiquement la série à la liste « en cours » de l’utilisateur  
-   faite à moitié par théo
+   OK
 
 9. Lors du visionnage d’un épisode d’une série, noter et commenter la série  
-   presque fini par lucas
+   presque fini par lucas  
+   en crous
 
 10. Lors de l’affichage d’une série, indiquer sa note moyenne et donner accès aux
     commentaires  
