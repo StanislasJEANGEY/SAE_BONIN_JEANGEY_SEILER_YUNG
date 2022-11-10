@@ -27,7 +27,7 @@ class DisplayProfilAction extends Action
             $_SESSION['user'] = serialize($user);
             return $rendererProfil->render(2);
 
-        } else return "<a href=?action=signin>Veuillez vous connecter</a>";
+        } else return "<a id=ButtonCatalogue href=?action=signin>Veuillez vous connecter</a>";
 
     }
 
@@ -48,7 +48,7 @@ class DisplayProfilAction extends Action
                 return $rendererProfil->render(2);
             }
 
-        } else return "<a href=?action=signin>Veuillez vous connecter</a>";
+        } else return "<a id=ButtonCatalogue href=?action=signin>Veuillez vous connecter</a>";
 
     }
 }

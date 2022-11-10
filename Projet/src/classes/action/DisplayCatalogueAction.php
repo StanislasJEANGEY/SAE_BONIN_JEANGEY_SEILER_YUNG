@@ -50,7 +50,7 @@ class DisplayCatalogueAction extends Action
                 <option value="episode">nom d'episode</option>
                 </select>
                 <input id="trie"name="trie"type="submit">
-                
+
                 </form>
                 </div>
                 EOF;
@@ -61,7 +61,7 @@ class DisplayCatalogueAction extends Action
     protected function executeGET(): string
     {
         if(!isset($_SESSION['user'])) {
-            return "<a href=?action=signin>Veuillez vous connecter</a>";
+            return "<a id=ButtonCatalogue href=?action=signin>Veuillez vous connecter</a>";
         } else {
             $html= DisplayCatalogueAction::boutton();
             $query = "SELECT serie.idSerie,titre,img, AVG(note) as moy FROM serie

@@ -16,7 +16,7 @@ class ModifyProfil extends Action
 
             return $rendererProfil->render();
 
-        } else return "<a href=?action=signin>Veuillez vous connecter</a>";
+        } else return "<a id=ButtonCatalogue href=?action=signin>Veuillez vous connecter</a>";
     }
 
     protected function postExecute() : string
