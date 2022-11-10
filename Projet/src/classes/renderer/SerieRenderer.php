@@ -47,17 +47,17 @@ class SerieRenderer implements renderer {
                 $requete2->bindParam(1, $_GET['id']);
                 $requete2->execute();
                 while ($data2 = $requete2->fetch()){
-                    $html .= "Sortie en {$data2['annee']} <br> et ajouté le {$data2['date_ajout']} sur <strong>netVOD</strong>";
+                    $html .= "<p id=titreFav>Sortie en {$data2['annee']} <br> et ajouté le {$data2['date_ajout']} sur NetVOD</p>";
                 }
 
                 $requete3 = $bd->prepare('SELECT AVG(note) as moy FROM commentaire where idSerie = ?');
                 $requete3->bindParam(1,$_GET['idSerie']);
                 $requete3->execute();
-                $html .= "<p>Note moyenne de la série : </p>";
+                $html .= "<p id=titreFav>Note moyenne de la série : </p>";
                 while ($data3 = $requete3->fetch()) {
                     $moy = $data3['moy'];
                     if ($moy == null){
-                        $html.= "<strong>soit le premier à noter la série</strong><br>";
+                        $html.= "<strong id=titreFav>soit le premier à noter la série</strong><br>";
                     } else{
                         $html .= $moy;
                     }

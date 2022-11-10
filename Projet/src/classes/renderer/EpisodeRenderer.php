@@ -18,10 +18,15 @@ class EpisodeRenderer implements renderer
     {
         switch ($selector) {
             case 1:
-                $html =
-                    "<h1>Titre : {$this->episode->titre}</h1>" .
-                    "<div class = 'resume'>Résumé : {$this->episode->resume}</div>  <div class='duree'>
-                        Durée : {$this->episode->duree} min </div><br>" .
+                $html ="<h1 id=Titre>NetVOD</h1>";
+                $html .="<div id=mainMenu>"."<a id=ButtonCatalogue href=?action=catalogue&trie=note>Catalogue</a>";
+                $html .="<a id=retour href=?action=signin>Retour à l'accueil</a>";
+                $html .="<a id=logout href=?action=logout>Se déconnecter</a>";
+                $html .="</div>";
+                $html .=
+                    "<h1 id=titreFav>Titre : {$this->episode->titre}</h1>" .
+                    "<div id=titreFav class = 'resume'>Résumé : {$this->episode->resume}</div>  <div class='duree'>
+                        <h1 id=titreFav>Durée : {$this->episode->duree} min </h1></div><br>" .
                     "</div>";
                 $html .= "<div class='track'>" .
                     "<p><video controls autoplay id=vd src='video/{$this->episode->source}' type='video/mp4'></video></p>";
