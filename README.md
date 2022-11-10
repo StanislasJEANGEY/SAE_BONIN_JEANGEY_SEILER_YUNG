@@ -65,7 +65,7 @@ YUNG Théo
 12. Recherche dans le catalogue par mots clés
 
 13. Tri dans le catalogue  
-    En cours par Lucas
+    OK
 
 14. Filtrage du catalogue par genre, par public
 
