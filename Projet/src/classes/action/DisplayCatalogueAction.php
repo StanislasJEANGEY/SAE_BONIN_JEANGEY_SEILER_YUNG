@@ -27,8 +27,8 @@ class DisplayCatalogueAction extends Action
         while($data = $result->fetch()){
             $html .= "
                   <div id=MainAfficherSerie>
-                  <h2>" . $data['titre'] ."<h2>
-                  <a href='?action=serie&id=". $data['idSerie'] . "'><br><img id=imgSerie src='". $data['img'] ."' width='300' height='300'></a><br>
+                  <a id=titreSerie >" . $data['titre'] . "</a>
+                  <a href='?action=serie&id=". $data['idSerie'] . "'><br><img id=imgSerie src='". $data['img'] ."'width='300' height='300'></a><br>
                   ";
 
             $user = unserialize($_SESSION['user']);
@@ -37,7 +37,7 @@ class DisplayCatalogueAction extends Action
                 <form method="POST" action="?action=favorie&idSerie={$data['idSerie']}">
                     <input type="hidden" name="url" value="{$_SERVER['REQUEST_URI']}">
                     <input type="hidden" name="idserie" value="{$data['idSerie']}">
-                    
+
                     <input id="ButtonLike" type="submit" value="J'adore">
                 </form>
                 </div>

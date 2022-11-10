@@ -80,7 +80,7 @@ class SigninAction extends Action
         $req->bindParam(1, $userid);
         $req->execute();
 
-        $html = "<h1> Série favorites :</h1><br>";
+        $html = "<h1 id=titreFav> Série favorites :</h1><br>";
         while ($data = $req->fetch()){
             $rendererSerie = new SerieRenderer(Serie::getSerie($data['idserie']));
             $html .= $rendererSerie->render();

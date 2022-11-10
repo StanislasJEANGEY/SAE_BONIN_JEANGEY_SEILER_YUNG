@@ -224,6 +224,10 @@ body{
   box-shadow: 10px 10px 0 #FBC638;
 }
 
+#ButtonLike{
+  background-color: ;
+}
+
 #catTitre{
   padding-top: 10px;
   display:grid;
@@ -236,7 +240,7 @@ body{
   align-items: center;
   display: grid;
   padding: 10px 45px;
-  text-decoration: none;
+  div-decoration: none;
   font-family: 'Poppins', sans-serif;
   font-size: 20px;
   color: white;
@@ -249,32 +253,57 @@ body{
 }
 
 #MainAfficherSerie{
-  width: auto;
-  height: auto;
-  border: 1px solid rgb(111,41,97);
   border-radius: .5em;
   display: block;
-  background-color: white;
-  justify-content: space-between;
+  background-color: darkgrey;
   margin: 1em;
   text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  justify-content: center;
+}
 
+#titreFav{
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  padding-left: 20px;
+  font-size: 20px;
+}
+
+#titreSerie{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
 }
 
 #imgSerie{
   border-radius: 1px;
+  transition: transform .1s;
 }
 
 #imgSerie:hover{
   box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+  -ms-transform: scale(1.1); /* IE 9 */
+  -webkit-transform: scale(1.1); /* Safari 3-8 */
+  transform: scale(1.1);
 }
 
 
 #Tout{
+  padding-top: 50px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+}
+
+
+#Tout2{
+  display:inline-flex;
+  flex-wrap: wrap;
 }
 
 #retourRegister{
