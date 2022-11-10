@@ -3,6 +3,8 @@
 namespace iutnc\netVOD\dispatcher;
 
 
+use iutnc\netVOD\action\ajouterCommentaireAction;
+use iutnc\netVOD\action\DisplayCommentaireAction;
 use iutnc\netVOD\action\DisplayEpisodeAction;
 use iutnc\netVOD\action\DisplayProfilAction;
 use iutnc\netVOD\action\FavorieAction;
@@ -65,6 +67,15 @@ class Dispatcher
             case 'retirerfavorie':
                 $action = new RetirerFavorieAction();
                 $html .= $action->execute();
+                break;
+            case 'ajouterCommentaireAction':
+                $action = new ajouterCommentaireAction();
+                $html .= $action->execute();
+                break;
+            case 'afficherCommentaire':
+                $action = new DisplayCommentaireAction();
+                $html .= $action->execute();
+                break;
             default:
                 $html = "<h1 id=Titre>NetVOD</h1>";
                 break;
