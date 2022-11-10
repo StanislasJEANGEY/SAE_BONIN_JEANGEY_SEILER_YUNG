@@ -37,8 +37,7 @@ class SerieRenderer implements renderer {
                 }
 
                 $html .= <<<EOF
-                            <form method="POST" action="?action=afficherCommentaire&idSerie={$_GET['id']}">
-                                <input type="hidden" name="url" value="{$_SERVER['REQUEST_URI']}">                        
+                            <form method="POST" action="?action=afficherCommentaire&idSerie={$_GET['id']}">                           
                                 <input type="submit" value="Commentaire">
                             </form>
                          EOF;
