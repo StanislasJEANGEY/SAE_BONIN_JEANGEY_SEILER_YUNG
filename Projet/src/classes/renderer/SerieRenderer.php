@@ -14,12 +14,16 @@ class SerieRenderer implements renderer {
 
     public function render(int $selector = 1): string
     {
-        $html = "<h1>Série : {$this->serie->titre}</h1>";
+        $html = "<div id=Tout2>";
+        $html .= "<div id=MainAfficherSerie>";
+        $html .= "<h1 id=titreFav>Série : {$this->serie->titre}</h1>";
         switch ($selector){
             case 1:
                 $html .= "
                         <div class='track'>
-                        <a href='?action=serie&id=".$this->serie->__get('idSerie')."'> <img controls src='".$this->serie->image."'width='400' height='225'></img></a>
+                        <a href='?action=serie&id=".$this->serie->__get('idSerie')."'> <img id=imgSerie controls src='".$this->serie->image."'width='300' height='300'></img></a>
+                        </div>
+                        </div>
                         </div>
                         ";
 
@@ -38,7 +42,7 @@ class SerieRenderer implements renderer {
 
                 $html .= <<<EOF
                             <form method="POST" action="?action=afficherCommentaire&idSerie={$_GET['id']}">
-                                <input type="hidden" name="url" value="{$_SERVER['REQUEST_URI']}">                        
+                                <input type="hidden" name="url" value="{$_SERVER['REQUEST_URI']}">
                                 <input type="submit" value="Commentaire">
                             </form>
                          EOF;
