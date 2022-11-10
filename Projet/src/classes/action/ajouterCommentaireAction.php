@@ -15,7 +15,7 @@ class ajouterCommentaireAction extends Action
         <input type="text" name="commentaire" id="commentaire">
         <legend>Note : </legend>
         <input type="number" name="note" id="note" required>
-        <input type="hidden" name="idserie" value="{$_GET['idserie']}">
+        <input type="hidden" name="idserie" value="{$_GET['idSerie']}">
         <input type="hidden" name="id" value="{$_GET['id']}">
         <input type="submit" value="Ajouter">
         </fieldset>

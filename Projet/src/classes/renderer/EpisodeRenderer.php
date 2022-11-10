@@ -26,7 +26,8 @@ class EpisodeRenderer implements renderer
                 $html .= "<div class='track'>" .
                     "<p><video controls src='video/{$this->episode->source}' type='video/mp4'></video></p>";
                 $html .= <<<EOF
-                            <form method="POST" action="?action=ajouterCommentaireAction&idSerie={$_GET['idserie']}">
+                            <form method="POST" action="?action=ajouterCommentaireAction&idSerie={$this->episode->idSerie}&id={$this->episode->id}">
+
                                 <input type="submit" value="Commenter">
                             </form>
                          EOF;
