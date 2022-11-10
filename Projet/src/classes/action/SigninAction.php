@@ -18,7 +18,7 @@ class SigninAction extends Action
             $user = Auth::authenticate($_POST['email'], $_POST['password']);
             if (isset($_SESSION['user'])) {
                 $html = "<h1 id=Titre>NetVOD</h1>";
-                $html .= "<div id=mainMenu>" . "<a id=ButtonCatalogue href=?action=catalogue>Catalogue</a>";
+                $html .= "<div id=mainMenu>" . "<a id=ButtonCatalogue href=?action=catalogue&trie=note>Catalogue</a>";
                 $html .= "<a id=retour href=?action=signin>Retour à l'accueil</a>";
                 $html .= "<a id=retour href=?action=profil>Profil</a>";
                 $html .= "<a id=logout href=?action=logout>Se déconnecter</a>";
@@ -49,7 +49,7 @@ class SigninAction extends Action
     {
         if (isset($_SESSION['user'])) {
             $html = "<h1 id=Titre>NetVOD</h1>";
-            $html .= "<div id=mainMenu>" . "<a id=ButtonCatalogue href=?action=catalogue>Catalogue</a>";
+            $html .= "<div id=mainMenu>" . "<a id=ButtonCatalogue href=?action=catalogue&trie=note>Catalogue</a>";
             $html .= "<a id=retour href=?action=signin>Retour à l'accueil</a>";
             $html .= "<a id=retour href=?action=profil>Profil</a>";
             $html .= "<a id=logout href=?action=logout>Se déconnecter</a>";
