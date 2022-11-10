@@ -17,7 +17,7 @@ class addCommentAction extends Action
             $commentaire = $_POST['commentaire'];
             $note = $_POST['note'];
             $user->ajouterCommentaire($idserie,  $commentaire, $note);
-            header('Location: ');
+            header('Location: index.php?action=episode&id='. $_POST['id']. '&idserie=' . $_POST['idserie']);
             die();
         } else {
             return "Connecté vous";
