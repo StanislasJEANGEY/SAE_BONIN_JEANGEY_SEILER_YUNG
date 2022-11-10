@@ -27,3 +27,7 @@ create table commentaire (
    CONSTRAINT commentaire_iduser_FK foreign key (iduser) REFERENCES Utilisateur(id),
    CONSTRAINT commentaire_idserie_FK foreign key (idSerie) REFERENCES serie(idSerie)
 );
+
+ALTER TABLE utilisateur ADD nom VARCHAR(20);
+ALTER TABLE utilisateur ADD prenom VARCHAR(20);
+ALTER TABLE utilisateur ADD genrePref VARCHAR(20);
