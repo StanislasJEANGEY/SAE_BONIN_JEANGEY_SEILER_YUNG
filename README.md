@@ -8,6 +8,10 @@ https://github.com/StanislasJEANGEY/SAE_BONIN_JEANGEY_SEILER_YUNG
 
 <br>
 
+### Lien vers webetu
+
+<br>
+
 Dictionnaire BDD:
 https://docs.google.com/document/d/18JlecGTAmzPNkR0mv3FkQhdQj7pgGciCsjey5xb32E8/edit?usp=sharing
 
@@ -67,7 +71,8 @@ YUNG Théo
 13. Tri dans le catalogue  
     OK
 
-14. Filtrage du catalogue par genre, par public
+14. Filtrage du catalogue par genre, par public  
+    OK
 
 15. Gestion de la liste de préférence : retrait  
     OK
@@ -94,15 +99,7 @@ YUNG Théo
          azertyuiop
       2. test2@gmail.com
          azertyuiop
+      3. test3@gmail.com
+         azertyuiop
 
-genre :
-Comédie
-Horreur
-Action
-Drame
-Aventure
-
-public :
-enfant
-ados
-adulte
+Si vous souhaiter lancer l'application web depuis un serveur local, vous avez juste à décommenter/commenter la ligne de signature de la méthode setConfig() dans le fichier ConnectionFactory.
