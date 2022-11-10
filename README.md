@@ -58,7 +58,8 @@ YUNG Théo
 
 12. Recherche dans le catalogue par mots clés
 
-13. Tri dans le catalogue
+13. Tri dans le catalogue  
+    En cours par Lucas
 
 14. Filtrage du catalogue par genre, par public
 
@@ -74,7 +75,7 @@ YUNG Théo
 18. Accès direct à l’épisode à visionner lorsque l’on visualise une série qui est dans la liste « en cours »
 
 19. Tri dans le catalogue selon la note moyenne
-   OK
+    OK
 
 20. Mot de passe oublié
 
