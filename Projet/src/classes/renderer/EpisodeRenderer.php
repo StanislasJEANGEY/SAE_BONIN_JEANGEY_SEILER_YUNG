@@ -25,8 +25,6 @@ class EpisodeRenderer implements renderer
                     "</div>";
                 $html .= "<div class='track'>" .
                     "<p><video controls autoplay id=vd src='video/{$this->episode->source}' type='video/mp4'></video></p>";
-                    $myvid = document.getElementById('vd');
-                    $buffer = $myvid.buffered;
                 $html .= <<<EOF
                             <form method="POST" action="?action=ajouterCommentaireAction&idSerie={$this->episode->idSerie}">
 
