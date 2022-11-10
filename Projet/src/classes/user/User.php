@@ -73,7 +73,7 @@ class User
           $query->execute();
       }
     }
-  }
+
 
     public function Finir(int $serieid):void
     {
