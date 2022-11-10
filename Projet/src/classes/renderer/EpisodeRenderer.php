@@ -39,12 +39,16 @@ class EpisodeRenderer implements renderer
                 $requete->bindParam(1, $this->episode->idSerie);
                 $requete->execute();
                 while ($data = $requete->fetch()) {
-                    $html = "<h2>Episode {$this->episode->numero} : {$this->episode->titre}</h2>";
-                    $html .= "<p>Durée :  {$this->episode->duree}</h2>";
+                    $html = "<div id=Tout2>";
+                    $html .= "<div id=MainAfficherEpisode>";
+                    $html .= "<h2 id=titreSerie>Episode {$this->episode->numero} : {$this->episode->titre}</h2>";
+                    $html .= "<p id=titreSerie>Durée :  {$this->episode->duree} secondes</h2>";
                     $html .=
                         "<div class='track'>".
-                        "<a href='?action=episode&id={$this->episode->id}&idserie={$this->episode->idSerie}'><br><img src='".$data['img']."' width='400' height='225'></a>".
+                        "<a href='?action=episode&id={$this->episode->id}&idserie={$this->episode->idSerie}'><br><img src='".$data['img']."' width='300' height='300'></a>".
                         "</div>";
+                    $html .= "</div>";
+                    $html .= "</div>";
                 }
 
 

@@ -263,9 +263,21 @@ body{
   justify-content: center;
 }
 
+#MainAfficherEpisode{
+  border-radius: .5em;
+  display: block;
+  background-color: darkgrey;
+  margin: 1em;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  justify-content: center;
+}
+
 #titreFav{
   color: white;
   font-family: 'Poppins', sans-serif;
+  padding-top: 20px;
   padding-left: 20px;
   font-size: 20px;
 }

@@ -29,6 +29,14 @@ class SerieRenderer implements renderer {
 
                 break;
             case 2:
+                $html = "";
+                $html = "<h1 id=Titre>NetVOD</h1>";
+                $html .= "</div>";
+                $html .= "</div>";
+                $html .= "<div id=mainMenu>" . "<a id=ButtonCatalogue href=?action=catalogue>Catalogue</a>";
+                $html .= "<a id=retour href=?action=signin>Retour à l'accueil</a>";
+                $html .= "<a id=logout href=?action=logout>Se déconnecter</a>";
+                $html .= "</div>";
                 $html .= "<h2>Genre : </h2> {$this->serie->descriptif}<br><br>";
                 $bd = ConnectionFactory::makeConnection();
                 $requete = $bd->prepare("SELECT * FROM episode WHERE serie_id = ?");

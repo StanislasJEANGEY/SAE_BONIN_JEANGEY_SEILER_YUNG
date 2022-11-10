@@ -47,7 +47,7 @@ class SigninAction extends Action
             $html = "<h1 id=Titre>NetVOD</h1>";
             $html .= "<div id=mainMenu>" . "<a id=ButtonCatalogue href=?action=catalogue>Catalogue</a>";
             $html .= "<a id=retour href=?action=signin>Retour à l'accueil</a>";
-            $html .= "<a id=profil href=?action=profil>Profil</a>";
+            $html .= "<a id=retour href=?action=profil>Profil</a>";
             $html .= "<a id=logout href=?action=logout>Se déconnecter</a>";
             $html .= "</div>";
 
@@ -95,7 +95,7 @@ class SigninAction extends Action
         $req->bindParam(1, $userid);
         $req->execute();
 
-        $html = "<h1> Série en cours :</h1><br>";
+        $html = "<h1 id=titreFav> Série en cours :</h1><br>";
         while ($data = $req->fetch()){
             $rendererSerie = new SerieRenderer(Serie::getSerie($data['idserie']));
             $html .= $rendererSerie->render();
