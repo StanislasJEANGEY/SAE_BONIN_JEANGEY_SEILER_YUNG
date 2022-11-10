@@ -29,7 +29,7 @@ class EpisodeRenderer implements renderer
                 if (!$user->estCommenter($this->episode->idSerie)){
                     $html .= <<<EOF
                             <form method="POST" action="?action=ajouterCommentaireAction&idSerie={$this->episode->idSerie}">
-                                <input type="submit" value="Commenter">
+                                <input id="ButtonCatalogue" type="submit" value="Commenter">
                             </form>
                          EOF;
                 } else {

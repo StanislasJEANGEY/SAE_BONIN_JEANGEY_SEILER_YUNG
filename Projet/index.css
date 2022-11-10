@@ -497,7 +497,7 @@ body{
 
 
 #mainLogin{
-  padding-top: 10px;
+  padding-top: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -519,6 +519,13 @@ body{
   transform: skewX(-15deg);
   height: 50px;
   width: 200px;
+}
+
+select {
+	Border: #53d3aa 1px solid;
+  border-radius: 3px;
+	font-size: 1.2em;
+  padding: 6px 12px;
 }
 
 #ButtonModif:hover{

@@ -36,10 +36,11 @@ class ProfilRenderer implements renderer
                                   <option value="Drame">Drame</option>
                                   <option value="Aventure">Aventure</option>
                               </select>
-                            <button id="buttonAjout" type="submit">Ajouter</button>
+                            <br>
+                            <button id="ButtonCatalogue" type="submit">Ajouter</button>
                         </form>
                         EOF;
-                $html .= "<a id=retourConnexion href='?action=signin'>Retour à la connexion</a><br><br>";
+                $html .= "<a id=retourConnexion href='?action=signin'>Retour à l'accueil</a><br><br>";
                 $html .= "</div>";
                 break;
             case 2 :
@@ -55,7 +56,7 @@ class ProfilRenderer implements renderer
                 $html .=  "<label id=prenomProfil>Prenom : {$data[0]['prenom']} <br></label>";
                 $html .=  "<label id=genreProfil>Genre préféré : {$data[0]['genrePref']} <br></label>";
                 $html .= "<a id=ButtonModif href='?action=modifyProfil'>Modifier</a>";
-                $html .= "<a id=retourConnexion href='?action=signin'>Retour à la connexion</a><br><br>";
+                $html .= "<a id=retourConnexion href='?action=signin'>Retour à l'accueil</a><br><br>";
                 $html .= "</div>";
                 break;
         }
