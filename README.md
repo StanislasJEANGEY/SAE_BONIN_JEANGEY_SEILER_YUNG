@@ -51,8 +51,26 @@ YUNG Théo
     commentaires  
     OK
 
-11. Gestion de la liste de préférence : retrait.
+11. Activation de compte
+
+12. Recherche dans le catalogue par mots clés
+
+13. Tri dans le catalogue
+
+14. filtrage du catalogue par genre, par public
+
+15. gestion de la liste de préférence : retrait  
     OK
+
+16. Gestion de la liste « déjà visionnées »
+
+17. gestion du profil de l’utilisateur : ajouter des informations (nom, prénom, genre préféré ...)
+
+18. accès direct à l’épisode à visionner lorsque l’on visualise une série qui est dans la liste « en cours »
+
+19. Tri dans le catalogue selon la note moyenne
+
+20. mot de passe oublié
 
 <br>
 <br>
@@ -60,4 +78,6 @@ YUNG Théo
 # Liste des utilateurs avec leur mot de passe :
 
       1. test@gmail.com
+         azertyuiop
+      2. test2@gmail.com
          azertyuiop

@@ -2,7 +2,6 @@
 
 namespace iutnc\netVOD\action;
 
-use iutnc\netVOD\user\User;
 
 class FavorieAction extends Action {
     protected function postExecute(): string

@@ -24,9 +24,10 @@ class EpisodeRenderer implements renderer
                         Durée : {$this->episode->duree} min </div><br>" .
                     "</div>";
                 $html .= "<div class='track'>" .
-                    "<p><video controls src='video/{$this->episode->source}' type='video/mp4'></video></p>";
+                    "<p><video controls autoplay id=vd src='video/{$this->episode->source}' type='video/mp4'></video></p>";
                 $html .= <<<EOF
-                            <form method="POST" action="?action=ajouterCommentaireAction&idSerie={$_GET['idserie']}">
+                            <form method="POST" action="?action=ajouterCommentaireAction&idSerie={$this->episode->idSerie}">
+
                                 <input type="submit" value="Commenter">
                             </form>
                          EOF;
