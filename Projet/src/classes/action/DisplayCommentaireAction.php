@@ -14,8 +14,6 @@ class DisplayCommentaireAction extends Action
         $requete2->bindParam(1,$_GET['idSerie']);
         $requete2->execute();
         while ($data2 = $requete2->fetch()){
-            echo $data2['commentaire'];
-            echo 1;
             $html .= $data2['commentaire'];
         }
         $requete3 = $bd->prepare('SELECT AVG(note) as moy FROM commentaire where idSerie = ?');

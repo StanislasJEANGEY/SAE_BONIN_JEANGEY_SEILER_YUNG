@@ -75,7 +75,7 @@ class User
         return $query->rowCount() >= 1;
     }
 
-    public function ajouterCommentaire(int $serieid, string $commentaire, int $note)
+    public function ajouterCommentaire(int $serieid, string $commentaire = "", int $note)
     {
         $db = ConnectionFactory::makeConnection();
         $query = $db->prepare("INSERT INTO commentaire VALUES(?, ?, ?, ?)");

@@ -13,13 +13,11 @@ class addCommentAction extends Action
     protected function postExecute(): string {
         if(isset($_SESSION['user'])) {
             $user = unserialize($_SESSION['user']);
-            $idserie = $_GET['idserie'];
-            $commentaire = $_GET['commentaire'];
-            $note = $_GET['note'];
-            $iduser = $user->__get('id');
-            $user->ajouterCommentaire($idserie, $note, $commentaire);
-            echo $_GET['url'];
-            header('Location:');
+            $idserie = $_POST['idserie'];
+            $commentaire = $_POST['commentaire'];
+            $note = $_POST['note'];
+            $user->ajouterCommentaire($idserie,  $commentaire, $note);
+            header('Location: index.php?action=episode&id='. $_POST['id']. '&idserie=' . $_POST['idserie']);
             die();
         } else {
             return "Connecté vous";
