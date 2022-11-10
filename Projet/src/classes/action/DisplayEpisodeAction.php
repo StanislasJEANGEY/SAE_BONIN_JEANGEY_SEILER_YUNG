@@ -17,6 +17,8 @@ class DisplayEpisodeAction extends Action
             if(!$user->Finir($serie)){
 
                 $user->AjouterSerieCommencer($serie,$id);
+              }else{
+                $user->ajouterSerieFini($serie);
               }
         }
 

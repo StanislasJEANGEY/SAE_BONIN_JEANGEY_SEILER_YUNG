@@ -88,7 +88,7 @@ class User
         $q = $db->prepare("SELECT id FROM episode WHERE serie_id = ?");
         $q->bindParam(1, $serieid);
         $q->execute();
-        
+
         if($q->rowCount() == $n){
           $del = $db->prepare("DELETE from current where iduser = ? and idserie = ?");
           $del->bindParam(1, $this->id);
@@ -99,6 +99,21 @@ class User
 
     }
 
+    public function ajouterSerieFini(int $serieid){
+      $db = ConnectionFactory::makeConnection();
+      $state = $db->prepare("SELECT iduser,idserie FROM fini WHERE iduser = ? and idserie = ?");
+      $state->bindParam(1, $this->id);
+      $state->bindParam(2, $serieid);
+      $state->execute();
+
+      if ($state->rowCount() == 0) {
+
+      $query = $db->prepare("INSERT INTO fini VALUES(?, ?)");
+      $query->bindParam(1, $this->id);
+      $query->bindParam(2, $serieid);
+      return $query->execute();
+    }
+}
     public function ajouterCommentaire(int $serieid, int $note,string $commentaire = "")
     {
         $db = ConnectionFactory::makeConnection();
