@@ -74,6 +74,7 @@ YUNG Théo
 18. Accès direct à l’épisode à visionner lorsque l’on visualise une série qui est dans la liste « en cours »
 
 19. Tri dans le catalogue selon la note moyenne
+   OK
 
 20. Mot de passe oublié
 

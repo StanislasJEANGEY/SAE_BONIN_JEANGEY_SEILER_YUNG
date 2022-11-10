@@ -19,7 +19,7 @@ class DisplayEpisodeAction extends Action
                 $user->AjouterSerieCommencer($serie,$id);
 
         }
-        var_dump($_GET['id']);
+
         $rendererEpisode = new EpisodeRenderer(Episode::getEpisode($_GET['id']));
         return $rendererEpisode->render();
     }

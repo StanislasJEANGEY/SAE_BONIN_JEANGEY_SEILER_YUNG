@@ -37,11 +37,31 @@ class SerieRenderer implements renderer {
                 $html .= "<a id=retour href=?action=signin>Retour à l'accueil</a>";
                 $html .= "<a id=logout href=?action=logout>Se déconnecter</a>";
                 $html .= "</div>";
-                $html .= "<h2>Genre : </h2> {$this->serie->descriptif}<br><br>";
+                $html .= "<h2 id=titreFav>Genre : {$this->serie->descriptif}</h2><br><br>";
                 $bd = ConnectionFactory::makeConnection();
                 $requete = $bd->prepare("SELECT * FROM episode WHERE serie_id = ?");
                 $requete->bindParam(1, $_GET['id']);
                 $requete->execute();
+
+                $requete2 = $bd->prepare("SELECT * FROM serie WHERE idSerie = ?");
+                $requete2->bindParam(1, $_GET['id']);
+                $requete2->execute();
+                while ($data2 = $requete2->fetch()){
+                    $html .= "Sortie en {$data2['annee']} <br> et ajouté le {$data2['date_ajout']} sur <strong>netVOD</strong>";
+                }
+
+                $requete3 = $bd->prepare('SELECT AVG(note) as moy FROM commentaire where idSerie = ?');
+                $requete3->bindParam(1,$_GET['idSerie']);
+                $requete3->execute();
+                $html .= "<p>Note moyenne de la série : </p>";
+                while ($data3 = $requete3->fetch()) {
+                    $moy = $data3['moy'];
+                    if ($moy == null){
+                        $html.= "<strong>soit le premier à noter la série</strong><br>";
+                    } else{
+                        $html .= $moy;
+                    }
+                }
 
                 while ($data = $requete->fetch()){
                     $epRend = new EpisodeRenderer(Episode::getEpisode($data['id']));
