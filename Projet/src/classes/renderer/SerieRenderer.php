@@ -41,19 +41,6 @@ class SerieRenderer implements renderer {
                                 <input type="submit" value="Commentaire">
                             </form>
                          EOF;
-
-                /**
-                $html .= "<h3>Commentaire : </h3>";
-                $requete2 = $bd->prepare('SELECT commentaire FROM commentaire where idSerie = ?');
-                while ($data2 = $requete2->fetch()){
-                    $html .= $data['commentaire'];
-                }
-                $requete3 = $bd->prepare('SELECT MOY(note) as moy FROM commentaire where idSerie = ?');
-                $html .= "<p>Note moyenne : </p>";
-                while ($data3 = $requete3->fetch()){
-                    $html.= $data['moy'];
-                }
-                 */
                 break;
         }
         return $html;
