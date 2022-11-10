@@ -10,6 +10,7 @@ use iutnc\netVOD\action\DisplayEpisodeAction;
 use iutnc\netVOD\action\DisplayProfilAction;
 use iutnc\netVOD\action\FavorieAction;
 use iutnc\netVOD\action\LogoutAction;
+use iutnc\netVOD\action\ModifyProfil;
 use iutnc\netVOD\action\RetirerFavorieAction;
 use iutnc\netVOD\action\SigninAction;
 use iutnc\netVOD\action\AddUserAction;
@@ -79,6 +80,10 @@ class Dispatcher
                 break;
             case 'afficherCommentaire':
                 $action = new DisplayCommentaireAction();
+                $html .= $action->execute();
+                break;
+            case 'modifyProfil' :
+                $action = new ModifyProfil();
                 $html .= $action->execute();
                 break;
             default:

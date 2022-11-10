@@ -96,6 +96,14 @@ class User
         return $query->rowCount() >= 1;
     }
 
+    public function resetUser(): void
+    {
+        $this->nom = '';
+        $this->prenom = '';
+        $this->genrePref = '';
+        $this->ajoutBDDInfos();
+    }
+
     public function ajoutBDDInfos() : void
     {
         $bd = ConnectionFactory::makeConnection();
