@@ -272,6 +272,7 @@ body{
   padding-top: 20px;
   padding-bottom: 20px;
   justify-content: center;
+
 }
 
 #titreFav{
@@ -291,9 +292,32 @@ body{
   font-size: 15px;
 }
 
+#titreDuree{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+}
+
+#titreEpisode{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  max-width: 300px;
+}
+
 #imgSerie{
   border-radius: 1px;
   transition: transform .1s;
+}
+
+#imgEpisode{
+
 }
 
 #imgSerie:hover{

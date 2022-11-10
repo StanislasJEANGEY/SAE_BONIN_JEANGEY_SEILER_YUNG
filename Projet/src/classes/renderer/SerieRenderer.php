@@ -37,7 +37,7 @@ class SerieRenderer implements renderer {
                 $html .= "<a id=retour href=?action=signin>Retour à l'accueil</a>";
                 $html .= "<a id=logout href=?action=logout>Se déconnecter</a>";
                 $html .= "</div>";
-                $html .= "<h2>Genre : </h2> {$this->serie->descriptif}<br><br>";
+                $html .= "<h2 id=titreFav>Genre : {$this->serie->descriptif}</h2><br><br>";
                 $bd = ConnectionFactory::makeConnection();
                 $requete = $bd->prepare("SELECT * FROM episode WHERE serie_id = ?");
                 $requete->bindParam(1, $_GET['id']);
