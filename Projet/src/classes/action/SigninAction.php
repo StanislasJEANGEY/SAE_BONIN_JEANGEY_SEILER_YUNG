@@ -57,19 +57,13 @@ class SigninAction extends Action
             $html .= "<a id=logout href=?action=logout>Se déconnecter</a>";
             $html .= "</div>";
 
-            $bd = ConnectionFactory::makeConnection();
-            $req = $bd->prepare("SELECT idserie FROM favorite WHERE iduser = ?");
-
             $user = unserialize($_SESSION['user']);
             $iduser = $user->getId();
-            $req->bindParam(1, $iduser);
-            $req->execute();
 
-            $html .= "<h1> Serie favorites :</h1><br>";
-            while ($data = $req->fetch()){
-                $rendererSerie = new SerieRenderer(Serie::getSerie($data['idserie']));
-                $html .= $rendererSerie->render();
-            }
+            $html .= $this->serieFavorite($iduser);
+
+            $html .= $this->serieEnCours($iduser);
+
         } else {
             return <<<EOF
                 <div id="mainLogin">
@@ -80,6 +74,37 @@ class SigninAction extends Action
                 </form>
                 </div>
             EOF;
+        }
+        return $html;
+    }
+
+    public function serieFavorite(string $userid) : string
+    {
+        $bd = ConnectionFactory::makeConnection();
+        $req = $bd->prepare("SELECT idserie FROM favorite WHERE iduser = ?");
+
+        $req->bindParam(1, $userid);
+        $req->execute();
+
+        $html = "<h1> Série favorites :</h1><br>";
+        while ($data = $req->fetch()){
+            $rendererSerie = new SerieRenderer(Serie::getSerie($data['idserie']));
+            $html .= $rendererSerie->render();
+        }
+        return $html;
+    }
+
+    public function serieEnCours(string $userid) : string
+    {
+        $bd = ConnectionFactory::makeConnection();
+        $req = $bd->prepare("SELECT idserie FROM current WHERE iduser = ?");
+        $req->bindParam(1, $userid);
+        $req->execute();
+
+        $html = "<h1> Série en cours :</h1><br>";
+        while ($data = $req->fetch()){
+            $rendererSerie = new SerieRenderer(Serie::getSerie($data['idserie']));
+            $html .= $rendererSerie->render();
         }
         return $html;
     }

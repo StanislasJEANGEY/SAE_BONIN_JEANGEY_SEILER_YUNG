@@ -9,10 +9,6 @@ class DisplayCatalogueAction extends Action
         parent::__construct();
     }
 
-    protected function postExecute(): string
-    {
-        return "Erreur =(";
-    }
 
     protected function executeGET(): string
     {

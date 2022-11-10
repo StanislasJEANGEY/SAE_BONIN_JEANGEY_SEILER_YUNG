@@ -8,11 +8,6 @@ use iutnc\netVOD\video\track\Episode;
 class DisplayEpisodeAction extends Action
 {
 
-    protected function postExecute(): string
-    {
-        return 'Erreur';
-    }
-
     protected function executeGET(): string
     {
       $serie = $_GET['idserie'];

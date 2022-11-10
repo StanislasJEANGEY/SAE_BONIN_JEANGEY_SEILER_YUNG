@@ -28,8 +28,6 @@ abstract class Action {
         return "Erreur =(";
     }
 
-    protected abstract function postExecute() : string;
-
     protected abstract function executeGET() : string;
 
 }
