@@ -24,9 +24,15 @@ class ProfilRenderer implements renderer
             case 1:
                 $html = <<<EOF
                         <form method='post' action='?action=profil'>
-                            <span id="nom"><label id="labelNom">Nom : </label><br><input id="textNom" type="text" name="nom" value="" placeholder='Saisir nom' required><br></span>
-                            <span id="prenom"><label id="labelPrenom">Prénom : </label><br><input id="textPrenom" type="text" name="prenom" value="" placeholder='Saisir prénom' required><br></span>
-                            <span id="genre"><label id="labelGenre">Genre préféré : </label><br><input id="textGenre" type="text" name="genrePref" value="" placeholder='Saisir genre préféré' required><br></span>
+                            <span id="nom"><label id="labelNom">Nom : </label><br><input id="TextLogin" type="text" name="nom" value="" placeholder='Saisir nom' required><br></span>
+                            <span id="prenom"><label id="labelPrenom">Prénom : </label><br><input id="TextLogin" type="text" name="prenom" value="" placeholder='Saisir prénom' required><br></span>
+                            <span id="genre"><label id="labelGenre">Genre préféré : </label><br>
+                              <select name="genre">
+                                  <option value="">Fais ton choix</option>
+                                  <option value="Comédie">Comédie</option>
+                                  <option value="Horreur">Horreur</option>
+                              </select>
+
                             <button id="buttonAjout" type="submit">Ajouter</button>
                         </form>
                         EOF;
