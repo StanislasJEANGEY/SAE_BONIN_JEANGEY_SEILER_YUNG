@@ -25,12 +25,17 @@ class EpisodeRenderer implements renderer
                     "</div>";
                 $html .= "<div class='track'>" .
                     "<p><video controls autoplay id=vd src='video/{$this->episode->source}' type='video/mp4'></video></p>";
-                $html .= <<<EOF
+                $user = unserialize($_SESSION['user']);
+                if (!$user->estCommenter($this->episode->idSerie)){
+                    $html .= <<<EOF
                             <form method="POST" action="?action=ajouterCommentaireAction&idSerie={$this->episode->idSerie}">
-
                                 <input type="submit" value="Commenter">
                             </form>
                          EOF;
+                } else {
+                    $html .= "Série déjà commenter";
+                }
+
                 break;
 
             case 2:

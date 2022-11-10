@@ -75,7 +75,7 @@ class User
         return $query->rowCount() >= 1;
     }
 
-    public function ajouterCommentaire(int $serieid, string $commentaire, int $note)
+    public function ajouterCommentaire(int $serieid, string $commentaire = "", int $note)
     {
         $db = ConnectionFactory::makeConnection();
         $query = $db->prepare("INSERT INTO commentaire VALUES(?, ?, ?, ?)");
@@ -94,6 +94,14 @@ class User
         $query->bindParam(2, $serieid);
         $query->execute();
         return $query->rowCount() >= 1;
+    }
+
+    public function resetUser(): void
+    {
+        $this->nom = '';
+        $this->prenom = '';
+        $this->genrePref = '';
+        $this->ajoutBDDInfos();
     }
 
     public function ajoutBDDInfos() : void

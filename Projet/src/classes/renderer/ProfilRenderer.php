@@ -2,6 +2,7 @@
 
 namespace iutnc\netVOD\renderer;
 
+use iutnc\netVOD\db\ConnectionFactory;
 use iutnc\netVOD\user\User;
 
 class ProfilRenderer implements renderer
@@ -23,19 +24,26 @@ class ProfilRenderer implements renderer
             case 1:
                 $html = <<<EOF
                         <form method='post' action='?action=profil'>
-                            <span id="nom"><label id="labelNom">Nom : </label><br><input id="textNom" type="text" name="nom" value="" placeholder='Saisir nom'><br></span>
-                            <span id="prenom"><label id="labelPrenom">Prénom : </label><br><input id="textPrenom" type="text" name="prenom" value="" placeholder='Saisir prénom'><br></span>
-                            <span id="genre"><label id="labelGenre">Genre préférer : </label><br><input id="textGenre" type="text" name="genrePref" value="" placeholder='Saisir genre préféré'><br></span>
+                            <span id="nom"><label id="labelNom">Nom : </label><br><input id="textNom" type="text" name="nom" value="" placeholder='Saisir nom' required><br></span>
+                            <span id="prenom"><label id="labelPrenom">Prénom : </label><br><input id="textPrenom" type="text" name="prenom" value="" placeholder='Saisir prénom' required><br></span>
+                            <span id="genre"><label id="labelGenre">Genre préféré : </label><br><input id="textGenre" type="text" name="genrePref" value="" placeholder='Saisir genre préféré' required><br></span>
                             <button id="buttonAjout" type="submit">Ajouter</button>
                         </form>
                         EOF;
                 break;
             case 2 :
+                $user = unserialize($_SESSION['user']);
+                $userid = $user->__get('id');
+                $bd = ConnectionFactory::makeConnection();
+                $req = $bd->prepare("SELECT nom, prenom, genrePref FROM Utilisateur WHERE id = ?");
+                $req->bindParam(1, $userid);
+                $req->execute();
+                $data= $req->fetchAll();
                 $html = "
-                        Nom : " . $this->profil->__get("nom") . "<br>
-                        Prenom : " . $this->profil->__get("prenom") . "<br>
-                        Genre préféré : " . $this->profil->__get("genrePref") . "<br>
-                        ";
+                        Nom : " . $data[0]['nom'] . "<br>
+                        Prenom : " . $data[0]['prenom'] . "<br>
+                        Genre préféré : " . $data[0]['genrePref'] . "<br>";
+                $html .= "<a href='?action=modifyProfil'>Modifier</a>";
                 break;
         }
         return $html;

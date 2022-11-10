@@ -4,44 +4,33 @@ namespace iutnc\netVOD\action;
 
 class ajouterCommentaireAction extends Action
 {
-    protected function postExecute(): string
-    {
-        $html = <<<EOF
-        <h1>Ajout d’un commentaire</h1>
+    protected function postExecute(): string {
+            $html = <<<EOF
+                    <h1>Ajout d’un commentaire</h1>
 
-        <form action="index.php?action=ajouterCommentaireAction" method="GET">
-        <fieldset>
-        <legend>Commentaire : </legend>
-        <input type="text" name="commentaire" id="commentaire">
-        <legend>Note : </legend>
-        <input type="number" name="note" id="note" required>
-        <input type="hidden" name="idserie" value="{$_GET['idSerie']}">
-        <input type="submit" value="Ajouter">
-        </fieldset>
-        </form>
+                    <form action="index.php?action=addComment&idserie={$_GET['idSerie']}" method="POST">
+                    <fieldset>
+                        <legend>Commentaire : </legend>
+                        <input type="text" name="commentaire" id="commentaire">
+                        <legend>Note : </legend>
+                        <input type="number" name="note" id="note" required max="5" min="1">
+                        <input type="hidden" name="idserie" value="{$_GET['idSerie']}">
+                        <input type="hidden" name="url" value="{$_SERVER['REQUEST_URI']}">
+        
+                        <input type="submit" value="Ajouter">
+                    </fieldset>
+                    </form>
         EOF;
+            return $html;
 
-        return $html;
+
     }
 
+
+
+
     protected function executeGET(): string {
-        $user = unserialize($_SESSION['user']);
-        $idserie = $_GET['idserie'];
 
-        $commentaire = $_GET['commentaire'];
-        $note = $_GET['note'];
-
-        try {
-
-            $iduser = $user->__get('id');
-            $user->ajouterCommentaire($idserie, $iduser, $note, $commentaire);
-
-        } catch (\Exception $e) {
-            echo $e->getMessage();
-        }
-        echo $_GET['URL'];
-        header('Location: index.php?action=catalogue');
-        die();
     }
 
 

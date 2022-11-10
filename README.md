@@ -17,7 +17,9 @@ YUNG Théo
 <br>
 <br>
 
-## Choses faites :
+## Fonctionnalités :
+
+### De base :
 
 1. Identification/Authentification – Formulaire de login  
    OK
@@ -44,12 +46,13 @@ YUNG Théo
    OK
 
 9. Lors du visionnage d’un épisode d’une série, noter et commenter la série  
-   presque fini par lucas  
-   en crous
+   OK
 
 10. Lors de l’affichage d’une série, indiquer sa note moyenne et donner accès aux
     commentaires  
     OK
+
+### Etendue :
 
 11. Activation de compte
 
@@ -57,20 +60,22 @@ YUNG Théo
 
 13. Tri dans le catalogue
 
-14. filtrage du catalogue par genre, par public
+14. Filtrage du catalogue par genre, par public
 
-15. gestion de la liste de préférence : retrait  
+15. Gestion de la liste de préférence : retrait  
     OK
 
-16. Gestion de la liste « déjà visionnées »
+16. Gestion de la liste « déjà visionnées »  
+    En cours par théo
 
-17. gestion du profil de l’utilisateur : ajouter des informations (nom, prénom, genre préféré ...)
+17. Gestion du profil de l’utilisateur : ajouter des informations (nom, prénom, genre préféré ...)  
+    OK
 
-18. accès direct à l’épisode à visionner lorsque l’on visualise une série qui est dans la liste « en cours »
+18. Accès direct à l’épisode à visionner lorsque l’on visualise une série qui est dans la liste « en cours »
 
 19. Tri dans le catalogue selon la note moyenne
 
-20. mot de passe oublié
+20. Mot de passe oublié
 
 <br>
 <br>
