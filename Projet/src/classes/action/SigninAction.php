@@ -3,7 +3,10 @@
 namespace iutnc\netVOD\action;
 
 use iutnc\netVOD\auth\Auth;
+use iutnc\netVOD\db\ConnectionFactory;
 use iutnc\netVOD\Exception\AuthException;
+use iutnc\netVOD\renderer\SerieRenderer;
+use iutnc\netVOD\video\list\Serie;
 
 
 class SigninAction extends Action
@@ -19,6 +22,21 @@ class SigninAction extends Action
                 $html .= "<a id=retour href=?action=signin>Retour à l'accueil</a>";
                 $html .= "<a id=logout href=?action=logout>Se déconnecter</a>";
                 $html .= "</div>";
+
+
+                $bd = ConnectionFactory::makeConnection();
+                $req = $bd->prepare("SELECT idserie FROM favorite WHERE iduser = ?");
+
+                $iduser = $user->getId();
+                $req->bindParam(1, $iduser);
+                $req->execute();
+
+                $html .= "<h1> Serie favorites :</h1><br>";
+                while ($data = $req->fetch()){
+                    $rendererSerie = new SerieRenderer(Serie::getSerie($data['idserie']));
+                    $html .= $rendererSerie->render();
+                }
+
             }
         } catch (AuthException $e) {
             $html = "<div id=mainReturnConnexion>";
@@ -33,11 +51,25 @@ class SigninAction extends Action
     protected function executeGET(): string
     {
         if (isset($_SESSION['user'])) {
-          $html = "<h1 id=Titre>NetVOD</h1>";
-          $html .= "<div id=mainMenu>" . "<a id=ButtonCatalogue href=?action=catalogue>Catalogue</a>";
-          $html .= "<a id=retour href=?action=signin>Retour à l'accueil</a>";
-          $html .= "<a id=logout href=?action=logout>Se déconnecter</a>";
-          $html .= "</div>";
+            $html = "<h1 id=Titre>NetVOD</h1>";
+            $html .= "<div id=mainMenu>" . "<a id=ButtonCatalogue href=?action=catalogue>Catalogue</a>";
+            $html .= "<a id=retour href=?action=signin>Retour à l'accueil</a>";
+            $html .= "<a id=logout href=?action=logout>Se déconnecter</a>";
+            $html .= "</div>";
+
+            $bd = ConnectionFactory::makeConnection();
+            $req = $bd->prepare("SELECT idserie FROM favorite WHERE iduser = ?");
+
+            $user = unserialize($_SESSION['user']);
+            $iduser = $user->getId();
+            $req->bindParam(1, $iduser);
+            $req->execute();
+
+            $html .= "<h1> Serie favorites :</h1><br>";
+            while ($data = $req->fetch()){
+                $rendererSerie = new SerieRenderer(Serie::getSerie($data['idserie']));
+                $html .= $rendererSerie->render();
+            }
         } else {
             return <<<EOF
                 <div id="mainLogin">

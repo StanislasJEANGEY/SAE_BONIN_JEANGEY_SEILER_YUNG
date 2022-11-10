@@ -67,6 +67,15 @@ public function DejaCommencer(int $serieid):bool{
   return $query->rowCount() >= 1;
 }
 
+    /**
+     * @return int
+     */
+    public function getId(): int
+    {
+        return $this->id;
+    }
+
+
 
 
 
