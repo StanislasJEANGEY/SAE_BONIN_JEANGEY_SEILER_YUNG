@@ -62,11 +62,12 @@ class User
       $state = $db->prepare("SELECT iduser,idserie,id, FROM Utilisateur WHERE email = :email");
       $state->execute([':email' => $email]);
       if ($state->rowCount() == 0) {
-        $query = $db->prepare("INSERT INTO current values(?,?,?)");
-        $query->bindParam(1, $this->id);
-        $query->bindParam(2, $serieid);
-        $query->bindParam(3,$epid);
-        $query->execute();
+          $query = $db->prepare("INSERT INTO current values(?,?,?)");
+          $query->bindParam(1, $this->id);
+          $query->bindParam(2, $serieid);
+          $query->bindParam(3, $epid);
+          $query->execute();
+      }
     }
 
     public function Finir(int $serieid):void
