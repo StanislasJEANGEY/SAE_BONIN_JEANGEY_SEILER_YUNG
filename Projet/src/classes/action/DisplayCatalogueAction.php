@@ -11,8 +11,7 @@ class DisplayCatalogueAction extends Action
 
     protected function postExecute():string{
         $html=DisplayCatalogueAction::boutton();
-        var_dump($_POST['trier']);
-        switch($_POST['trier']){
+        switch($_POST['trie']){
             case'episode':
                 $query = "SELECT idSerie,serie.titre,img from serie
                             inner join episode on episode.serie_id = serie.idSerie
@@ -23,7 +22,6 @@ class DisplayCatalogueAction extends Action
             case'ajout':
                 $query = "SELECT idSerie,titre,img from serie ORDER BY date_ajout";
                 $html .= DisplayCatalogueAction::formulaire($query);
-
                 break;
             default:
                 $query = "SELECT idSerie,titre,img from serie ORDER BY titre";
@@ -31,6 +29,7 @@ class DisplayCatalogueAction extends Action
                 break;
 
         }
+
         return $html;
     }
 
@@ -44,12 +43,12 @@ class DisplayCatalogueAction extends Action
                 trier par:
                 <div>
                 <form method="POST" action="?action=catalogue&trie=note">
-                <select name="trier" id="trie">
+                <select name="trie" id="trie">
                 <option value="note">par Note</option>
                 <option value="ajout">Date d'ajout</option>
                 <option value="episode">nom d'episode</option>
                 </select>
-                <input id="trie"name="trie"type="submit">
+                <input id="trier"name="trier"type="submit">
 
                 </form>
                 </div>
@@ -58,10 +57,10 @@ class DisplayCatalogueAction extends Action
         $html.=<<<EOF
                 filtrer par genre :
                 <div>
-                <form method="POST" action="?action=catalogue&trie=genre">
+                <form method="POST" action="?action=genre">
                 <select name="genre" id="genre">
                 <option>default</option>
-                <option value="Comédie">Comédie</option>
+                <option value="Comedie">Comédie</option>
                 <option value="Horreur">Horreur</option>
                 <option value="Action">Action</option>
                 <option value="Drame">Drame</option>
@@ -75,7 +74,7 @@ class DisplayCatalogueAction extends Action
         $html.=<<<EOF
                 filtrer par public visé :
                 <div>
-                <form method="POST" action="?action=catalogue&trie=genre">
+                <form method="POST" action="?action=public">
                 <select name="public" id="public">
                 <option>default</option>
                 <option value="enfant">enfant</option>
