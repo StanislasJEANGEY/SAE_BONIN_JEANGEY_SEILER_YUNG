@@ -40,7 +40,7 @@ class DisplayCatalogueAction extends Action
         $html.="<a id=logout href=?action=logout>Se déconnecter</a>";
         $html.="</div>";
         $html.=<<<EOF
-                trier par:
+                <h1 id="titreFav"> trier par : </h1>
                 <div>
                 <form method="POST" action="?action=catalogue&trie=note">
                 <select name="trie" id="trie">
@@ -48,14 +48,14 @@ class DisplayCatalogueAction extends Action
                 <option value="ajout">Date d'ajout</option>
                 <option value="episode">nom d'episode</option>
                 </select>
-                <input id="trier"name="trier"type="submit">
+                <input id="ButtonCatalogue" name="trier" type="submit">
 
                 </form>
                 </div>
                 EOF;
 
         $html.=<<<EOF
-                filtrer par genre :
+                <h1 id="titreFav"> filtrer par genre :</h1>
                 <div>
                 <form method="POST" action="?action=genre">
                 <select name="genre" id="genre">
@@ -66,13 +66,13 @@ class DisplayCatalogueAction extends Action
                 <option value="Drame">Drame</option>
                 <option value="Aventure">Aventure</option>
                 </select>
-                <input id="genrer"name="genrer"type="submit">
+                <input id="ButtonCatalogue" name="genrer" type="submit">
 
                 </form>
                 </div>
                 EOF;
         $html.=<<<EOF
-                filtrer par public visé :
+                <h1 id="titreFav"> filtrer par public visé : </h1>
                 <div>
                 <form method="POST" action="?action=public">
                 <select name="public" id="public">
@@ -81,7 +81,7 @@ class DisplayCatalogueAction extends Action
                 <option value="ado">Adolescent</option>
                 <option value="adulte">adulte</option>
                 </select>
-                <input id="publique"name="publique"type="submit">
+                <input id="ButtonCatalogue" name="publique" type="submit">
 
                 </form>
                 </div>
