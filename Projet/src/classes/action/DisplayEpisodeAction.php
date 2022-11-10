@@ -14,10 +14,10 @@ class DisplayEpisodeAction extends Action
         $id = $_GET['id'];
         if (isset($_SESSION['user'])) {
             $user = unserialize($_SESSION['user']);
-
+            if(!$user->Finir($serie)){
 
                 $user->AjouterSerieCommencer($serie,$id);
-                $user->Finir($serie);
+              }
         }
 
         $rendererEpisode = new EpisodeRenderer(Episode::getEpisode($_GET['id']));
