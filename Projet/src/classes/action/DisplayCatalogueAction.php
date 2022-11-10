@@ -41,7 +41,7 @@ class DisplayCatalogueAction extends Action
         $html.="<a id=logout href=?action=logout>Se déconnecter</a>";
         $html.="</div>";
         $html.=<<<EOF
-                trierpar:
+                trier par:
                 <div>
                 <form method="POST" action="?action=catalogue&trie=note">
                 <select name="trier" id="trie">
@@ -50,6 +50,39 @@ class DisplayCatalogueAction extends Action
                 <option value="episode">nom d'episode</option>
                 </select>
                 <input id="trie"name="trie"type="submit">
+
+                </form>
+                </div>
+                EOF;
+
+        $html.=<<<EOF
+                filtrer par genre :
+                <div>
+                <form method="POST" action="?action=catalogue&trie=genre">
+                <select name="genre" id="genre">
+                <option>default</option>
+                <option value="Comédie">Comédie</option>
+                <option value="Horreur">Horreur</option>
+                <option value="Action">Action</option>
+                <option value="Drame">Drame</option>
+                <option value="Aventure">Aventure</option>
+                </select>
+                <input id="genrer"name="genrer"type="submit">
+
+                </form>
+                </div>
+                EOF;
+        $html.=<<<EOF
+                filtrer par public visé :
+                <div>
+                <form method="POST" action="?action=catalogue&trie=genre">
+                <select name="public" id="public">
+                <option>default</option>
+                <option value="enfant">enfant</option>
+                <option value="ado">Adolescent</option>
+                <option value="adulte">adulte</option>
+                </select>
+                <input id="publique"name="publique"type="submit">
 
                 </form>
                 </div>
