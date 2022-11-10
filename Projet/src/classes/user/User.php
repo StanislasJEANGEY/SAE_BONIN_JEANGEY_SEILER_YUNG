@@ -3,6 +3,8 @@
 namespace iutnc\netVOD\user;
 
 
+use Exception;
+use iutnc\netVOD\action\ajouterCommentaireAction;
 use iutnc\netVOD\db\ConnectionFactory;
 use iutnc\netVOD\Exception\AuthException;
 
@@ -58,13 +60,13 @@ class User
       $query->execute();
     }
 
-public function DejaCommencer(int $serieid):bool{
-  $db = ConnectionFactory::makeConnection();
-  $query = $db->prepare("SELECT idserie FROM current WHERE iduser = ? AND idserie = ?");
-  $query->bindParam(1,$this->id);
-  $query->bindParam(2,$serieid);
-  $query->execute();
-  return $query->rowCount() >= 1;
+    public function DejaCommencer(int $serieid):bool{
+        $db = ConnectionFactory::makeConnection();
+        $query = $db->prepare("SELECT idserie FROM current WHERE iduser = ? AND idserie = ?");
+        $query->bindParam(1,$this->id);
+        $query->bindParam(2,$serieid);
+        $query->execute();
+        return $query->rowCount() >= 1;
 }
 
     /**
@@ -73,6 +75,31 @@ public function DejaCommencer(int $serieid):bool{
     public function getId(): int
     {
         return $this->id;
+    }
+
+    public function ajouterCommentaire(int $serieid, string $commentaire, int $note){
+        $db = ConnectionFactory::makeConnection();
+        $query = $db->prepare("INSERT INTO commentaire VALUES(?, ?, ?, ?)");
+        $query->bindParam(1,$this->id);
+        $query->bindParam(2,$serieid);
+        $query->bindParam(3,$note);
+        $query->bindParam(4,$commentaire);
+        return $query->execute();
+    }
+
+    public function estCommenter(int $serieid){
+        $db = ConnectionFactory::makeConnection();
+        $query = $db->prepare("SELECT idserie FROM commentaire WHERE iduser = ? AND idserie = ?");
+        $query->bindParam(1,$this->id);
+        $query->bindParam(2,$serieid);
+        $query->execute();
+        return $query->rowCount() >= 1;
+    }
+
+    public function __get( string $attr) : mixed {
+        if (property_exists($this, $attr)) return $this->$attr;
+        else {
+            throw new Exception("$attr : invalid property");}
     }
 
 

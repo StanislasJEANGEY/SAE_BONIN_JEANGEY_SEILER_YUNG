@@ -25,7 +25,14 @@ class EpisodeRenderer implements renderer
                     "</div>";
                 $html .= "<div class='track'>" .
                     "<p><video controls src='video/{$this->episode->source}' type='video/mp4'></video></p>";
+                $html .= <<<EOF
+                            <form method="POST" action="?action=ajouterCommentaireAction&idSerie={$_GET['idserie']}">
+
+                                <input type="submit" value="Commenter">
+                            </form>
+                         EOF;
                 break;
+
             case 2:
                 $bd = ConnectionFactory::makeConnection();
                 $requete = $bd->prepare("SELECT img,numero FROM serie inner join episode on serie.idSerie = episode.serie_id WHERE serie.idSerie = ?");
@@ -39,6 +46,8 @@ class EpisodeRenderer implements renderer
                         "<a href='?action=episode&id={$this->episode->id}&idserie={$this->episode->idSerie}'><br><img src='".$data['img']."' width='400' height='225'></a>".
                         "</div>";
                 }
+
+
                 break;
 
         }
