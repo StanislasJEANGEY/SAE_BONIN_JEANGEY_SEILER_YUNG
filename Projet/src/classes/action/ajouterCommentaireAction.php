@@ -13,7 +13,7 @@ class ajouterCommentaireAction extends Action
                         <legend>Commentaire : </legend>
                         <input type="text" name="commentaire" id="commentaire">
                         <legend>Note : </legend>
-                        <input type="number" name="note" id="note" required>
+                        <input type="number" name="note" id="note" required max="5" min="1">
                         <input type="hidden" name="idserie" value="{$_GET['idSerie']}">
                         <input type="hidden" name="url" value="{$_SERVER['REQUEST_URI']}">
         
