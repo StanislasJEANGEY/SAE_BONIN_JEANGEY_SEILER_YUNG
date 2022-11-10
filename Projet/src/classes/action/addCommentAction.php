@@ -16,8 +16,7 @@ class addCommentAction extends Action
             $idserie = $_POST['idserie'];
             $commentaire = $_POST['commentaire'];
             $note = $_POST['note'];
-            $user->ajouterCommentaire($idserie, $note, $commentaire);
-            echo $_GET['url'];
+            $user->ajouterCommentaire($idserie,  $commentaire, $note);
             header('Location: ');
             die();
         } else {
