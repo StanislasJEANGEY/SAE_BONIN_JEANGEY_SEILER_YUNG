@@ -21,12 +21,12 @@ class DisplayCatalogueAction extends Action
         $html .= "<a id=logout href=?action=logout>Se déconnecter</a>";
         $html .= "</div>";
         $html .= "<div id=Tout>";
-        $query = "SELECT serie.idSerie,titre,img, AVG(note) as moy FROM serie 
+        $query = "SELECT serie.idSerie,titre,img, AVG(note) as moy FROM serie
                 INNER JOIN commentaire ON commentaire.idserie = serie.idSerie
                 GROUP by serie.idSerie,titre,img
                 ORDER BY moy";
         $html.= DisplayCatalogueAction::formulaire($query);
-        $query2 = "SELECT idSerie,titre,img from serie 
+        $query2 = "SELECT idSerie,titre,img from serie
                     where idSerie NOT IN (SELECT idserie from commentaire)";
         $html.= DisplayCatalogueAction::formulaire($query2);
 
@@ -54,8 +54,7 @@ class DisplayCatalogueAction extends Action
                 <form method="POST" action="?action=favorie&idSerie={$data['idSerie']}">
                     <input type="hidden" name="url" value="{$_SERVER['REQUEST_URI']}">
                     <input type="hidden" name="idserie" value="{$data['idSerie']}">
-
-                    <input id="ButtonLike" type="submit" value="J'adore">
+                    <input class="buttonLike" type="submit" value="J'adore">
                 </form>
                 </div>
                 EOF;
@@ -64,7 +63,7 @@ class DisplayCatalogueAction extends Action
                 <form method="POST" action="?action=retirerfavorie&idSerie={$data['idSerie']}">
                     <input type="hidden" name="url" value="{$_SERVER['REQUEST_URI']}">
                     <input type="hidden" name="idserie" value="{$data['idSerie']}">
-                    <input id="ButtonLike" type="submit" value="J'aime plus">
+                    <input class="buttonNoLike" type="submit" value="J'aime plus">
                 </form>
                 </div>
                 EOF;
