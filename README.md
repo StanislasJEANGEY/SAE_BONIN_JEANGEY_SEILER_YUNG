@@ -67,7 +67,7 @@ YUNG Théo
     OK
 
 16. Gestion de la liste « déjà visionnées »  
-    En cours par théo
+    OK
 
 17. Gestion du profil de l’utilisateur : ajouter des informations (nom, prénom, genre préféré ...)  
     OK
