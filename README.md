@@ -94,3 +94,15 @@ YUNG Théo
          azertyuiop
       2. test2@gmail.com
          azertyuiop
+
+genre :
+Comédie
+Horreur
+Action
+Drame
+Aventure
+
+public :
+enfant
+ados
+adulte
