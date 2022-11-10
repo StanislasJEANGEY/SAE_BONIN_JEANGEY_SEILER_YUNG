@@ -54,7 +54,7 @@ class DisplayCatalogueAction extends Action
                 </form>
                 </div>
                 EOF;
-        $html.="<divid=Tout>";
+        $html.="<div id=Tout>";
         return$html;
     }
 
