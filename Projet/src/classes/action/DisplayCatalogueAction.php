@@ -28,7 +28,7 @@ class DisplayCatalogueAction extends Action
             $html .= "
                   <div id=MainAfficherSerie>
                   <h2>" . $data['titre'] ."<h2>
-                  <a href='?action=serie&id=". $data['idSerie'] . "'><br><img src='". $data['img'] ."' width='400' height='225'></a><br>
+                  <a href='?action=serie&id=". $data['idSerie'] . "'><br><img id=imgSerie src='". $data['img'] ."' width='300' height='300'></a><br>
                   ";
 
             $user = unserialize($_SESSION['user']);
@@ -37,7 +37,8 @@ class DisplayCatalogueAction extends Action
                 <form method="POST" action="?action=favorie&idSerie={$data['idSerie']}">
                     <input type="hidden" name="url" value="{$_SERVER['REQUEST_URI']}">
                     <input type="hidden" name="idserie" value="{$data['idSerie']}">
-                    <input type="submit" value="J'adore">
+                    
+                    <input id="ButtonLike" type="submit" value="J'adore">
                 </form>
                 </div>
                 EOF;
@@ -46,7 +47,7 @@ class DisplayCatalogueAction extends Action
                 <form method="POST" action="?action=retirerfavorie&idSerie={$data['idSerie']}">
                     <input type="hidden" name="url" value="{$_SERVER['REQUEST_URI']}">
                     <input type="hidden" name="idserie" value="{$data['idSerie']}">
-                    <input type="submit" value="J'aime plus">
+                    <input id="ButtonLike" type="submit" value="J'aime plus">
                 </form>
                 </div>
                 EOF;
