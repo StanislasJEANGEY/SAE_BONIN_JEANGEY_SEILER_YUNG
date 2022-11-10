@@ -21,7 +21,24 @@ class DisplayCatalogueAction extends Action
         $html .= "<a id=logout href=?action=logout>Se déconnecter</a>";
         $html .= "</div>";
         $html .= "<div id=Tout>";
-        $query = "SELECT idSerie,titre,img FROM serie";
+        $query = "SELECT serie.idSerie,titre,img, AVG(note) as moy FROM serie 
+                INNER JOIN commentaire ON commentaire.idserie = serie.idSerie
+                GROUP by serie.idSerie,titre,img
+                ORDER BY moy";
+        $html.= DisplayCatalogueAction::formulaire($query);
+        $query2 = "SELECT idSerie,titre,img from serie 
+                    where idSerie NOT IN (SELECT idserie from commentaire)";
+        $html.= DisplayCatalogueAction::formulaire($query2);
+
+        $html .= "</div>";
+    }
+
+    return $html;
+    }
+
+
+    public static function formulaire(string $query): string{
+        $html="";
         $result = ConnectionFactory::makeConnection()->prepare($query);
         $result->execute();
         while($data = $result->fetch()){
@@ -55,9 +72,6 @@ class DisplayCatalogueAction extends Action
 
 
         }
-        $html .= "</div>";
-    }
-
-    return $html;
+        return $html;
     }
 }

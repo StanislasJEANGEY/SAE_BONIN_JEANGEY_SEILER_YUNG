@@ -56,26 +56,42 @@ class User
         return $query->rowCount() >= 1;
     }
 
-    public function AjouterSerieCommencer(int $serieid): void
+    public function AjouterSerieCommencer(int $serieid,int $epid): void
+    {
+      $db = ConnectionFactory::makeConnection();
+      $state = $db->prepare("SELECT iduser,idserie,id FROM current WHERE iduser = ? and idserie = ? and id = ?");
+      $state->bindParam(1, $this->id);
+      $state->bindParam(2, $serieid);
+      $state->bindParam(3,$epid);
+      $state->execute();
+
+      if ($state->rowCount() == 0) {
+          $query = $db->prepare("INSERT INTO current values(?,?,?)");
+          $query->bindParam(1, $this->id);
+          $query->bindParam(2, $serieid);
+          $query->bindParam(3, $epid);
+          $query->execute();
+      }
+    }
+
+
+    public function Finir(int $serieid):void
     {
         $db = ConnectionFactory::makeConnection();
-        $query = $db->prepare("INSERT INTO current values(?,?)");
+        $query = $db->prepare("SELECT count(idserie) FROM current WHERE iduser = ? AND idserie = ?");
         $query->bindParam(1, $this->id);
         $query->bindParam(2, $serieid);
         $query->execute();
+        $n = $query->rowCount();
+        echo $n;
+        $q = $db->prepare("SELECT count(serie_id) FROM episode WHERE serie_id = ?");
+        $q->bindParam(1, $serieid);
+        $q->execute();
+        echo $q->rowCount();
+
     }
 
-    public function DejaCommencer(int $serieid): bool
-    {
-        $db = ConnectionFactory::makeConnection();
-        $query = $db->prepare("SELECT idserie FROM current WHERE iduser = ? AND idserie = ?");
-        $query->bindParam(1, $this->id);
-        $query->bindParam(2, $serieid);
-        $query->execute();
-        return $query->rowCount() >= 1;
-    }
-
-    public function ajouterCommentaire(int $serieid, string $commentaire = "", int $note)
+    public function ajouterCommentaire(int $serieid, int $note,string $commentaire = "")
     {
         $db = ConnectionFactory::makeConnection();
         $query = $db->prepare("INSERT INTO commentaire VALUES(?, ?, ?, ?)");

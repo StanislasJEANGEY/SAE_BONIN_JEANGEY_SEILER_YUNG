@@ -11,13 +11,15 @@ class DisplayEpisodeAction extends Action
     protected function executeGET(): string
     {
         $serie = $_GET['idserie'];
+        $id = $_GET['id'];
         if (isset($_SESSION['user'])) {
             $user = unserialize($_SESSION['user']);
-            if (!$user->DejaCommencer($serie)) {
-                $user->AjouterSerieCommencer($serie);
-            }
+            
+
+                $user->AjouterSerieCommencer($serie,$id);
+
         }
-        var_dump($_GET['id']);
+
         $rendererEpisode = new EpisodeRenderer(Episode::getEpisode($_GET['id']));
         return $rendererEpisode->render();
     }
