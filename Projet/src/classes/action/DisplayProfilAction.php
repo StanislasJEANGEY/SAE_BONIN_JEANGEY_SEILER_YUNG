@@ -2,6 +2,7 @@
 
 namespace iutnc\netVOD\action;
 
+use iutnc\netVOD\db\ConnectionFactory;
 use iutnc\netVOD\renderer\ProfilRenderer;
 
 class DisplayProfilAction extends Action
@@ -28,7 +29,13 @@ class DisplayProfilAction extends Action
         if (isset($_SESSION['user'])) {
             $user = unserialize($_SESSION['user']);
             $rendererProfil = new ProfilRenderer($user);
-            if ($user->__get('nom') != '' && $user->__get('prenom') != '' && $user->__get('genrePref') != '') {
+            $bd = ConnectionFactory::makeConnection();
+            $query = $bd->prepare("SELECT nom, prenom, genrePref FROM Utilisateur WHERE id = ?");
+            $id = $user->__get('id');
+            $query->bindParam(1,$id);
+            $query->execute();
+            $data = $query->fetchAll();
+            if ( $data[0]['nom'] == null && $data[0]['prenom'] == null && $data[0]['genrePref'] == null)            {
                 return $rendererProfil->render();
             } else {
                 return $rendererProfil->render(2);
