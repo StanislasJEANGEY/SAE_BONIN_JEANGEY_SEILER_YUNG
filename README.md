@@ -62,9 +62,11 @@ YUNG Théo
 15. gestion de la liste de préférence : retrait  
     OK
 
-16. Gestion de la liste « déjà visionnées »
+16. Gestion de la liste « déjà visionnées »  
+    En cours par théo
 
-17. gestion du profil de l’utilisateur : ajouter des informations (nom, prénom, genre préféré ...)
+17. gestion du profil de l’utilisateur : ajouter des informations (nom, prénom, genre préféré ...)  
+    OK
 
 18. accès direct à l’épisode à visionner lorsque l’on visualise une série qui est dans la liste « en cours »
 
