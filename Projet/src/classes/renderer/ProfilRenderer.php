@@ -23,20 +23,24 @@ class ProfilRenderer implements renderer
         switch ($selector) {
             case 1:
                 $html = <<<EOF
+                        <div id="mainLogin">
                         <form method='post' action='?action=profil'>
                             <span id="nom"><label id="labelNom">Nom : </label><br><input id="TextLogin" type="text" name="nom" value="" placeholder='Saisir nom' required><br></span>
                             <span id="prenom"><label id="labelPrenom">Prénom : </label><br><input id="TextLogin" type="text" name="prenom" value="" placeholder='Saisir prénom' required><br></span>
                             <span id="genre"><label id="labelGenre">Genre préféré : </label><br>
-                              <select name="genre">
+                              <select name="genrePref">
                                   <option value="">Fais ton choix</option>
                                   <option value="Comédie">Comédie</option>
                                   <option value="Horreur">Horreur</option>
+                                  <option value="Action">Action</option>
+                                  <option value="Drame">Drame</option>
+                                  <option value="Aventure">Aventure</option>
                               </select>
-
                             <button id="buttonAjout" type="submit">Ajouter</button>
                         </form>
                         EOF;
                 $html .= "<a id=retourConnexion href='?action=signin'>Retour à la connexion</a><br><br>";
+                $html .= "</div>";
                 break;
             case 2 :
                 $user = unserialize($_SESSION['user']);
@@ -46,12 +50,13 @@ class ProfilRenderer implements renderer
                 $req->bindParam(1, $userid);
                 $req->execute();
                 $data= $req->fetchAll();
-                $html = "
-                        Nom : " . $data[0]['nom'] . "<br>
-                        Prenom : " . $data[0]['prenom'] . "<br>
-                        Genre préféré : " . $data[0]['genrePref'] . "<br>";
-                $html .= "<a href='?action=modifyProfil'>Modifier</a>";
+                $html = "<div id=mainLogin>";
+                $html .=  "<label id=nomProfil>Nom : {$data[0]['nom']} <br></label>";
+                $html .=  "<label id=prenomProfil>Prenom : {$data[0]['prenom']} <br></label>";
+                $html .=  "<label id=genreProfil>Genre préféré : {$data[0]['genrePref']} <br></label>";
+                $html .= "<a id=ButtonModif href='?action=modifyProfil'>Modifier</a>";
                 $html .= "<a id=retourConnexion href='?action=signin'>Retour à la connexion</a><br><br>";
+                $html .= "</div>";
                 break;
         }
         return $html;

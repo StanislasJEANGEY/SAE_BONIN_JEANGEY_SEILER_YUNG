@@ -101,12 +101,10 @@ body{
 }
 
 #mainLogin {
-  padding-top: 50px;
-  display: grid;
+  padding-top: 10px;
+  display:grid;
   justify-content: center;
   align-items: center;
-  padding-left: 10px;
-  spacing: 100px;
 }
 
 ::placeholder {
@@ -495,4 +493,39 @@ body{
     min-width: 120px;
     padding: 0 25px;
   }
+}
+
+
+#mainLogin{
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#ButtonModif{
+  justify-content: center;
+  align-items: center;
+  display: grid;
+  padding: 10px 45px;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+  color: white;
+  background: #6225E6;
+  transition: 1s;
+  box-shadow: 6px 6px 0 black;
+  transform: skewX(-15deg);
+  height: 50px;
+  width: 200px;
+}
+
+#ButtonModif:hover{
+  transition: 0.5s;
+  box-shadow: 10px 10px 0 #FBC638;
+}
+
+#separation{
+  padding-bottom: 100px;
 }
