@@ -8,6 +8,18 @@ https://github.com/StanislasJEANGEY/SAE_BONIN_JEANGEY_SEILER_YUNG
 
 <br>
 
+# Attention - Note au correcteur :
+
+Sur le dernier commit and push de jeudi nous avons envoyer une version qui fonctionnait avec XAMPP.  
+Ensuite, nous avons déposer sur le serveur web de l'IUT (Webetu) et nous avons constaté une erreur alors que nous n'avion pas touché au code. L'erreur venait du fichier _Projet/src/classes/video/tack/Episode.php_ à la _ligne 7_ : **extends video {**  
+Cette ligne ne posait pas de problème à XAMPP pour charger la classe Video.php mais sur Webetu cela posait problème car il n'arrivait pas à trouver la classe en question.  
+Le problème à été résolu en mettant une majuscule à : **video**.  
+Donc si vous pouviez prendre en compte ce petit détail de majuscule qui ne nous posait pas de problème avant qu'on le depose sur Webetu, et que si vous rencontrer ce problème, merci de bien vouloir mettre un majuscule à l'endroit indiquer ou télécharger le dernier commit du git qui ne met à jour que le fichier README.md (pour ajouter cette note) et modifie juste la majuscule dans le fichier Episode.php (vous pouvez vérifier en regardant les détails du commit).  
+Merci  
+Signé : tout le groupe
+
+<br>
+
 ### Lien vers webetu
 
 https://webetu.iutnc.univ-lorraine.fr/www/jeangey1u/SAE_DevWeb/Projet/index.php

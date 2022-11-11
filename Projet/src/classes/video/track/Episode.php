@@ -4,7 +4,7 @@ namespace iutnc\netVOD\video\track;
 
 use iutnc\netVOD\db\ConnectionFactory;
 
-class Episode extends video
+class Episode extends Video
 {
     public mixed $descriptif;
     public $idSerie;
