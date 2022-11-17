@@ -1,3 +1,26 @@
+Presentation:
+Hello, welcome on our tutorial video : how to use NetVOD.
+NetVOD is our streaming app where you can see many series with a huge catalogue.
+NetVOD is free and legal without ads.
+When you arrive on NetVOD you can create an account by clicking on the button "S'inscrire" or 
+connect you with the button "Se connecter".
+We gonna talk about the sign up page.
+
+
+
+Sign up Page/log in :
+On the register page you can create your account with an email and a password.
+We asked to confirm your password to be sure you don't write a wrong password.
+Your email is store on our dataBase and your password is crypted whith Bcrypt.
+The email has to be correct with a '@' and a '.com' at the end for example.
+The password has to do 10 characters for security and be sure your password is safe.
+Next see the log in page 
+
+On the log in page you have to write your email and your password of your account.
+If you have forgot your password we don't have do the features to recover your password so don't forget it.
+If the email and the password is correct you have acces to your homepage else you have a warning message if your email or your password isn't correct.
+
+
 Once you are connected, you arrive on the User's home page.
 Here, you can find your favorite series, series you are currently watching and your finished series.
 When a currents series is finished, it goes to the finished series.
