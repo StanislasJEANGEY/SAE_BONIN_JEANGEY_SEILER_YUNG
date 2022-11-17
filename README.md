@@ -120,13 +120,16 @@ Si vous souhaiter lancer l'application web depuis un serveur local, vous avez ju
 
 
 # How to sign up and register on NetVOD.
+
 - To sign up in our application you should click in the button “s’inscrire”. 
 - You will be redirected to a page where you can add your email and your password. 
 - After these things done you have an account et now can register. 
 To register it’s almost the same thing as sign up, but you must click on the button “connexion”.
 
 # Now how to navigate on NetVOD.
+
 ## Button “catalogue”
+
 - The first button you can see is “Catalogue” click on it. 
 - Now you can see a catalogue of series, choose the one who interest you the most among all we have and click on the picture. 
 - In addition, underneath each series you have a button “j’aime” 
@@ -135,12 +138,14 @@ To register it’s almost the same thing as sign up, but you must click on the b
 - After watching a series add a comment and an evaluation but look out you can only do it once for each series. 
 
 ## Button “Profile”
+
 - The second button is “Profile” click on it. You can now edit your profile. 
 - If it’s the first time put your last name, your name, and your favorite type of series. 
 - You can add all by press on the button “ajouter”
 - Go back to the last page by clicking in “retour à l’accueil” 
 
 ## Button “Se déconnecter”
+
 - Click on it and you should be kick of our streaming app
 - To go back on NetVOD you need to log in
 
