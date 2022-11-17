@@ -119,13 +119,13 @@ YUNG Théo
 Si vous souhaiter lancer l'application web depuis un serveur local, vous avez juste à décommenter/commenter la ligne de signature de la méthode setConfig() dans le fichier ConnectionFactory.
 
 
-** How to sign up and register on NetVOD. **
+**How to sign up and register on NetVOD.**
 - To sign up in our application you should click in the button “s’inscrire”. 
 - You will be redirected to a page where you can add your email and your password. 
 - After these things done you have an account et now can register. 
 To register it’s almost the same thing as sign up, but you must click on the button “connexion”.
 
-** Now how to navigate on NetVOD.**
+**Now how to navigate on NetVOD.**
 ## Button “catalogue” 
 - The first button you can see is “Catalogue” click on it. 
 - Now you can see a catalogue of series, choose the one who interest you the most among all we have and click on the picture. 
