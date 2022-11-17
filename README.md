@@ -123,7 +123,7 @@ Si vous souhaiter lancer l'application web depuis un serveur local, vous avez ju
 
 - To sign up in our application you should click in the button “s’inscrire”. 
 - You will be redirected to a page where you can add your email and your password. 
-- After these things done you have an account et now can register. 
+- After these things done you have an account et now can sign in. 
 To register it’s almost the same thing as sign up, but you must click on the button “connexion”.
 
 # Now how to navigate on NetVOD.
@@ -132,7 +132,7 @@ To register it’s almost the same thing as sign up, but you must click on the b
 
 - The first button you can see is “Catalogue” click on it. 
 - Now you can see a catalogue of series, choose the one who interest you the most among all we have and click on the picture. 
-- In addition, underneath each series you have a button “j’aime” 
+- In addition, underneath each series you have a button “j’aime”. Click on this button below the series which you like the most !
 - All episodes of the series will be available like previously choose one and click on the picture and watch it!
 - Below all episodes you can click on the button “commentaire” and see all ratings
 - After watching a series add a comment and an evaluation but look out you can only do it once for each series. 
@@ -148,4 +148,20 @@ To register it’s almost the same thing as sign up, but you must click on the b
 
 - Click on it and you should be kick of our streaming app
 - To go back on NetVOD you need to log in
+
+## The categories
+### Favorite series
+
+- First, if you don't have series already like, go like any series you like in the catalogue and go back in the homepage. 
+- Now you have one or several videos who appears. It’s work like the catalogue but only with your favorite series
+
+### Continue watching 
+
+- First, if you don't have any series in this category. go watch a series but not entirely and go back in the homepage. 
+- Now you have one series who appears and same as catalogue or favorite series it's work the same. 
+
+
+### Watch it again 
+- First, if you don't have any series in this category. go watch a series but but this time entirely and go back in the homepage. 
+-  Now you have one series who appears in this category. it's means you finish this one and you can watch it again as many time you want. 
 
