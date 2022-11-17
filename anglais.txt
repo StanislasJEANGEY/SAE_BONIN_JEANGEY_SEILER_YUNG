@@ -5,11 +5,18 @@ Moreover, you can access your profile to add or modify your information.
 You can also access our catalogue and you can log out.
 
 
+You have the possibility to access your profile by clicking on "Profile" on the home page.
+You can then add your surname, name and your favorite kind of series. By clicking on
+"Add", you save your information in your profile. If you make a mistake or you 
+would like to change information, click on "Modify", you will be able to modify 
+everything.
 
-
-
-
-
+To consult the series proposed by our platform, click on the "Catalogue" button on the home page.
+You can then view all available series on netVOD. You have the possibility
+to filter the series by kind or by public. You can also sort the series by episode names, 
+rating assigned by other users, and date added on NetVOD. If you like a series, 
+You can add it to your favorite series by clicking on "Like" and if you no longer like it
+by clicking on "I don't like".
 
 When you click on series, its description is displayed, with its release date and its average score.
 Of course, you have the list of episodes whith their names and durations.
