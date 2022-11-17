@@ -162,6 +162,6 @@ To register it’s almost the same thing as sign up, but you must click on the b
 
 
 ### Watch it again 
-- First, if you don't have any series in this category. go watch a series but but this time entirely and go back in the homepage. 
+- First, if you don't have any series in this category. go watch a series but this time entirely and go back in the homepage. 
 -  Now you have one series who appears in this category. it's means you finish this one and you can watch it again as many time you want. 
 
