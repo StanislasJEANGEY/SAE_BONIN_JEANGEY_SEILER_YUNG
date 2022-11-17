@@ -1,0 +1,25 @@
+Once you are connected, you arrive on the User's home page.
+Here, you can find your favorite series, series you are currently watching and your finished series.
+When a currents series is finished, it goes to the finished series.
+Moreover, you can access your profile to add or modify your information.
+You can also access our catalogue and you can log out.
+
+
+
+
+
+
+
+
+When you click on series, its description is displayed, with its release date and its average score.
+Of course, you have the list of episodes whith their names and durations.
+And at the bottom, you have a button to see the list of comments.
+
+
+When you click on episode, the title, a summary and the duration display and the video begins
+You have the possibility to post a comment and rate this series.
+
+
+
+
+
